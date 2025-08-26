@@ -68,7 +68,8 @@ class SupportVC: UIViewController {
     
     
     @IBAction func didTapSubmitTicket(_ sender: Any) {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubmitTicketViewController") as! SubmitTicketViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func didTapBackBtn(_ sender: Any) {

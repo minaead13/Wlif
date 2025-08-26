@@ -1,10 +1,59 @@
-/*
-  Localizable.strings
-  Al-Mahata
 
-  Created by abdelrahman on 6/10/18.
-  Copyright © 2018 abdelrahman. All rights reserved.
-*/
+
+"Stores" = "المتاجر";
+"See All" = "عرض الكل";
+"Clinics" = "العيادات";
+"Hotels" = "الفنادق";
+"Offer Stores" = "عروض المتاجر";
+"Offer Clinics" = "عروض العيادات";
+"Offer Hotel" = "عروض الفندق";
+"Discount" = "خصم";
+"Book Now" = "احجز الآن";
+"VeterinaryServices" = "الخدمات البيطرية";
+"Distance" = "المسافة";
+"closes At" = "يغلق في";
+"Service" = "الخدمة";
+"Continue" = "متابعة";
+"Select Date" = "اختر التاريخ";
+"Select Time" = "اختر الوقت";
+"Confirm Booking" = "تأكيد الحجز";
+"Service Type" = "نوع الخدمة";
+"Date :" = "التاريخ :";
+"Type of animal" = "نوع الحيوان";
+"Value added tax" = "ضريبة القيمة المضافة";
+"Total" = "الإجمالي";
+"Minimum" = "الحد الأدنى";
+"SR" = "ر.س";
+"About Veterinary" = "عن الطب البيطري";
+"Service Type :" = "نوع الخدمة :";
+"Date :" = "التاريخ :";
+"Time :" = "الوقت :";
+"Booking Confirmed!" = "تم تأكيد الحجز!";
+"Thank you for choosing our service. See you at the scheduled time." = "شكرًا لاختيارك خدمتنا. نراك في الموعد المحدد.";
+"Go to Home" = "الذهاب إلى الرئيسية";
+"Location :" = "الموقع :";
+"Information :" = "المعلومات :";
+"Booking" = "الحجز";
+"Review :" = "المراجعة :";
+"Available services :" = "الخدمات المتاحة :";
+"Rooms" = "الغرف";
+"Number of Animals" = "عدد الحيوانات";
+"Services" = "الخدمات";
+"Entry Date" = "تاريخ الدخول";
+"From :" = "من :";
+"TO :" = "إلى :";
+"About Hotel" = "عن الفندق";
+"Exit Date :" = "تاريخ الخروج :";
+"Number of Rooms :" = "عدد الغرف :";
+"Pet Hotel" = "فندق الحيوانات الأليفة";
+"Hotel Details" = "تفاصيل الفندق";
+"Latest Adoption Offers" = "أحدث عروض التبني";
+"Photo" = "صورة";
+"Hi" = "مرحبًا";
+"Sent to :" = "تم الإرسال إلى :";
+"Explore" = "اكتشف";
+"Review :" = "مراجعة :";
+
 "Privacy" = "الخصوصية";
 "Login" = "تسجيل الدخول";
 "Home" = "المنزل";
@@ -294,7 +343,6 @@
 "Cart Subtotal" = "إجمالي السلة";
 "Product Discount" = "خصم المنتجات";
 "Cach" = "الدفع عند الاستلام";
-"Discount" = "خصومات";
 "Shipping" = "التوصيل";
 "EGP" = "ر.س";
 "No Orders Yet!" = "لا توجد طلبات حتى الآن!";

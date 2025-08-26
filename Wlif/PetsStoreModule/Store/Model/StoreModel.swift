@@ -37,7 +37,8 @@ struct Product: Codable {
     var name: String?
     var priceBefore, price: Int?
     var desc: String?
-    let sizes, colors: [String]?
+    var sizes: [Size]?
+    var colors: [Color]?
     
     enum CodingKeys: String, CodingKey {
         case id, image, name

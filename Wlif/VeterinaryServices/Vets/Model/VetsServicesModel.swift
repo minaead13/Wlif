@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct VetsServicesModel: Codable {
+    var store: Store?
+    var services: [Service]?
+}
+
+struct Service: Codable {
+    var id: Int?
+    var name: String?
+    var price: Int?
+}

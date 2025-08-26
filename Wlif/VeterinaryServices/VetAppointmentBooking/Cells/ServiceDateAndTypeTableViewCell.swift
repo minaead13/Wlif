@@ -9,6 +9,11 @@ import UIKit
 
 class ServiceDateAndTypeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var serviceType: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    var handleSelection: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +24,10 @@ class ServiceDateAndTypeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func didTapOpenCalender(_ sender: Any) {
+        handleSelection?()
+    }
+    
     
 }

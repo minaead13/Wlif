@@ -25,8 +25,14 @@ class CartViewController: UIViewController {
         setupTableView()
         bind()
         viewModel.getCart()
+        getDeliveryFees()
     }
     
+    func getDeliveryFees() {
+        if LocationUtil.load() != nil {
+            viewModel.getDeliveryFees()
+        }
+    }
     
     func bind() {
         viewModel.onCartFetched = { [weak self] cart in
@@ -57,7 +63,10 @@ class CartViewController: UIViewController {
     
     
     @IBAction func didTapContinueBtn(_ sender: Any) {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PetsStoreConfirmOrderVC") as! PetsStoreConfirmOrderVC
+        vc.viewModel.cart = viewModel.cart
+        vc.viewModel.deliveryFees = viewModel.deliveryFees
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -106,7 +115,6 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     private func increaseQuantity(productId: Int, qty: Int) {
-        print("cart qty \(qty)")
         viewModel.addCartProduct(productId: productId, qty: qty)
     }
     

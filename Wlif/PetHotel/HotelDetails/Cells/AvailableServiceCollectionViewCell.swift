@@ -8,7 +8,9 @@
 import UIKit
 
 class AvailableServiceCollectionViewCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var serviceLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

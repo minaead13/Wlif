@@ -8,16 +8,21 @@
 import UIKit
 
 class AddoptionOfferTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var animalImageView: UIImageView!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var photosCountLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(adoptionOffers: AdoptionOffer) {
+        nameLabel.text = adoptionOffers.petName
+        animalImageView.setImage(from: adoptionOffers.image)
+        descLabel.text = adoptionOffers.description
+        photosCountLabel.text = "\(adoptionOffers.imagesCount) \("Photos".localized)"
     }
     
 }

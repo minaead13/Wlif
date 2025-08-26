@@ -20,6 +20,18 @@ extension NSMutableAttributedString {
 
 extension String {
     
+    func toBackendDateFormat() -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "d MMMM yyyy"
+        
+        if let date = formatter.date(from: self) {
+            formatter.dateFormat = "yyyy-MM-dd"
+            return formatter.string(from: date)
+        } else {
+            return ""
+        }
+    }
     static func className(_ aClass: AnyClass) -> String {
         return NSStringFromClass(aClass).components(separatedBy: ".").last!
     }

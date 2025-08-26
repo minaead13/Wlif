@@ -176,6 +176,7 @@ amet, consectetur ....</string>
                 <outlet property="deliveryLabel" destination="u5e-Aj-8Kz" id="TbB-1w-Onb"/>
                 <outlet property="descLabel" destination="JSR-wa-kDO" id="A3H-mX-Kkn"/>
                 <outlet property="distanceLabel" destination="Ogr-eu-1A4" id="UPn-9Z-HGs"/>
+                <outlet property="distanceView" destination="2Fd-x0-njN" id="Pi0-8K-MEO"/>
                 <outlet property="nameLabel" destination="Y8r-cf-yHX" id="w5d-rf-MQg"/>
                 <outlet property="petsStoreImageView" destination="Buw-rl-djX" id="aCV-8j-24i"/>
             </connections>

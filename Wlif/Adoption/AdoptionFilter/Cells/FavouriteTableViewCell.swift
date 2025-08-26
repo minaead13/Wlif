@@ -8,16 +8,27 @@
 import UIKit
 
 class FavouriteTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var animalImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    
+    var handleSelection: (() -> Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configure(data: FavModel) {
+        animalImageView.setImage(from: data.image)
+        nameLabel.text = data.petName
+        descLabel.text = data.description
     }
+
+    @IBAction func didTapDeleteBtn(_ sender: Any) {
+        handleSelection?()
+    }
+    
     
 }

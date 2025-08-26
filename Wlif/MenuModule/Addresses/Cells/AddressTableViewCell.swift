@@ -8,16 +8,25 @@
 import UIKit
 
 class AddressTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    
+    var handleSelection: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configure(with data: AddressModel) {
+        typeLabel.text = data.type
+        addressLabel.text = data.address
     }
+
+    @IBAction func didTapDeleteBtn(_ sender: Any) {
+        handleSelection?()
+    }
+    
     
 }

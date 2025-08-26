@@ -9,15 +9,25 @@ import UIKit
 
 class ProductOrderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var storeImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var storeLabel: UILabel!
+    @IBOutlet weak var sizeLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
+    func configure(item: Item) {
+        storeImageView.setImage(from: item.image)
+        nameLabel.text = item.name
+        storeLabel.text = item.store
+        sizeLabel.text = item.size
+        priceLabel.text = item.price
+        quantityLabel.text = "\(item.qty)"
+    }
 }

@@ -64,6 +64,11 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 let vc = self?.storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
+            
+            cell.handleFavSelection = { [weak self] in
+                let vc = self?.storyboard?.instantiateViewController(withIdentifier: "FavoritesViewController") as! FavoritesViewController
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
             cell.selectionStyle = .none
             return cell
             
@@ -86,6 +91,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             switch indexPath.row {
             case 2:
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "SupportVC") as! SupportVC
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            case 3:
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "LanguagesViewController") as! LanguagesViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             case 4:
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "TermsVC") as! TermsVC

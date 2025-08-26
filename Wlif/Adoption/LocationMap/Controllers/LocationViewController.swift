@@ -8,154 +8,130 @@
 import UIKit
 import MapKit
 import CoreLocation
-import MOLH
+import GoogleMaps
 
-class LocationViewController: UIViewController , CLLocationManagerDelegate  ,MKMapViewDelegate{
+class LocationViewController: UIViewController ,CLLocationManagerDelegate, GMSMapViewDelegate{
     
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var locationTitleLabel: UILabel!
-    @IBOutlet weak var checkBtn: UIButton!
-    @IBOutlet weak var keepLocationLabel: UILabel!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var additionalLabel: UILabel!
-    @IBOutlet weak var optionalLabel: UILabel!
-    @IBOutlet weak var additionalTextField: UITextField!
-    @IBOutlet weak var confirmBtn: UIButton!
-    @IBOutlet weak var segmentView: UIView!
-    @IBOutlet weak var additionalView: UIView!
-    @IBOutlet weak var textView: UIView!
+    @IBOutlet weak var homeView: UIView!
+    @IBOutlet weak var workView: UIView!
+    @IBOutlet weak var saveSwitch: UISwitch!
+    
     
     var locationManager = CLLocationManager()
-    var previousLoc: CLLocation?
     var viewModel = LocationViewModel()
     var spinnerView: UIView?
     
-    var saved: Int = 0 {
-        didSet {
-            updateViewsVisibility()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mapView.delegate = self
+        setupLocationManager()
+        checkLocationExist()
+        saveSwitch.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
+        bind()
+        setAddressType()
+    }
+    
+    func bind() {
+        viewModel.isLoading.bind { [weak self] isLoading in
+            guard let self = self,
+                  let isLoading = isLoading else {
+                return
+            }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self.showLoadingIndicator()
+                } else {
+                    self.hideLoadingIndicator()
+                }
+            }
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupUI()
-        setupLocationManager()
-        checkLocationServiceAuthorization()
-        
+    @objc func switchChanged(_ sender: UISwitch) {
+        if sender.isOn {
+            viewModel.saved = 1
+        } else {
+            viewModel.saved = 0
+        }
     }
     
-    private func setupUI() {
-        setNavigation()
-        setFonts()
-        hideViews()
-        checkLanguage()
-    }
-    
-    func checkLanguage(){
-        let isArabic = MOLHLanguage.currentAppleLanguage() == "ar"
-        let alignment: NSTextAlignment = isArabic ? .right : .left
-        
-        locationTitleLabel.textAlignment = alignment
-        keepLocationLabel.textAlignment = alignment
-        additionalLabel.textAlignment = alignment
-        optionalLabel.textAlignment = alignment
-        additionalTextField.textAlignment = alignment
-    }
-    
-    private func setNavigation(){
-        navigationController?.navigationBar.tintColor = .black
-        let backButton = UIBarButtonItem()
-        backButton.title = ""
-        navigationItem.backBarButtonItem = backButton
-    }
-    
-    private func setFonts(){
-        
-        locationTitleLabel.font = UIFont(name: "DMSans-Bold", size: 22)
-        keepLocationLabel.font = UIFont(name: "DMSans18pt-Regular", size: 14)
-        additionalLabel.font = UIFont(name: "DMSans-Bold", size: 14)
-        optionalLabel.font = UIFont(name: "DMSans18pt-Regular", size: 12)
-        additionalTextField.font = UIFont(name: "DMSans18pt-Regular", size: 12)
-        let attributes: [NSAttributedString.Key: Any] = [
-                    NSAttributedString.Key.font: UIFont(name: "DMSans18pt-Regular", size: 14)!]
-        segmentedControl.setTitleTextAttributes(attributes, for: .normal)
-        confirmBtn.titleLabel?.font = UIFont(name: "DMSans18pt-Regular", size: 16)
-        checkBtn.setTitle("", for: .normal)
-        
-        keepLocationLabel.text = "Keep the address to use later" .localized
-        segmentedControl.setTitle("Home" .localized, forSegmentAt: 0)
-        segmentedControl.setTitle("rest" .localized, forSegmentAt: 1)
-        segmentedControl.setTitle("shop" .localized, forSegmentAt: 2)
-        additionalLabel.text = "Additional details".localized
-        optionalLabel.text = "Optional".localized
-        additionalTextField.placeholder = "Additional details".localized
-        confirmBtn.setTitle("Confirm Location".localized, for: .normal)
-        
-    }
-    
-    private func hideViews(){
-        segmentView.isHidden = true
-        additionalView.isHidden = true
-        textView.isHidden = true
-        
-    }
-    
-    private func showViews(){
-        segmentView.isHidden = false
-        additionalView.isHidden = false
-        textView.isHidden = false
-        
-    }
-    
-    private func updateViewsVisibility() {
-        let image = saved == 1 ? UIImage(named: "true") : UIImage(named: "Rectangle")
-        checkBtn.setImage(image, for: .normal)
-        saved == 1 ? showViews() : hideViews()
-    }
-       
     // MARK: - Location Services
+    
+    func setAddressType() {
+        switch viewModel.addressType {
+        case "1":
+            updateViewColors(selectedView: homeView, otherView: workView, type: "1")
+        case "2":
+            updateViewColors(selectedView: workView, otherView: homeView, type: "2")
+        default:
+            break
+        }
+    }
+    
+    func checkLocationExist() {
+        if let lat = viewModel.lat, let lon = viewModel.lon {
+            locationTitleLabel.text = viewModel.addressType
+            locationManager.stopUpdatingLocation()
+            zoomToPassedLocation(lat: lat, lon: lon)
+        } else {
+            zoomToSaudiArabia()
+            checkLocationServiceAuthorization()
+        }
+    }
+    
+    func zoomToPassedLocation(lat: Float, lon: Float) {
+        let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
+        let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 15.0)
+        mapView.camera = camera
+
+        let marker = GMSMarker(position: coordinate)
+        marker.title = "Selected Location"
+        marker.map = mapView
+
+        viewModel.lat = lat
+        viewModel.lon = lon
+
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        getLocationInfo(location: location)
+    }
+    
+    func zoomToSaudiArabia() {
+        let saudiCoordinate = CLLocationCoordinate2D(latitude: 23.8859, longitude: 45.0792)
+        let camera = GMSCameraPosition.camera(withLatitude: saudiCoordinate.latitude, longitude: saudiCoordinate.longitude, zoom: 5.0)
+        mapView.camera = camera
+    }
     
     private func setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.allowsBackgroundLocationUpdates = true
-        mapView.delegate = self
+        mapView.isMyLocationEnabled = true
     }
     
     private func checkLocationServiceAuthorization() {
         isLocationServiceEnabled { isEnabled in
             if isEnabled {
-                print("Location services are enabled.")
                 self.checkAuthorization()
             } else {
-                print("Location services are not enabled.")
                 self.showAlert(msg: "Please allow location".localized)
             }
         }
     }
     
     // MARK: - CLLocationManagerDelegate
-       
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
+        if viewModel.lat == nil, let location = locations.last {
             zoomToUserLocation(location: location)
             viewModel.lat = Float(location.coordinate.latitude)
             viewModel.lon = Float(location.coordinate.longitude)
+            getLocationInfo(location: location)
             locationManager.stopUpdatingLocation()
         }
     }
     
-    // MARK: - MKMapViewDelegate
-    
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        let newLocation = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
-        
-        if previousLoc == nil || previousLoc!.distance(from: newLocation) > 10 {
-            getLocationInfo(location: newLocation)
-        }
-        
-    }
     
     // MARK: - Helper Methods
     
@@ -164,35 +140,34 @@ class LocationViewController: UIViewController , CLLocationManagerDelegate  ,MKM
         alert.addAction(UIAlertAction(title: "Close".localized, style: .default))
         alert.addAction(UIAlertAction(title: "Settings".localized, style: .default, handler: { action in
             
-                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
         }))
         
         present(alert, animated: true)
     }
     
     func zoomToUserLocation(location : CLLocation){
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
-        mapView.setRegion(region, animated: true)
+        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 15.0)
+        mapView.camera = camera
         
     }
     
     func getLocationInfo(location : CLLocation){
         
-        previousLoc = location
         let geoCoder = CLGeocoder()
         geoCoder.reverseGeocodeLocation(location) { places, error in
             guard let place = places?.first , error == nil else { return }
-            self.viewModel.default_address = "\(place.name.orEmpty), \(place.locality.orEmpty), \(place.administrativeArea.orEmpty), \(place.country.orEmpty)"
-            self.locationTitleLabel.text = "\(place.name!) \(place.country!)"
+            self.viewModel.address = "\(place.name ?? ""), \(place.locality ?? ""), \(place.administrativeArea ?? ""), \(place.country ?? "")"
+            self.locationTitleLabel.text = "\(place.name ?? "") \(place.country ?? "")"
         }
     }
-        
+    
     func isLocationServiceEnabled(completion: @escaping (Bool) -> Void) {
-
+        
         // Check if the service is enabled asynchronously
         DispatchQueue.global(qos: .background).async {
             let isEnabled = CLLocationManager.locationServicesEnabled()
-
+            
             // Return the result on the main thread
             DispatchQueue.main.async {
                 completion(isEnabled)
@@ -209,10 +184,10 @@ class LocationViewController: UIViewController , CLLocationManagerDelegate  ,MKM
                 break
             case .authorizedWhenInUse:
                 locationManager.startUpdatingLocation()
-                mapView.showsUserLocation = true
+                mapView.isMyLocationEnabled = true
             case .authorizedAlways:
                 locationManager.startUpdatingLocation()
-                mapView.showsUserLocation = true
+                mapView.isMyLocationEnabled = true
             case .denied:
                 showAlert(msg: "Please allow the location".localized)
                 break
@@ -228,7 +203,7 @@ class LocationViewController: UIViewController , CLLocationManagerDelegate  ,MKM
                 locationManager.requestWhenInUseAuthorization()
             case .authorizedWhenInUse:
                 locationManager.startUpdatingLocation()
-                mapView.showsUserLocation = true
+                mapView.isMyLocationEnabled = true
             case .denied:
                 showAlert(msg: "Please allow the location".localized)
             default:
@@ -246,10 +221,10 @@ class LocationViewController: UIViewController , CLLocationManagerDelegate  ,MKM
                 break
             case .authorizedWhenInUse:
                 locationManager.startUpdatingLocation()
-                mapView.showsUserLocation = true
+                mapView.isMyLocationEnabled = true
             case .authorizedAlways:
                 locationManager.startUpdatingLocation()
-                mapView.showsUserLocation = true
+                mapView.isMyLocationEnabled = true
             case .denied:
                 showAlert(msg: "Please allow the location")
                 break
@@ -266,7 +241,7 @@ class LocationViewController: UIViewController , CLLocationManagerDelegate  ,MKM
                 locationManager.requestWhenInUseAuthorization()
             case .authorizedWhenInUse:
                 locationManager.startUpdatingLocation()
-                mapView.showsUserLocation = true
+                mapView.isMyLocationEnabled = true
             case .denied:
                 showAlert(msg: "Please allow the location")
             default:
@@ -275,77 +250,52 @@ class LocationViewController: UIViewController , CLLocationManagerDelegate  ,MKM
         }
     }
     
-    func bindingViewModel(){
-        viewModel.isLoading.bind { [weak self] isLoading in
-            guard let self = self,
-                  let isLoading = isLoading else {
-                return
-            }
-            DispatchQueue.main.async {
-                if isLoading {
-                    self.showLoadingIndicator()
-                } else {
-                    self.hideLoadingIndicator()
-                }
-            }
-        }
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        
+        viewModel.lat = Float(coordinate.latitude)
+        viewModel.lon = Float(coordinate.longitude)
+        
+        
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        getLocationInfo(location: location)
+        
+        mapView.clear()
+        
+        let marker = GMSMarker(position: coordinate)
+        marker.title = "Selected Location"
+        marker.map = mapView
     }
     
-    func showLoadingIndicator() {
-        spinnerView = displaySpinner(onView: self.view)
+    
+    @IBAction func didTapBackBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
-    func hideLoadingIndicator() {
-        if let sv = spinnerView{
-            removeSpinner(spinner: sv)
-        }
+    @IBAction func didTapHomeBtn(_ sender: Any) {
+        updateViewColors(selectedView: homeView, otherView: workView, type: "1")
     }
     
-
-    @IBAction func didTapCheckBtn(_ sender: Any) {
-        saved = saved == 0 ? 1 : 0
+    
+    @IBAction func didTapWorkBtn(_ sender: Any) {
+        updateViewColors(selectedView: workView, otherView: homeView, type: "2")
     }
     
-    @IBAction func didTapSegementControl(_ sender: UISegmentedControl) {
-        let selectedIndex = sender.selectedSegmentIndex
-        viewModel.address_type = selectedIndex + 1
+    func updateViewColors(selectedView: UIView, otherView: UIView, type: String) {
+        selectedView.backgroundColor = .white
+        otherView.backgroundColor = UIColor(hex: "F5F7F2")
+        viewModel.addressType = type
     }
     
-
-
     @IBAction func didTapConfirmBtn(_ sender: Any) {
         
-        isLocationServiceEnabled { [weak self] isEnabled in
-            guard let self = self else { return }
-            
-            if isEnabled {
-                
-                self.viewModel.address = self.additionalTextField.text
-                bindingViewModel()
-                self.sendLocationToServer()
-                
-            } else {
-                self.showAlert(msg: "Location services are not enabled.".localized)
+        if viewModel.lat != nil && viewModel.lon != nil {
+            viewModel.addAddress { [weak self] result in
+                self?.navigationController?.popViewController(animated: true)
             }
+        } else {
+            self.showAlert(msg: "Location services are not enabled.".localized)
+
         }
     }
-    
-    private func sendLocationToServer() {
-        
-        viewModel.sendLocation(viewController: self,
-                               lat: viewModel.lat ?? 0,
-                               lon: viewModel.lon ?? 0,
-                               saved: saved ,
-                               address_type: viewModel.address_type ?? 1,
-                               address: viewModel.address ?? "",
-                               default_address: viewModel.default_address ?? "",
-                               successCallback: { [weak self] in
-            guard let self = self else { return }
-            
-            if let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController {
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true)
-            }
-        })
-    }
 }
+

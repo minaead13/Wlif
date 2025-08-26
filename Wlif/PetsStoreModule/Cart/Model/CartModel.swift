@@ -17,8 +17,12 @@ struct CartModel: Codable {
     }
 }
 
+struct CartItems: Codable {
+    var items: [Item]?
+}
+
 struct Item: Codable {
-    let id, productID: Int
+    let id, merchantId, productID: Int
     let name, store: String
     let image: String
     let price, size: String
@@ -26,6 +30,7 @@ struct Item: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id
+        case merchantId = "merchant_id"
         case productID = "product_id"
         case name, store, image, price, size, qty
     }

@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct PetsStoresDataContainer: Codable {
+    var data: [PetsStoresModel]?
+    var banners: [BannerModel]?
+}
+
 struct PetsStoresModel: Codable {
     let id: Int
     let image: String
@@ -20,4 +25,9 @@ struct PetsStoresModel: Codable {
         case delivery, distance, rate, minuim
         case closesAt = "closes_at"
     }
+}
+
+struct BannerModel: Codable {
+    var id: Int?
+    var image: String?
 }

@@ -129,13 +129,13 @@ extension ProductDetailsTableViewCell: UICollectionViewDelegate, UICollectionVie
         case sizeCollectionView:
             guard let cell = sizeCollectionView.dequeueReusableCell(withReuseIdentifier: "SizeCollectionViewCell", for: indexPath) as? SizeCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.sizeLabel.text = productDetails?.product?.sizes?[indexPath.row]
+            cell.sizeLabel.text = productDetails?.product?.sizes?[indexPath.row].size
             return cell
             
         case colorCollectionView:
             guard let cell = colorCollectionView.dequeueReusableCell(withReuseIdentifier: "ColorCollectionViewCell", for: indexPath) as? ColorCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.colorView.backgroundColor = UIColor(hexString: productDetails?.product?.colors?[indexPath.row] ?? "")
+            cell.colorView.backgroundColor = UIColor(hexString: productDetails?.product?.colors?[indexPath.row].color ?? "")
             return cell
             
         default:

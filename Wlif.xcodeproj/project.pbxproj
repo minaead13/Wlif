@@ -6,8 +6,22 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		009E0AEE3925D8C6754245A5 /* Pods_Wlif.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3A66331E110713BCCA3137 /* Pods_Wlif.framework */; };
+		8A4B22D32E1E729400A13823 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 8A4B22D22E1E729400A13823 /* Cosmos */; };
+		8AB0A2632E16971C0042FB85 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8AB0A2622E16971C0042FB85 /* Kingfisher */; };
+		8AB0A2682E1697830042FB85 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 8AB0A2672E1697830042FB85 /* NVActivityIndicatorView */; };
+		8AB0A26A2E1697830042FB85 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 8AB0A2692E1697830042FB85 /* NVActivityIndicatorViewExtended */; };
+		8AF539CC2E13BE2600D3170A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8AF539CB2E13BE2600D3170A /* Alamofire */; };
+		8AF53A352E13DA6800D3170A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8AF53A342E13DA6800D3170A /* IQKeyboardManagerSwift */; };
+		8AF9EF8B2E2FA60B008F7EF2 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 8AF9EF8A2E2FA60B008F7EF2 /* FSCalendar */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		6B3A66331E110713BCCA3137 /* Pods_Wlif.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wlif.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CC7AFB25524E2360C23AB94 /* Pods-Wlif.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wlif.release.xcconfig"; path = "Target Support Files/Pods-Wlif/Pods-Wlif.release.xcconfig"; sourceTree = "<group>"; };
 		8AF539A22E13BD3000D3170A /* Wlif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wlif.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D3E6D84C5485CE388AEE9F9 /* Pods-Wlif.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wlif.debug.xcconfig"; path = "Target Support Files/Pods-Wlif/Pods-Wlif.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,17 +50,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A4B22D32E1E729400A13823 /* Cosmos in Frameworks */,
+				8AB0A2682E1697830042FB85 /* NVActivityIndicatorView in Frameworks */,
+				8AB0A2632E16971C0042FB85 /* Kingfisher in Frameworks */,
+				8AF539CC2E13BE2600D3170A /* Alamofire in Frameworks */,
+				8AF53A352E13DA6800D3170A /* IQKeyboardManagerSwift in Frameworks */,
+				8AF9EF8B2E2FA60B008F7EF2 /* FSCalendar in Frameworks */,
+				8AB0A26A2E1697830042FB85 /* NVActivityIndicatorViewExtended in Frameworks */,
+				009E0AEE3925D8C6754245A5 /* Pods_Wlif.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D11E1A4A94C75E62A2E7FEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D3E6D84C5485CE388AEE9F9 /* Pods-Wlif.debug.xcconfig */,
+				7CC7AFB25524E2360C23AB94 /* Pods-Wlif.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8AF539992E13BD3000D3170A = {
 			isa = PBXGroup;
 			children = (
 				8AF539A42E13BD3000D3170A /* Wlif */,
 				8AF539A32E13BD3000D3170A /* Products */,
+				1D11E1A4A94C75E62A2E7FEE /* Pods */,
+				978F310C8D4B2DAC1CEE761B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +91,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		978F310C8D4B2DAC1CEE761B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B3A66331E110713BCCA3137 /* Pods_Wlif.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,9 +106,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AF539B52E13BD3100D3170A /* Build configuration list for PBXNativeTarget "Wlif" */;
 			buildPhases = (
+				05A45D1D5F0FF2736DBB137B /* [CP] Check Pods Manifest.lock */,
 				8AF5399E2E13BD3000D3170A /* Sources */,
 				8AF5399F2E13BD3000D3170A /* Frameworks */,
 				8AF539A02E13BD3000D3170A /* Resources */,
+				89028F947675A97799F6496B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -78,6 +121,13 @@
 			);
 			name = Wlif;
 			packageProductDependencies = (
+				8AF539CB2E13BE2600D3170A /* Alamofire */,
+				8AF53A342E13DA6800D3170A /* IQKeyboardManagerSwift */,
+				8AB0A2622E16971C0042FB85 /* Kingfisher */,
+				8AB0A2672E1697830042FB85 /* NVActivityIndicatorView */,
+				8AB0A2692E1697830042FB85 /* NVActivityIndicatorViewExtended */,
+				8A4B22D22E1E729400A13823 /* Cosmos */,
+				8AF9EF8A2E2FA60B008F7EF2 /* FSCalendar */,
 			);
 			productName = Wlif;
 			productReference = 8AF539A22E13BD3000D3170A /* Wlif.app */;
@@ -104,9 +154,19 @@
 			knownRegions = (
 				en,
 				Base,
+				"ar-EG",
+				"ar-SA",
 			);
 			mainGroup = 8AF539992E13BD3000D3170A;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8AF539CA2E13BE2600D3170A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8AF53A332E13DA6800D3170A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				8AB0A2612E16971C0042FB85 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8AB0A2662E1697830042FB85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				8A4B22D12E1E729400A13823 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				8AF9EF892E2FA60B008F7EF2 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8AF539A32E13BD3000D3170A /* Products */;
 			projectDirPath = "";
@@ -127,6 +187,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05A45D1D5F0FF2736DBB137B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wlif-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89028F947675A97799F6496B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wlif/Pods-Wlif-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wlif/Pods-Wlif-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wlif/Pods-Wlif-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8AF5399E2E13BD3000D3170A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,12 +242,14 @@
 /* Begin XCBuildConfiguration section */
 		8AF539B62E13BD3100D3170A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D3E6D84C5485CE388AEE9F9 /* Pods-Wlif.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3N2647N98U;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Wlif/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -158,7 +262,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MinaEidTrail.Wlif;
+				PRODUCT_BUNDLE_IDENTIFIER = MinaEidTrail.Task1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -168,12 +272,14 @@
 		};
 		8AF539B72E13BD3100D3170A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CC7AFB25524E2360C23AB94 /* Pods-Wlif.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3N2647N98U;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Wlif/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -186,7 +292,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MinaEidTrail.Wlif;
+				PRODUCT_BUNDLE_IDENTIFIER = MinaEidTrail.Task1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -335,6 +441,95 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8A4B22D12E1E729400A13823 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 25.0.1;
+			};
+		};
+		8AB0A2612E16971C0042FB85 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.3.3;
+			};
+		};
+		8AB0A2662E1697830042FB85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+		8AF539CA2E13BE2600D3170A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		8AF53A332E13DA6800D3170A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.1;
+			};
+		};
+		8AF9EF892E2FA60B008F7EF2 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8A4B22D22E1E729400A13823 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A4B22D12E1E729400A13823 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
+		8AB0A2622E16971C0042FB85 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AB0A2612E16971C0042FB85 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		8AB0A2672E1697830042FB85 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AB0A2662E1697830042FB85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		8AB0A2692E1697830042FB85 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AB0A2662E1697830042FB85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
+		};
+		8AF539CB2E13BE2600D3170A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AF539CA2E13BE2600D3170A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		8AF53A342E13DA6800D3170A /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AF53A332E13DA6800D3170A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		8AF9EF8A2E2FA60B008F7EF2 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AF9EF892E2FA60B008F7EF2 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8AF5399A2E13BD3000D3170A /* Project object */;
 }

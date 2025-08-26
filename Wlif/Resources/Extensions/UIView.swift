@@ -39,17 +39,17 @@ extension UIView {
             if #available(iOS 11.0, *){
                 self.clipsToBounds = false
                 self.layer.cornerRadius = newValue
-//                if LanguageManager.shared.isRightToLeft {
-//                    self.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
-//                }else{
-//                    self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-//                }
+                if LanguageManager.shared.isRightToLeft {
+                    self.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+                }else{
+                    self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+                }
             }else{
-//                if LanguageManager.shared.isRightToLeft {
-//                    roundCorners([.topLeft , .bottomLeft], radius: newValue)
-//                }else{
-//                    roundCorners([.topRight , .bottomRight], radius: newValue)
-//                }
+                if LanguageManager.shared.isRightToLeft {
+                    roundCorners([.topLeft , .bottomLeft], radius: newValue)
+                }else{
+                    roundCorners([.topRight , .bottomRight], radius: newValue)
+                }
             }
         }
     }
@@ -63,17 +63,17 @@ extension UIView {
                 if #available(iOS 11.0, *){
                     self.clipsToBounds = false
                     self.layer.cornerRadius = newValue
-//                    if LanguageManager.shared.isRightToLeft {
-//                        self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-//                    }else{
-//                        self.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
-//                    }
+                    if LanguageManager.shared.isRightToLeft {
+                        self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+                    }else{
+                        self.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+                    }
                 }else{
-//                    if LanguageManager.shared.isRightToLeft {
-//                        roundCorners([.topRight , .bottomRight], radius: newValue)
-//                    }else{
-//                        roundCorners([.topLeft , .bottomLeft], radius: newValue)
-//                    }
+                    if LanguageManager.shared.isRightToLeft {
+                        roundCorners([.topRight , .bottomRight], radius: newValue)
+                    }else{
+                        roundCorners([.topLeft , .bottomLeft], radius: newValue)
+                    }
                 }
             }
         }

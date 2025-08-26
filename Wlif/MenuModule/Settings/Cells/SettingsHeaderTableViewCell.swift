@@ -14,6 +14,7 @@ class SettingsHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var actionsView: UIView!
     
     var handleProfileSelection: (() -> Void)?
+    var handleFavSelection: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,11 @@ class SettingsHeaderTableViewCell: UITableViewCell {
     
     @IBAction func didTapProfileBtn(_ sender: Any) {
         handleProfileSelection?()
+    }
+    
+    
+    @IBAction func didTapFavBtn(_ sender: Any) {
+        handleFavSelection?()
     }
     
 }

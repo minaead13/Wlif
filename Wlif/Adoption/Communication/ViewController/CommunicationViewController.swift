@@ -8,22 +8,38 @@
 import UIKit
 
 class CommunicationViewController: UIViewController {
-
+    
+    @IBOutlet weak var phoneLabel: UILabel!
+    
+    let viewModel = CommunicationViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       
+        setupUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupUI() {
+        phoneLabel.text = viewModel.phoneNumber
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
     }
-    */
-
+   
+    @IBAction func didTapPhoneBtn(_ sender: Any) {
+        let phone = viewModel.phoneNumber.replacingOccurrences(of: " ", with: "")
+        if let url = URL(string: "tel://\(phone)"),
+           UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    
+    @IBAction func didTapCommunicateBtn(_ sender: Any) {
+        
+    }
+    
+    
+    @IBAction func didTapDismiss(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
 }

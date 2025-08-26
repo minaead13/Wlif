@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct DeliveryModel: Codable {
+    var cost: Int?
+    var expectedDeliveryTime: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case cost
+        case expectedDeliveryTime = "expected_delivery_time"
+    }
+}

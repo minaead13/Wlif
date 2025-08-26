@@ -7,6 +7,8 @@
 
 import Foundation
 
-class LanguageViewModel {
+class LanguagesViewModel {
+    
+    var selectedIndex = LanguageManager.shared.currentLanguage == .arSa ? 0 : 1
     var languages = ["العربية", "English"]
 }

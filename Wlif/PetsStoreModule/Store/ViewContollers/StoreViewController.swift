@@ -32,6 +32,34 @@ class StoreViewController: UIViewController {
         viewModel.onStoreFetched = { [weak self] services in
             self?.tableView.reloadData()
         }
+        
+        viewModel.isLoading.bind { [weak self] isLoading in
+            guard let self = self,
+                  let isLoading = isLoading else {
+                return
+            }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self.showLoadingIndicator()
+                } else {
+                    self.hideLoadingIndicator()
+                }
+            }
+        }
+        
+        cartViewModel.isLoading.bind { [weak self] isLoading in
+            guard let self = self,
+                  let isLoading = isLoading else {
+                return
+            }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self.showLoadingIndicator()
+                } else {
+                    self.hideLoadingIndicator()
+                }
+            }
+        }
     }
     
     func setupTableView() {

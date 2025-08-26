@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+class CommunicationViewModel {
+    var phoneNumber: String = ""
+}

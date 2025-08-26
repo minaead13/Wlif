@@ -10,6 +10,7 @@ import UIKit
 class PetsStoresViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     let viewModel = PetsStoresViewModel()
     
@@ -28,11 +29,32 @@ class PetsStoresViewController: UIViewController {
     
     func setupTableView() {
         tableView.registerCell(cell: PetsStoresTableViewCell.self)
+        tableView.registerCell(cell: BannerTableViewCell.self)
     }
     
     func bind() {
         viewModel.onPetsStoresFetched = { [weak self] services in
-            self?.tableView.reloadData()
+            guard let self else { return }
+            if viewModel.serviceType == .petStores {
+                titleLabel.text = "All Stores".localized
+            } else if viewModel.serviceType == .veterinaryServices {
+                titleLabel.text = "VeterinaryServices".localized
+            }
+            tableView.reloadData()
+        }
+        
+        viewModel.isLoading.bind { [weak self] isLoading in
+            guard let self = self,
+                  let isLoading = isLoading else {
+                return
+            }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self.showLoadingIndicator()
+                } else {
+                    self.hideLoadingIndicator()
+                }
+            }
         }
     }
     
@@ -44,26 +66,71 @@ class PetsStoresViewController: UIViewController {
 
 extension PetsStoresViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.petsStores?.count ?? 0
+        switch section {
+        case 0:
+            return 1
+            
+        case 1:
+            return viewModel.petsStores?.data?.count ?? 0
+            
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PetsStoresTableViewCell", for: indexPath) as? PetsStoresTableViewCell else { return UITableViewCell() }
+        switch indexPath.section {
+            
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "BannerTableViewCell", for: indexPath) as? BannerTableViewCell else { return UITableViewCell() }
+            
+            cell.banners = viewModel.petsStores?.banners ?? []
+            
+            cell.selectionStyle = .none
+            return cell
+            
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "PetsStoresTableViewCell", for: indexPath) as? PetsStoresTableViewCell else { return UITableViewCell() }
+            
+            if let data = viewModel.petsStores?.data {
+                cell.config(data: data[indexPath.row])
+            }
+            
+            cell.selectionStyle = .none
+            return cell
         
-        if let data = viewModel.petsStores {
-            cell.config(data: data[indexPath.row])
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 165
         }
         
-        cell.selectionStyle = .none
-        return cell
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "StoreViewController") as! StoreViewController
-        vc.viewModel.id = viewModel.petsStores![indexPath.row].id 
-        self.navigationController?.pushViewController(vc, animated: true)
+        if indexPath.section == 1 {
+            if viewModel.serviceType == .petStores {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "StoreViewController") as! StoreViewController
+                vc.viewModel.id = viewModel.petsStores?.data?[indexPath.row].id
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else if viewModel.serviceType == .veterinaryServices {
+                let storyboard = UIStoryboard(name: "VeterinaryServices", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "VetsServicesViewController") as! VetsServicesViewController
+                vc.viewModel.id = viewModel.petsStores?.data?[indexPath.row].id
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }

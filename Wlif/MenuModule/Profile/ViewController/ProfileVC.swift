@@ -28,7 +28,7 @@ class ProfileVC: UIViewController {
         tableView.registerCell(cell: SettingsHeaderTableViewCell.self)
     }
     
-    @IBAction func didTapHomeBtn(_ sender: Any) {
+    @IBAction func didTapBackBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
 }
@@ -98,6 +98,15 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             case 0:
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "PersonalInformationVC") as! PersonalInformationVC
                 self.navigationController?.pushViewController(vc, animated: true)
+                
+            case 1:
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddressesViewController") as! AddressesViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            case 2:
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "LogoutViewController") as! LogoutViewController
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
                 
             default:
                 break

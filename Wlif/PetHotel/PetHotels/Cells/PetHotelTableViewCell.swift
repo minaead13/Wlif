@@ -9,15 +9,20 @@ import UIKit
 
 class PetHotelTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var petHotelImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(data: PetHotel){
+        petHotelImageView.setImage(from: data.image)
+        nameLabel.text = data.name
+        descLabel.text = data.shortDesc
+        distanceLabel.text = data.distance
     }
-    
 }

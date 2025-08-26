@@ -8,22 +8,103 @@
 import UIKit
 
 class OfferStoresDetailsViewController: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    let viewModel = OfferStoresDetailsViewModel()
+    let cartViewModel = CartViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupUI() {
+        self.navigationController?.navigationBar.isHidden = true
+        setTableView()
+        bind()
+        viewModel.fetchOffers()
     }
-    */
+    
+    func setTableView() {
+        tableView.registerCell(cell: OfferStoresProductsDetailsTableViewCell.self)
+        tableView.registerCell(cell: OfferStoresDetailsTableViewCell.self)
+      }
 
+    func bind() {
+        viewModel.onStoreOffersFetched = { [weak self] in
+            guard let self else { return }
+            tableView.reloadData()
+        }
+        
+        viewModel.isLoading.bind { [weak self] isLoading in
+            guard let self = self,
+                  let isLoading = isLoading else {
+                return
+            }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self.showLoadingIndicator()
+                } else {
+                    self.hideLoadingIndicator()
+                }
+            }
+        }
+        
+        cartViewModel.isLoading.bind { [weak self] isLoading in
+            guard let self = self,
+                  let isLoading = isLoading else {
+                return
+            }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self.showLoadingIndicator()
+                } else {
+                    self.hideLoadingIndicator()
+                }
+            }
+        }
+    }
+    
+    @IBAction func didTapBackBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension OfferStoresDetailsViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "OfferStoresDetailsTableViewCell", for: indexPath) as? OfferStoresDetailsTableViewCell else { return UITableViewCell()}
+            if let data = viewModel.storeOffersDetails {
+                cell.configure(store: data)
+            }
+            cell.selectionStyle = .none
+            return cell
+            
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "OfferStoresProductsDetailsTableViewCell", for: indexPath) as? OfferStoresProductsDetailsTableViewCell else { return UITableViewCell()}
+            if let data = viewModel.storeOffers {
+                cell.offers = data
+            }
+            
+            cell.updateQnty = { [weak self] id in
+                guard let self else { return }
+                cartViewModel.addCartProduct(productId: id, qty: 1)
+            }
+            cell.selectionStyle = .none
+            return cell
+            
+        default:
+            return UITableViewCell()
+        }
+    }
 }

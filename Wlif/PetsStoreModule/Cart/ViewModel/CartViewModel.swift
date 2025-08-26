@@ -19,6 +19,14 @@ class CartViewModel {
     
     var onCartFetched: ((CartModel?) -> Void)?
     
+    var deliveryFees: DeliveryModel? {
+        didSet {
+            self.onDeliveryFeesFetched?(deliveryFees)
+        }
+    }
+    
+    var onDeliveryFeesFetched: ((DeliveryModel?) -> Void)?
+    
     func addCartProduct(productId: Int, qty: Int, completion: ((Result<StoreModel, Error>) -> Void)? = nil) {
         
         self.isLoading.value = true
@@ -62,6 +70,22 @@ class CartViewModel {
         NetworkManager.instance.request(Urls.cart, parameters: nil, method: .get, type: CartModel.self) { [weak self] (baseModel, error) in
             if let data = baseModel?.data {
                 self?.cart = data
+            }
+        }
+    }
+    
+    func getDeliveryFees(completion: ((Result<DeliveryModel, Error>) -> Void)? = nil) {
+
+        let params = [
+            "merchant_id": "1",
+            "lat": "\(LocationUtil.load()?.lat ?? "")",
+            "lon": "\(LocationUtil.load()?.lon ?? "")"
+        ] as [String: Any]
+        
+        NetworkManager.instance.request(Urls.deliveryFees, parameters: params, method: .post, type: DeliveryModel.self) { [weak self] (baseModel, message) in
+
+            if let data = baseModel?.data {
+                self?.deliveryFees = data
             }
         }
     }

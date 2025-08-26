@@ -24,7 +24,7 @@ class SettingsViewModel {
     var profileArray = [
         SettingsModel(image: "PersonalInfo", name: "Personal Information"),
         SettingsModel(image: "ShippingAddress", name: "Shipping Address"),
-        SettingsModel(image: "Logout", name: "LogUot"),
+        SettingsModel(image: "Logout", name: "Logout"),
         SettingsModel(image: "deleteAcc", name: "Delete Account")
     ]
 }

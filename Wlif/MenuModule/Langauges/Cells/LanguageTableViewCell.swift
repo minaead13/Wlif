@@ -9,6 +9,10 @@ import UIKit
 
 class LanguageTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var selectImageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

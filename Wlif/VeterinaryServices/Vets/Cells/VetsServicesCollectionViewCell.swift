@@ -9,6 +9,8 @@ import UIKit
 
 class VetsServicesCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var vetsLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

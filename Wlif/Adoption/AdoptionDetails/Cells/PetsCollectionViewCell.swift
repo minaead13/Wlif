@@ -8,7 +8,9 @@
 import UIKit
 
 class PetsCollectionViewCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var petsImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

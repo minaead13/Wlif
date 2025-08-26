@@ -9,15 +9,41 @@ import UIKit
 
 class BannerTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var banners: [BannerModel] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupCollectionView()
+    }
+
+    func setupCollectionView() {
+        collectionView.registerCell(cell: PetsCollectionViewCell.self)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+     }
+}
+
+extension BannerTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return banners.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetsCollectionViewCell", for: indexPath) as? PetsCollectionViewCell else { return UICollectionViewCell() }
+        cell.petsImageView.setImage(from: banners[indexPath.row].image)
+        return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
 }

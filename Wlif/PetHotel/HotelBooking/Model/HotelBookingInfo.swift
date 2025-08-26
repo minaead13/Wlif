@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct HotelBookingInfo {
+    var hotelId: Int?
+    var fromDate: String?
+    var toDate: String?
+    var noOfAnimals: String?
+    var room: RoomModel?
+    var services: [Service]?
+    var store: PetHotel?
+}

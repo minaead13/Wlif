@@ -9,18 +9,30 @@ import Foundation
 
 class PetsStoresViewModel {
     
-    var petsStores: [PetsStoresModel]? {
+    var serviceType: Services?
+    var isLoading: Observable<Bool> = Observable(false)
+
+    var petsStores: PetsStoresDataContainer? {
         didSet {
             self.onPetsStoresFetched?(petsStores)
         }
     }
     
-    var onPetsStoresFetched: (([PetsStoresModel]?) -> Void)?
+    var onPetsStoresFetched: ((PetsStoresDataContainer?) -> Void)?
     
-    func getPetsStores(completion: ((Result<[PetsStoresModel], Error>) -> Void)? = nil) {
-                
-        NetworkManager.instance.request(Urls.storesList, parameters: nil, method: .get, type: [PetsStoresModel].self) { [weak self] (baseModel, error) in
-                        
+    func getPetsStores(completion: ((Result<PetsStoresDataContainer, Error>) -> Void)? = nil) {
+        self.isLoading.value = true
+
+        var url: String?
+        if serviceType == .petStores {
+            url = Urls.storesList
+        } else if serviceType == .veterinaryServices {
+            url = Urls.vetsService
+        }
+      
+        NetworkManager.instance.request(url ?? "", parameters: nil, method: .get, type: PetsStoresDataContainer.self) { [weak self] (baseModel, error) in
+            self?.isLoading.value = false
+
             if let data = baseModel?.data {
                 self?.petsStores = data
             }

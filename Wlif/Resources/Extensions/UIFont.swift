@@ -65,9 +65,9 @@ extension UILabel {
             } else if fontNameToTest.range(of: "Heavy") != nil || fontNameToTest.range(of: "heavy") != nil {
                 fontNameOfNewFont += "-Bold"
             } else if fontNameToTest.range(of: "Semibold") != nil || fontNameToTest.range(of: "Md") != nil {
-                fontNameOfNewFont += "-Bold"
+                fontNameOfNewFont += "-Semibold"
             } else if fontNameToTest.range(of: "Medium") != nil || fontNameToTest.range(of: "Md") != nil {
-                fontNameOfNewFont += "-Bold"
+                fontNameOfNewFont += "-Medium"
             } else if fontNameToTest.range(of: "Regular") != nil{
                 fontNameOfNewFont += "-Regular"
             } else if fontNameToTest.range(of: "light") != nil {
@@ -106,7 +106,7 @@ extension UIButton{
                 } else if fontNameToTest.range(of: "Heavy") != nil || fontNameToTest.range(of: "heavy") != nil {
                     fontNameOfNewFont += "-Medium"
                 } else if fontNameToTest.range(of: "Semibold") != nil || fontNameToTest.range(of: "Md") != nil {
-                    fontNameOfNewFont += "-Medium"
+                    fontNameOfNewFont += "-Semibold"
                 } else if fontNameToTest.range(of: "Medium") != nil || fontNameToTest.range(of: "Md") != nil {
                     fontNameOfNewFont += "-Medium"
                 } else if fontNameToTest.range(of: "Regular") != nil{
@@ -134,7 +134,7 @@ extension UIButton{
 extension UITextView {
     func setLineHeight(lineHeight: CGFloat) {
         let text = self.text
-        if let text = text, self.tag != 888 {
+        if let text = text {
             let attributeString = NSMutableAttributedString(string: text)
             
             let style = NSMutableParagraphStyle()
@@ -142,14 +142,9 @@ extension UITextView {
             //            style.colo
             //style.lineSpacing = lineHeight
             style.lineBreakMode = .byTruncatingTail
-            
-            attributeString
-                .addAttribute(
-                    .font,
-                    value: self.font
-                        ?? UIFont(name: "IBMPlexSansArabic-Light", size: (lineHeight))
-                        ?? UIFont.systemFont(ofSize: (lineHeight * 10 ) / 2, weight: .regular),
-                    range: NSMakeRange(0, text.count))
+            let font = self.font ?? UIFont.systemFont(ofSize: lineHeight, weight: .medium)
+            let range = NSRange(location: 0, length: text.count)
+            attributeString.addAttribute(.font, value: font, range: range)
             attributeString.addAttribute(.foregroundColor, value: self.textColor ?? .black, range: NSMakeRange(0, text.count))
             attributeString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSMakeRange(0, text.count))
             self.attributedText = attributeString
@@ -162,13 +157,13 @@ extension UITextView {
             if let fontNameToTest = self.font?.fontName {
                 let sizeOfOldFont = self.font?.pointSize
                 var fontNameOfNewFont = ""
-                //Optional(<FCContainerController: 0x7fc9b84e1740>)
+                
                 if fontNameToTest.range(of: "Bold") != nil || fontNameToTest.range(of: "bold") != nil {
                     fontNameOfNewFont += "-Medium"
                 } else if fontNameToTest.range(of: "Heavy") != nil || fontNameToTest.range(of: "heavy") != nil {
                     fontNameOfNewFont += "-Medium"
                 } else if fontNameToTest.range(of: "Semibold") != nil || fontNameToTest.range(of: "Md") != nil {
-                    fontNameOfNewFont += "-Medium"
+                    fontNameOfNewFont += "-Semibold"
                 } else if fontNameToTest.range(of: "Medium") != nil || fontNameToTest.range(of: "Md") != nil {
                     fontNameOfNewFont += "-Medium"
                 } else if fontNameToTest.range(of: "Regular") != nil{
@@ -181,14 +176,10 @@ extension UITextView {
                     fontNameOfNewFont = "-Light"
                 }
                 let font = "\(newValue ?? "IBMPlexSansArabic")\(fontNameOfNewFont)"
-                let top = String(describing: UIApplication.topViewController()?.classForCoder.description())
-                //                print("fontNameToTest",fontNameToTest)
-                //                print("top",top)
                 
-                if self.font?.fontName != "FontAwesome" && top != "Optional(\"FCContainerController\")", self.tag != 999 {
-                    self.font = UIFont(name: font , size: sizeOfOldFont ?? 17)
-                    //                    self.textContainerInset = UIEdgeInsets(top: 0, left: 4, bottom: 4, right: 4)
-                    self.setLineHeight(lineHeight: sizeOfOldFont ?? 17)
+                if fontNameToTest != "FontAwesome", self.tag != 999 {
+                    self.font = UIFont(name: font, size: sizeOfOldFont ?? 17)
+                    self.setLineHeight(lineHeight: (sizeOfOldFont ?? 17))
                 }
             }
         }
@@ -227,7 +218,7 @@ extension UITextField {
                 } else if fontNameToTest.range(of: "Heavy") != nil || fontNameToTest.range(of: "heavy") != nil {
                     fontNameOfNewFont += "-Medium"
                 } else if fontNameToTest.range(of: "Semibold") != nil || fontNameToTest.range(of: "Md") != nil {
-                    fontNameOfNewFont += "-Medium"
+                    fontNameOfNewFont += "-Semibold"
                 } else if fontNameToTest.range(of: "Medium") != nil || fontNameToTest.range(of: "Md") != nil {
                     fontNameOfNewFont += "-Medium"
                 } else if fontNameToTest.range(of: "Regular") != nil{
@@ -289,6 +280,8 @@ extension UITextField {
 struct AppFontName {
     static let regular = "IBMPlexSansArabic-Regular"
     static let bold = "IBMPlexSansArabic-Bold"
+    static let medium = "IBMPlexSansArabic-Medium"
+    static let semiBold = "IBMPlexSansArabic-SemiBold"
     static let mono = "IBMPlexMono-Bold"
 }
 

@@ -73,40 +73,51 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNw-PR-r6m">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ios-mo-fyi">
                                                                         <rect key="frame" x="0.0" y="22" width="222" height="20"/>
                                                                         <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="pfu-nc-Oev">
-                                                                                <rect key="frame" x="8" y="5" width="206" height="9"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNw-PR-r6m">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="72.666666666666671" height="20"/>
                                                                                 <subviews>
-                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationBlack" translatesAutoresizingMaskIntoConstraints="NO" id="yNs-Tj-wEV">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="8" height="9"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" constant="8" id="W8o-vS-GPM"/>
-                                                                                        </constraints>
-                                                                                    </imageView>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 km away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itf-lm-mno">
-                                                                                        <rect key="frame" x="15" y="0.0" width="191" height="9"/>
-                                                                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                                                                        <nil key="textColor"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="pfu-nc-Oev">
+                                                                                        <rect key="frame" x="7.9999999999999964" y="5" width="56.666666666666657" height="9"/>
+                                                                                        <subviews>
+                                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationBlack" translatesAutoresizingMaskIntoConstraints="NO" id="yNs-Tj-wEV">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="8" height="9"/>
+                                                                                                <constraints>
+                                                                                                    <constraint firstAttribute="width" constant="8" id="W8o-vS-GPM"/>
+                                                                                                </constraints>
+                                                                                            </imageView>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 km away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itf-lm-mno">
+                                                                                                <rect key="frame" x="14.999999999999996" y="0.0" width="41.666666666666657" height="9"/>
+                                                                                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                                                                <nil key="textColor"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                    </stackView>
                                                                                 </subviews>
-                                                                            </stackView>
+                                                                                <color key="backgroundColor" red="0.66666666666666663" green="0.83529411764705885" blue="0.81960784313725488" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="pfu-nc-Oev" firstAttribute="leading" secondItem="LNw-PR-r6m" secondAttribute="leading" constant="8" id="3nj-wY-Nhv"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="pfu-nc-Oev" secondAttribute="bottom" constant="6" id="9VG-Zd-w4g"/>
+                                                                                    <constraint firstItem="pfu-nc-Oev" firstAttribute="top" secondItem="LNw-PR-r6m" secondAttribute="top" constant="5" id="YZ0-bg-s5m"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="pfu-nc-Oev" secondAttribute="trailing" constant="8" id="ZzT-PN-6ii"/>
+                                                                                    <constraint firstAttribute="height" constant="20" id="hef-We-Ii3"/>
+                                                                                </constraints>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <real key="value" value="6"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </view>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" red="0.66666666666666663" green="0.83529411764705885" blue="0.81960784313725488" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstItem="pfu-nc-Oev" firstAttribute="leading" secondItem="LNw-PR-r6m" secondAttribute="leading" constant="8" id="3nj-wY-Nhv"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="pfu-nc-Oev" secondAttribute="bottom" constant="6" id="9VG-Zd-w4g"/>
-                                                                            <constraint firstItem="pfu-nc-Oev" firstAttribute="top" secondItem="LNw-PR-r6m" secondAttribute="top" constant="5" id="YZ0-bg-s5m"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="pfu-nc-Oev" secondAttribute="trailing" constant="8" id="ZzT-PN-6ii"/>
-                                                                            <constraint firstAttribute="height" constant="20" id="hef-We-Ii3"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="LNw-PR-r6m" secondAttribute="bottom" id="9Bi-LZ-Yrk"/>
+                                                                            <constraint firstItem="LNw-PR-r6m" firstAttribute="leading" secondItem="ios-mo-fyi" secondAttribute="leading" id="Ft6-wC-zCn"/>
+                                                                            <constraint firstItem="LNw-PR-r6m" firstAttribute="top" secondItem="ios-mo-fyi" secondAttribute="top" id="xrF-hi-4cY"/>
                                                                         </constraints>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="6"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                 </subviews>
                                                             </stackView>
@@ -166,6 +177,7 @@
             <connections>
                 <outlet property="locationLabel" destination="Itf-lm-mno" id="DgG-Us-n9z"/>
                 <outlet property="nameLabel" destination="NeT-2D-biN" id="lOM-au-vab"/>
+                <outlet property="titleLabel" destination="9Yv-xk-wFP" id="Iid-9i-LaY"/>
                 <outlet property="vetImageView" destination="U0T-Wm-CLa" id="dCc-9z-RuK"/>
             </connections>
             <point key="canvasLocation" x="13.740458015267174" y="40.140845070422536"/>

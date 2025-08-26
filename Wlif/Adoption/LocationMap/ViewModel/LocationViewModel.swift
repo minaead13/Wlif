@@ -9,46 +9,40 @@ import UIKit
 
 class LocationViewModel{
     
-    var isLoading : Observable<Bool> = Observable(false)
+    var lon: Float?
+    var lat: Float?
+    var address: String?
+    var saved: Int = 1
+    var addressType: String = "1"
     
-    var saved: Int?
-    var address_type : Int?
-    var address : String?
-    var lon : Float?
-    var lat : Float?
-    var default_address : String?
-    
-    func sendLocation(viewController : UIViewController, lat : Float, lon : Float, saved: Int, address_type: Int, address: String ,default_address : String  ,successCallback: (() -> Void)? = nil ) {
-        
+    var completionHandler: (() -> Void)?
+    var isLoading: Observable<Bool> = Observable(false)
+
+    func addAddress(completion: ((Result<AdoptionModel, Error>) -> Void)? = nil) {
         self.isLoading.value = true
-        let parameters: [String: Any] = [
-            
-            "lat": lat,
-            "lon" : lon,
-            "saved" : saved,
-            "address_type" : address_type,
-            "address" : address ,
-            "default_address" : default_address
+
+        var parameters: [String: Any] = [
+            "lat": lat ?? 0,
+            "lon": lon ?? 0,
+            "address_type": addressType,
+            "address": address ?? ""
         ]
         
-        
-        NetworkManager.instance.request(Endpoints.addLocationURL, parameters: parameters, method: .post, type: addToCart.self, viewController: viewController) { [weak self] (data) in
-          
-            self?.successData(data: data, successCallback: successCallback)
-            
+        if saved == 1 {
+            parameters["saved"] = "1"
         }
-    }
-    
-    private func successData(data: BaseModel<addToCart>?,  successCallback: (() -> Void)? ) {
-        if data != nil {
-            successCallback?()
-            self.isLoading.value = false
-            print(data)
-        } else {
-            self.isLoading.value = false
-            if let message = data?.message {
-                //self.swiftMessage(title: "Error", body: message, color: .error, layout: .messageView, style: .bottom)
+        
+        NetworkManager.instance.request(Urls.addressStore, parameters: parameters, method: .post, type: AdoptionModel.self) { [weak self] (baseModel, error) in
+            guard let self else { return }
+            isLoading.value = false
+
+            if let data = baseModel?.data {
+                completionHandler?()
                 
+                let address = AddressModel(address: address, lat: "\(lat ?? 0)", lon: "\(lon ?? 0)", addressType: Int(addressType))
+                
+                LocationUtil.save(address)
+                completion?(.success(data))
             }
         }
     }
