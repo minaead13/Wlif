@@ -1,0 +1,1641 @@
+/*
+  Localizable.strings
+  Al-Mahata
+
+  Created by abdelrahman on 6/10/18.
+  Copyright © 2018 abdelrahman. All rights reserved.
+*/
+"Privacy" = "الخصوصية";
+"Login" = "تسجيل الدخول";
+"Home" = "المنزل";
+"HomeTabBar" = "الرئيسية";
+"Contact Us" = "تواصل معنا";
+"Setting" = "الإعدادات";
+"Notifications" = "الإشعارات";
+"Logout Message" = "هل تريد بالفعل تسجيل الخروج؟";
+"Delete Message" = "هل تريد بالفعل الحذف؟";
+"Yes" = "نعم";
+"No" = "لا";
+"Logout Title" = "تسجيل الخروج";
+"Email" = "البريد الإلكتروني";
+"RememberMe" = "تذّكر معلومات تسجيل الدخول";
+"Password" = "كلمة المرور";
+"Forgot Password ?" = "هل نسيت كلمة المرور؟";
+"Sign Up" = "تسجيل";
+"Sign In" = "الدخول";
+"Connect With Facebook" = "تسجيل الدخول باستخدام الفيس بوك ";
+"Connection With" = "تسجيل الدخول باستخدام ";
+"Connect With Twitter" = "تسجيل الدخول باستخدام تويتر";
+"Dashboard" = "لوحة التحكم";
+"Edit Profile" = "تعديل الملف الشخصي";
+"Edit Phone" = "تعديل رقم الجوال";
+"Update Password" = "تحديث كلمة المرور";
+"Settings" = "الإعدادات";
+"Setting" = "الإعدادات";
+"Switch Language" = "تغيير اللغة";
+"Language" = "اللغة";
+"Logout" = "تسجيل الخروج";
+"Change Language Message" = "هل تريد بالفعل تغيير اللغة؟";
+"Change Language" = "تغيير اللغة";
+"Change Password" = "تغيير كلمة المرور";
+"Change Phone" = "تغيير رقم الجوال";
+"Confirm Password" = "تأكيد كلمة المرور";
+"City" = "المدينة";
+"Region" = "المنطقه";
+"Male" = "ذكر";
+"Famale" = "انثى";
+"Skip" = "تخطي";
+"Select County" = "اختر الدولة";
+"Please select Country" = "من فضلك حدد أي دولة تريدها";
+
+"Phone" = "رقم الجوال";
+"First Name" = "الاسم الأول";
+"Last Name" = "اسم العائله";
+// activation
+"Resend" = "إعادة إرسال";
+"Submit" = "إرسال";
+"Next" = "التالي";
+"Activation Message" = "إذا ما استلمت رمز  التحقق في خلال ال ٣٠ ثانية القادمة، يمكنك إعادة إرسال الرمز";
+//end activation
+
+"Worng" = "خطأ";
+"Required" = "مطلوب";
+"OK" = "متابعة";
+"error" = "خطأ";
+"please insert all code" = "من فضلك ادخل الكود كاملاً";
+"wrong code" = "رمز خاطئ";
+"Products" = "المنتجات";
+
+
+// validation messages
+"Is Required" = "مطلوب";
+"must contain only letter" = "يجب أن يكون من الأحرف فقط.";
+"Is Invalid" = "غير صحيح";
+"should not be numbers only" = "يجب ألا يكون من أرقام فقط";
+"should be numbers only" = "يجب ان يكون أرقام فقط";
+"should not be numbers only or spcial characters" = "يجب الا يكون أرقام أو حروف خاصة";
+"password valid" = "يجب أن تحتوي على حرف كبير وحرف صغير \n ورقم على الأقل";
+"confirmation is invalid" = "تأكيدها غير صحيح";
+"must be at least" = "يجب أن يكون على الأقل";
+"may not be greater than" = "يجب أن يكون أقل من";
+"must be greater than" = "يجب أن يكون أكبر من";
+
+"characters" = "حروف";
+"Success" = "تم بنجاح";
+
+"Username" = "اسم المستخدم";
+"Worng Confirm Password" = "تأكيد كلمة المرور غير صحيح";
+"Code Sent Successfuly" = "تم إعادة إرسال الرمز بنجاح";
+
+
+//// BLUE Age
+
+"introName1" = "تسوق وأستمتع بالخصومات";
+"introName2" = "سهولة استرجاع المنتجات";
+"introName3" = "اكتشف خاصية استلمها من المتجر";
+"introName4" = "الدفع نقدا أو عبر البطاقات المصرفية";
+"introName5" = "تسوق بشكل أسرع مع خدمة اشتري الآن";
+
+"introDesc1" = "تمتعي بالتسوق ومعرفة أن بياناتك الشخصية آمنة";
+"introDesc2" = "يمديك إعادة المنتجات أو تلغي طلبك بسهولة عن طريق حسابك باتباع خطوات بسيطة";
+"introDesc3" = "الآن تسوق وادفع لطلبك أونلاين واستلم منتجاتك من المتجر";
+"introDesc4" = "يتم قبول الدفع نقدًا عند التسليم، بالإضافة إلى بطاقات الائتمان";
+"introDesc5" = "قم بإتمام عملية الشراء، وأنهاء عملية التسوق بخطوة سريعة وأمنه";
+
+"Continue" = "استمرار";
+"Shop now" = "تسوق الآن";
+
+"Page0Descraption" = "ابحث عن منتج يتناسب في الأزياء بسهولة من بين آلاف الموديلات عن طريق البرنامج الخاص بنا";
+"Page1Descraption" = "ادفع قيمة جميع مشترياتك أونلاين عن طريق بطاقات الائتمان المتاحة";
+"Page2Descraption" = "استلم طلبك بأسرع وقت ممكن وبأحسن وسيلة مع إمكانية تتبع طلبك";
+
+"Explore" = "اكتشف";
+"Pay" = "ادفع";
+
+"User Name" = "اسم المستخدم";
+"Create Acccount" = "إنشاء حساب";
+"Already Have Account" = "لدي حساب";
+"You can register by" = "يمكنك التسجيل ب";
+
+"Register" = "إنشاء حساب";
+"#We_Are_Blue_Age" = "#احناـبلوايج";
+"Now you can start in English" = "أبداها باللغة العربية";
+"Now you can turn on alerts" = "الآن يمكنك تفعيل الإشعارات";
+"We will:" = "وسوف نقوم ب :  ;";
+"Start shopping at this moment" = "باشري التسوق الحين";
+"Discover the wonderful features we offer you" = "استكشفي الخصائص المميزة اللي نقدمها لك";
+"Start Shoping" = "البدء بالتسوق";
+
+"Accessories" = "الإكسسوارات";
+"Favorites" = "المفضلة";
+"Follow Orders" = "تتبع الطلبيات";
+"Profile" = "ملفك الشخصي";
+"Updated Successfully" = "تم التحديث بنجاح";
+"SAR" = "ريال";
+"Add To Cart" = "أضف إلى السلة";
+"Categories" = "الأقسام";
+"No Products found" = "لا يوجد منتجات";
+"Free Delivery" = "توصيل مجاني";
+"Payment upon receipt" = "الدفع عند الاستلام";
+"Delivery from 2-5 days" = "التوصيل من ٢-٥ أيام";
+"My orders" = "طلباتي";
+"My Address" = "عناويني";
+"My Credit Cards" = "بطاقاتي الإلكترونية";
+"Country" = "الدولة";
+"Cancel" = "إلغاء";
+"Done" = "تأكيد";
+"Old Password" = "كلمة المرور الحالية";
+"New Password" = "كلمة المرور الجديدة";
+"Confirm New Password" = "تأكيد كلمة المرور الجديدة";
+"Update" = "تحديث";
+"Add Address" = "أضف عنوان";
+"Edit Address" = "تعديل العنوان";
+"Detailed address" = "العنوان بالتفصيل";
+
+"Save" = "حفظ";
+"Company" = "الشركة";
+"Select country" = "أختر الدولة";
+"Change country" = "تغيير الدولة ";
+"Select Region" = "أختر المنطقة";
+"Orders" = "الطلبات";
+"Order" = "طلب";
+"Date" = "التاريخ";
+"Ship To" = "التوصيل إلى";
+"Total" = "إجمالي";
+"total" = "إجمالي";
+"Status" = "الحالة";
+"Order Information" = "معلومات الطلب";
+"Order information" = "معلومات الطلب";
+"Products Details" = "تفاصيل المنتجات";
+"Product Details" = "تفاصيل المنتج";
+"Quantity" = "العدد";
+"You may also like" = "يتناسب مع اختياراتك";
+"Product Name" = "اسم المنتج";
+"Price" = "السعر";
+"Qty" = "الكمية";
+"Shipping Address" = "عنوان الطلب";
+"Shipping Method" = "طريقة الطلب";
+"Payment Method" = "طريقة الدفع";
+"Grand Total" = "الإجمالي";
+"SKU" = "معرف المنتج";
+"Shopping & Handling" = "التوصيل والتسليم";
+"Not Found Orders" = "لا يوجد طلبات";
+"No items found" = "لا يوجد منتجات";
+"Not Found Items" = "لا يوجد منتجات";
+"Not Found Results" = "لا توجد نتائج";
+"Not Found Addresses" = "لا توجد عناوين";
+"Descover Newset products Now \n be the first one how owen it and add it to your wishlist." = "اكتشف المنتجات الجديدة الآن وخلك أول من يمتلكها ";
+"Edit" = "تعديل";
+//"Select"
+"Added Successfully" = "تم الإضافة بنجاح";
+"Added Succssesfully" = "تم الإضافة بنجاح";
+"Updated Successfully" = "تم التحديث بنجاح";
+"Deleted Successfully" = "تم الحذف بنجاح";
+"Continue your purchase" = "متابعة عملية الشراء";
+"Continue shopping" = "متابعة التسوق";
+"Total :" = "إجمالي :";
+"Cart" = "السلة";
+"Select Address" = "اختر العنوان";
+"Choose Shipping Method" = "اختر طريقة التوصيل";
+"Choose the shipping method you wish to add ." = "اختر طريقة التوصيل التي ترغب في إضافتها";
+"Only shipping methods which supports zones are listed" = "يتم تحديد طرق التوصيل التي تدعم منطقتك ";
+"Apply Order" = "إنهاء الطلب";
+"Deliver To" = "تسليم إلى";
+"Deliver to" = "التوصيل إلى";
+
+"Apply" = "تفعيل";
+"Discount Code" = "كود الخصم";
+"Product" = "المنتج";
+"Delivery Service" = "خدمة التوصيل";
+"Apply purchase" = "شراء";
+"Search" = "بحث";
+"Please Login First" = "من فضلك سجل دخولك أولًا";
+"Filters by" = "Filters by";
+"Forgot Password" = "نسيت كلمة المرور";
+"Please select country first" = "من فضلك أختر الدولة أولاً";
+"unauthenticated" = "تم إلغاء المصادقة";
+"Go to Login" = "الذهاب إلى تسجيل الدخول";
+
+"Each online store has its own store and bag, but if you want to go shopping in multiple places at once, so you only have one bag." = "يحتوي كل متجر على الإنترنت على متجر وحقيبة خاصة به، ولكن إذا كنت ترغب في الذهاب للتسوق في أماكن متعددة في وقت واحد، فلديك حقيبة واحدة فقط.";
+"Welcome to" = "هلا بك في";
+"GET STARTED" = "ابدأ الآن";
+"Qty : " = "الكمية : ";
+"ADD TO CART" = "أضف إلى السلة";
+"Wishlist" = "المنتجات المفضلة";
+"Add to Bag" = "أضف إلى السلة";
+
+//
+
+// MARK:- Auth
+"Log In" = "تسجيل الدخول";
+"LOG IN" = "تسجيل الدخول";
+"SIGN UP" = "إنشاء حساب جديد";
+"Welcome to chefaa" = " أهلاً وسهلاً بك في شفاء  ";
+"Gmail" = "جوجل";
+"Facebook" = "فيسبوك";
+"OR" = "أو";
+"Name" = "الاسم";
+"Send" = "إرسال";
+"Your SMS will be sent in seconds with verifcation code" = "سيتم إرسال رمز التحقق عبر الرسائل النصية SMS";
+"Forgot" = "نسيت كلمة مرورك؟";
+"Confirm" = "تأكيد";
+"Code" = "الرمز";
+"Resend activation code" = "إرسال رمز التحقق";
+"Activation" = "التحقق";
+"Enter your code" = "ادخل رمز التحقق ";
+"Activate Your Account" = "قم بتفعيل الحساب ";
+"Enter the code you received via SMS" = "ادخل الرمز الذي تلقيته عبر الرسائل القصيرة";
+"Reset Password" = "استعادة كلمة المرور";
+"Reset" = "إعادة ضبط";
+"Enter your new password" = "ادخل كلمة المرور الجديدة";
+"By signing up with" = "بإنشاء حساب في";
+"By signing up to" = "بإنشاء حساب في";
+"you agree to our terms and condition" = "فإنك توافق على الشروط والأحكام";
+"you agree to our terms and condition" = "فإنك توافق على الشروط والأحكام";
+"Ex : 010123456789" = "مثال: 010123456789";
+"phoneExEg" = "مثال";
+"phoneExSa" = "مثال";
+"phoneEx" = "مثال";
+"Ex : Ahmed" = " مثال: احمد";
+"Ex : Chefaa@gmail.com" = "مثال: Chefaa@gmail.com";
+
+//MARK: - Home
+"Welcome" = "نورتنا";
+"SEARCH" = "بحث";
+"STORE" = "المتجر";
+"SCAN" = "إلتقاط";
+"Show All" = "عرض الكل";
+"Best Offers" = "أفضل العروض";
+"Most Sales" = "الأكثر مبيعاً";
+//"Most Sales"
+"Add to cart" = "إضافة إلى السلة";
+"Added" = "تم الإضافة";
+"Delete" = "حذف";
+"AUTO" = "تلقائي";
+"ON" = "فتح";
+"OFF" = "إغلاق ";
+//"Guest"
+"Find Medicine near you" = "ابحث عن الأدوية في الصيدليات القريبة منك";
+"Here you can search for medicine \n in nearly pharmacies" = "يمكنك البحث عن الأدوية في الصيدليات القريبة منك.";
+"Search by product name" = "ابحث بأسم المنتج ";
+"MEDICATION" = "الأدوية";
+"SUPPORT" = "الدعم";
+"Support" = "الدعم";
+"Medication" = "الأدوية";
+"Please upload prescription image or write your order" = "يرجى رفع الوصفة أو كتابة طلبك ";
+"Select Prescription(s)" = "اختر الوصفة";
+"Select Prescription" = "اختر الوصفة";
+// MARK:- Order
+
+"Active Orders" = "طلباتك الحالية";
+"Pervious Orders" = "طلباتك السابقة";
+"Order Details" = "تفاصيل الطلب";
+"Phone Number" = "رقم الجوال";
+"Cart Subtotal" = "إجمالي السلة";
+"Product Discount" = "خصم المنتجات";
+"Cach" = "الدفع عند الاستلام";
+"Discount" = "خصومات";
+"Shipping" = "التوصيل";
+"EGP" = "ر.س";
+"No Orders Yet!" = "لا توجد طلبات حتى الآن!";
+"No previous orders to display \n make your first order now" = "لا توجد طلبات سابقة لعرضها أبدا طلبك الأول الآن ";
+"No active orders to display \n make your first order now" = "لا توجد طلبات سابقة لعرضها أبدا طلبك الأول الآن";
+
+// MARK:- Profile
+"Edit profile" = "تعديل ملفك الشخصي";
+"Edit Your profile" = "تعديل ملفك الشخصي";
+"Edit Your Profile" = "تعديل ملفك الشخصي";
+"My Address Book" = "سجل العناوين";
+"Change Language" = "تغيير اللغة";
+"Save Edit" = "حفظ التعديل";
+// MARK:- Settings
+
+"Feedback" = " رأيك يهمنا";
+"About Us" = "عن شفاء";
+"FAQS" = "أسئلة شائعة";
+"FAQ" = "أسئلة شائعة";
+"Terms of Service" = "شروط الخدمة";
+"Privacy Policy" = "سياسة الخصوصية";
+"Rate us" = "قيّم لنا شفاء";
+
+"We need your feedback" = "رأيك يهمنا ";
+"Help us improve Chefaa" = "ساعدنا على تحسين شفاء";
+"Thanks for your feedback" = "تسعدنا أرائك";
+"Please submit your feedback here..." = "الرجاء كتابة ملاحظاتك هنا...";
+"Please submit your message here..." = "الرجاء كتابة رسالتك هنا...";
+
+// MARK:- Scan
+"Rescan" = "إعادة الالتقاط";
+"Scan" = "التقاط";
+"Add any more notes (optional)" = " أضف ملاحظاتك (اختياري)";
+
+
+
+// MARK:- Store
+"Store" = "المتجر";
+"All" = "الكل";
+"Search by product name" = "ابحث بأسم المنتج ";
+
+// MARK:- Store
+"Checkout" = "الدفع";
+"Order now" = "اطلب الآن";
+"Schedule order" = "اطلب لاحقًا";
+"Delivery time" = "وقت التوصيل";
+"Payment method" = "طريقة الدفع";
+"Cash on delivery" = "نقداً عند الاستلام";
+"Pay by credit card" = "الدفع عبر بطاقة الائتمان";
+"Repeated Monthly" = "تكرار شهري";
+"Address" = "العنوان";
+"Contact by" = "للتواصل معك";
+"Order note" = "ملاحظات التوصيل";
+"Promo code" = "كود الخصم";
+"No Search results" = "لا يوجد نتائج بحث";
+"Search Results" = "نتائج البحث";
+"Enter Promo Code" = "ادخل كود الخصم";
+"Change" = "تغيير";
+"How would you prefer us to contact you incase of a problem with order ?" = "اختار الطريقة المناسبة للتواصل معك في حالة واجهتنا مشكلة في طلبك.";
+"Phone call" = "الجوال";
+"Support" = "الدعم";
+"Place order" = "تأكيد الطلب";
+// MARK:- Profile
+
+"Female" = "أنثى";
+"Gender" = "الجنس";
+"Select Gender" = "اختر الجنس";
+"Birthday" = "تاريخ الميلاد";
+"Enter your current password" = "ادخل كلمة المرور الحالية \n وكلمة المرور الجديدة";
+"Current Password" = "كلمة المرور الحالية";
+"Change Password" = "تغيير كلمة المرور";
+"Address Book" = "سجل العناوين";
+"EX : Home , Work" = "مثال : المنزل , العمل";
+"Floor No." = "رقم الطابق";
+"Building / Villa No." = "رقم البناية / المنزل";
+"Landmark" = "علامة مميزة";
+"Apartment No." = "رقم الشقة";
+"Select City" = "اختر المدينة";
+"Select Area" = "اختر المنطقة";
+"Filter" = "تصفية";
+"Please select city first" = "من فضلك أختر المدينة أولا ";
+"Order created Successfully" = "تم الطلب بنجاح";
+"Delivery location" = "موقع التوصيل";
+// MARK:- Cancel Reason
+
+"Cancel Order" = "إلغاء الطلب";
+"Tell us the reason you cancelled the order" = "أخبرنا عن سبب إلغاء الطلب";
+
+// MARK:- Chat
+
+"Chat" = "الدردشة";
+"Start Chat" = "بدأ الدردشة";
+
+// MARK:- Address
+
+"Your address book is empty" = "سجل العناوين الخاص بك فارغ";
+"No address to display yet \n add your address now" = "لا يوجد عنوان لعرضه بعد \ إضافة عنوانك الآن";
+
+"* Please type your address in details" = "يرجى كتابة عنوانك بالتفصيل";
+"ExStreet" = "اسم الشارع - الحي - المدينة";
+"Cancel reason : " = "سبب الإلغاء : ";
+"Please submit your reason for cancellation here...." = "يرجى كتابة سبب الإلغاء هنا ...";
+"Other" = "أخرى";
+"Not assigned to Pharmacy" = "لم يتم اختيار الصيدلية";
+"Please select address first!" = "من فضلك اختر العنوان أولا";
+
+"Variety" = "خيارات متعددة";
+"Chefaa helps you make a one-time order or a scheduled recurring order of all your pharmaceutical needs and beauty & health products from the pharmacy" = "يمكنك من خلال تطبيق شفاء تلبية احتياجاتك الدوائية واحتياجات عائلتك بكل سهولة طلب الأدوية ومنتجات العناية الشخصية من الصيدلية لتصلك فورا أو جدولتها في وقت لاحق.";
+
+"Payment Methods" = "طرق الدفع";
+"You can choose your preferred method of payment; online or cash on delivery" = "يمكنك اختيار طريقة الدفع التي تناسبك سواء الدفع عند الإستلام أو من خلال  بطاقة ائتمان";
+
+
+"Fast Delivery" = "التوصيل السريع";
+"your order is delivered to your door step free of delivery charges and in matter of minutes" = "يتم تسليم طلبك إلى العنوان الخاص بك بدون رسوم في خلال دقائق من أقرب صيدلية لك";
+
+"Get started" = "ابدأ الآن";
+"Profile Updated Successfuly" = "تم تحديث ملفك الشخصي بنجاح";
+"Password Changed Successfuly" = "تم تغيير كلمة مرورك بنجاح";
+
+// MARK: - ADDED BY HESHAM
+
+"Please check your credentials" = "من فضلك تأكد من بياناتك";
+"sorry you can't cancel the order after 1 minute from acceptance" = "لا يمكنك إلغاء السعر بعد دقيقة من الموافقة";
+
+
+"No images found" = "لا يوجد صور";
+"Update cart" = "تحديث السلة";
+
+"Coupon Discount" = "قيمة كود الخصم";
+"invalid coupon" = "كود الخصم خاطئ";
+"Valid discount for order above : " = "قيمة الخصم للطلب :";
+
+"We will be available here soon" = "ستتوفر خدماتنا هنا قريباً";
+
+"%" = "٪";
+
+"Confirm Order" = "تأكيد الطلب";
+
+
+"Enter Promo Code" = "ادخل كود الخصم";
+
+"You will be notified of the payment amount requested when order is accepted" = "بنعطيك خبر بالسعر من الصيدلية بعد قبوله";
+
+
+"Choose To" = "نوع الطلب";
+"Pay by" = "طريقة الدفع";
+"Credit card" = "بطاقة ائتمان";
+"No Products found to display yet" = "لا يوجد منتجات لعرضها";
+"Sorry, No Products Found In This Category" = "نعتذر منك، لا يوجد منتجات في هذا القسم";
+"Please select reason" = "من فضلك حدد السبب";
+"Refill Monthly" = "تكرار شهري";
+
+"Save & Change" = "تغيير وحفظ";
+
+"Find Us on social media" = "تابعنا على وسائل التواصل الإجتماعي";
+"Please select at least one item!" = "من فضلك اختر على الأقل منتج واحد";
+
+"Continue" = "استمرار";
+
+"Other Notes" = "ملحوظات أخرى";
+"Capture or upload your\nPrescription" = "ارفق صورة الوصفة";
+"Close" = "رجوع";
+"Enter your current Password and your new password" = "ادخل كلمة المرور الحالية و الجديدة";
+
+
+//MARK: - Blog
+"Chefaa Blog" = "مدونة شفاء";
+"Blog" = "المدونة";
+"Search Chefaa Blog" = "ابحث في مدونة شفاء";
+"Article Not Found" = "المقال غير متوفر";
+"We got it , we will write about it For you" = "بنكتب عن هذا الموضوع قريب، تابعنا.";
+
+"Your Total Order :" = "إجمالي الطلب :";
+"Close" = "رجوع";
+"Report Problem" = "إبلاغ عن مشكلة";
+"Please submit your report message here..." = "من فضلك اكتب المشكلة هنا...";
+"Thanks for your report" = "شكرا لإبلاغك عن المشكلة";
+"No connection" = "لا يوجد اتصال";
+"Please check your internet connection" = "الرجاء التحقق من اتصال الإنترنت الخاص بك";
+"Update Available" = "متاح تحديث جديد";
+"A new version of CHEFAA is avilable. Please update now" = "متوفرة نسخة جديدة من شفاء حدثها الحين";
+"Uploading: " = "جاري الرفع: ";
+"Order summary" = "ملخص الطلب";
+"Order items" = "عناصر الطلب";
+"Reorder" = "إعادة الطلب";
+"Photo Library" = "مكتبة الصور";
+"Camera" = "الكاميرا";
+"Preview images" = "عرض الصور";
+"Cancel" = "إلغاء";
+"Report Bug" = "أبلغ عن مشكلة";
+"Activation Code" = "رمز التفعيل";
+"Verification Code" = "رمز التحقق";
+
+"Waiting" = "انتظر";
+"Profile settings" = "إعدادات ملفك الشخصي";
+"Order this medicine" = "اطلب هذا الدواء";
+
+//"More"
+"More" = "أخرى";
+"Clear" = "مسح";
+"Order accepted you have one minute to cancel order" = "تم قبول طلبك عندك دقيقة واحدة للإلغاء";
+"sorry you can't cancel the order after 1 minute of acceptance" = "مرت دقيقة لا يمكنك إلغاء طلبك";
+"Order accepted can't be canceled" = "تم الموافقة على طلبك، لا يمكنك الإلغاء";
+
+"Order accepted can't be canceled after one minute" = "تم قبول طلبك، لا يمكنك اللإلغاء";
+"Order in preparing stage can't be canceled" = "لايمكن إلغاء طلب قيد التنفيذ";
+
+"this is not a valid phone number" = "رقم الجوال غير صحيح";
+//"Active"
+"Active" = "نشط";
+"Previous" = "السابق";
+
+"Choose your delivery address" = "من فضلك اختر موقعك";
+"My current location" = "موقعي الحالي";
+"My saved addresses" = "عناويني المحفوظة";
+"Choose another location" = "اختر موقعاً آخر";
+"Location" = "الموقع";
+
+//MARK: - Offers
+"Out of stock" = "غير متوفر حالياً";
+"You will be notified in case of product re-availability" = "سيتم إعلامك في حالة توافر المنتج مرة أخرى";
+"Choose from" = "اختر من";
+"Search for place" = "ابحث عن مكان";
+"Choose" = "اختر";
+"Area" = "المنطقة";
+
+
+//MARK: - Insurance
+"My Insurance Cards" = "بطاقات التأمين الطبي";
+
+"Add New Card" = "إضافة بطاقة جديد";
+"Please Upload One Image For Each Side" = "قم برفع صورة لكل جهة من البطاقة ";
+"Please Enter Card Holder Name" = "ادخل اسم حامل البطاقة ";
+"Please Enter A Valid Card Number" = "ادخل رقم البطاقة صحيح";
+"Insurance Cards" = "بطاقات التأمين الطبي";
+"Delete This Card" = "احذف البطاقة ";
+
+"No Insurance Cards Yet" = "لا توجد بطاقات تأمين حتى الآن";
+"Start Add Your First Insurance Cards" = "ابدأ بإضافة أول بطاقة تأمين";
+"Start to add your first insurance card" = "ابدأ بإضافة أول بطاقة تأمين";
+"Card Details" = "بيانات البطاقة ";
+
+"Card Holder Name" = "اسم حامل البطاقة";
+"Card Name" = "اسم حامل البطاقة";
+"Card Number" = "رقم البطاقة";
+
+"Upload Your Card" = "أرفق البطاقة ";
+"Upload Or Capture Your Card Front Side" = "ارفع الجانب الأمامي للبطاقة ";
+"Upload Or Capture Your Card Back Side" = "ارفع الجانب الخلفي للبطاقة ";
+"Delete" = "حذف";
+"Save" = "حفظ";
+
+//MARK: - order notes
+"Order Notes" = "ملاحظات";
+"Product Availability,Price And Pharmacies Offers May Vary According To Your Area" = "توضيح هام! توفر المنتجات وأسعارها والعروض في الصيدليات قابل للتغيير حسب منطقتك ";
+
+//MARK: - reminders
+"New Reminder" = "منبه جديد";
+"Drug Name" = "اسم الدواء";
+"Notes" = "ملاحظات";
+"Quantity per intake " = "العدد لكل مرة ";
+"Times per day" = "عدد المرات خلال اليوم";
+"+ New time" = "+ وقت جديد";
+"Save" = "حفظ";
+
+"Repeat for" = "التكرار";
+"Take On" = "يتناوله في";
+//"Specific days"
+"Medication Reminder" = "تذكير الدواء";
+"Time" = "الوقت";
+"Today's Reminders" = "تنبيهات اليوم";
+"This Day Has No Reminders" = "هذا اليوم لايحتوي على أي تنبيهات";
+"Never Miss Your Dose Again And Start Adding Your Reminders" = "لا تفوت جرعاتك وابدأ في إضافة تنبيهات";
+"Notes" = "ملاحظات";
+
+"Every Day" = "كل يوم";
+"Limit Days" = "لمدة محددة";
+"Specific Days" = "أيام مختلفة";
+//"Specific Days"
+"Today Only" = "اليوم الحالي فقط";
+"Start from" = "بداية من";
+
+"Take On" = "يتناوله في";
+"Select Specific Days To Remind You Of Your Doses" = "اختر أياماً مختلفة لتذكيرك فيها بجرعاتك";
+"+ Add New Day" = "+ إضافة يوم جديد";
+"Day" = "اليوم";
+"This day is existed before" = "لقد قمت بإضافة هذا اليوم من قبل";
+
+"Start date can't be in past." = "هذا التاريخ في الماضي";
+"Days" = "الأيام";
+"Add Your Days" = "أضف الأيام";
+"Duration" = "المدة";
+"Duration Days" = "أيام";
+"Duration Day" = "يوم";
+"Please add days" = "قم بإضافة الأيام";
+"Please add times" = "قم بإضافة الوقت";
+"Chefaa Reminder🔔" = "منبه شفاء🔔";
+"Time to take your medication" = "نذكرك بموعد دوائك";
+
+"Medication Reminder" = "تذكير الدواء";
+"Reminder" = "منبه الدواء";
+"Drug Name Is Required" = "من فضلك ادخل اسم الدواء ";
+"saved successfuly" = "تم الحفظ";
+"Are you sure you want to permanently delete the Reminder?" = " متأكد أنك تريد حذف التنبيه بشكل نهائي؟";
+"Yes, Delete" = "تأكيد";
+
+"pills" = "حبوب";
+"per intake" = "لكل مرة";
+//MARK: - Tracking
+"Placed" = "تم الاستلام";
+"In-Progress" = "قيد التنفيذ";
+"Processing" = "قيد التنفيذ";
+"Delivered" = "تم التوصيل";
+"Cancelled" = "تم الإلغاء";
+
+"Your order has been placed and is being assigned to a pharmacy" = "استلمنا الطلب، ونرسله للصيدليات القريبة منك";
+
+"Assigning a pharmacy that can deliver your order may take few minutes" = "خليك بالانتظار ندور لك على أقرب صيدلية ";
+
+"Your order is accepted by a pharmacy and is being prepared" = "تم تأكيد الطلب، ونجهزه لك الحين";
+
+"Your order is out for delivery" = " طلبك جايك بالطريق";
+
+"Your order is delivered successfully" = "تم التوصيل";
+"Your Order Is Cancelled" = "تم الإلغاء";
+
+"Rate this order" = "راضي عن طلبك؟ ";
+
+//MARK: - Review
+"Please, rate your last order" = "قيم اخر طلب وعطنا رأيك";
+"Chefaa Service" = "خدمة شفاء";
+"The Pharmacy" = "الصيدلية";
+//MARK: - Payment Online
+"Scan Card" = "مسح البطاقة";
+"Card Information" = "معلومات البطاقة";
+"Full name" = "الاسم بالكامل";
+"Expiration" = "تاريخ الانتهاء";
+//"Name can't be empty!"
+//"Invalid!"
+//"Invalid card number!"
+//"Invalid date!"
+"Powered by " = "مدعوم بواسطة  ";
+"Thanks for rating" = "شكراً على تقييمك نسعى دائما إلى رضاك";
+
+
+//MARK:-Updated Scan Cart
+"Ex: Panadol" = "مثال: شريط بنادول و بامبرز مقاس 4";
+"Type Your Order" = "اكتب طلبك";
+
+//MARK:- new home
+"Search for any product" = "ابحث عن أي منتج";
+"Prescription" = "الوصفة الطبية";
+"Medicines" = "الأدوية";
+"store" = "المتجر";
+"Chefaa Box" = "شفاء بوكس";
+"All Categories" = "كل الأقسام";
+"Brands" = "الماركات";
+"show all" = "عرض الكل";
+"Best Selling" = "الأكثر مبيعًا";
+"Invite your friends" = "شارك التطبيق مع أصدقائك";
+
+//MARK: - Wallet
+"Wallet" = "المحفظة";
+"Transactions History" = "سجل المعاملات";
+"This Month" = "الشهر الحالي";
+"No transactions" = "لا يوجد معاملات";
+"Here you can track all your transactions" = "يمكنك تتبع جميع معاملاتك هنا";
+"Available Balance" = "الرصيد الحالي";
+"Received" = "تم إيداع";
+"Expired" = "منتهي الصلاحية";
+"valid till" = "صالح حتى";
+"Wallet Discount" = "خصم المحفظة";
+"Debt" = "دين";
+
+"Search by brand name" = "ابحث باسم الماركة";
+//MARK: - SideMenu
+"Addresses Book" = "سجل العناوين";
+"Addresses book" = "سجل العناوين";
+"Address book" = "سجل العناوين";
+"Rate App" = "قيّم التطبيق";
+"Max number is 150" = "أكبر رقم هو ١٥٠";
+"Max number is 10000" = "أكبر رقم هو ١٠٠٠٠";
+"Filter by" = "تصنيف عن طريق";
+"Offers" = "العروض";
+"All products" = "كل المنتجات";
+"Apply Filter" = "تطبيق";
+"Welcome to chefaa" = " أهلاً وسهلاً بك في شفاء  ";
+"Welcome to Chefaa" = "هلابك في شفاء";
+"Welcome to CHEFAA" = "هلابك في شفاء";
+"Profile setting" = "إعدادات ملفك الشخصي";
+"Change password" = "تغيير كلمة المرور";
+"About us" = "عن شفاء";
+"Terms of service" = "شروط الخدمة";
+"Privacy policy" = "سياسة الخصوصية";
+"My Wallet" = "المحفظة";
+
+
+//// new register
+"Continue With Phone Number" = " ادخل رقم جوالك للتسجيل";
+"Continue With Facebook" = "التسجيل باستخدام الفيسبوك";
+"Continue With Gmail" = "التسجيل باستخدام حساب جوجل";
+"Login with phone number" = " ادخل رقم جوالك لتسجيل الدخول";
+"Continue with phone number" = " ادخل رقم جوالك للتسجيل";
+"Type your phone number" = "ادخل رقم جوالك";
+"Already you have an account" = "بالفعل لديك حساب";
+"Enter your password" = "ادخل كلمة المرور";
+"Type your password" = "ادخل كلمة المرور";
+"Forget Password ?" = "هل نسيت كلمة المرور؟";
+"Your SMS will be sent within seconds with a verfication code to" = "بتجيك رسالة خلال ثواني فيها رمز التحقق على رقم";
+"Type your verification code" = "ادخل رمز التحقق ";
+"Enter your verification code" = "ادخل رمز التحقق ";
+"Resend the code" = "إعادة إرسال الرمز";
+"Complete your profile" = "أكمل ملفك الشخصي";
+"Type your profile information" = "ادخل بيانات ملفك الشخصي";
+"Email Address" = "البريد الإلكتروني";
+"Invitation Code" = "كود دعوة";
+"enter your invitation code (Optional)" = "ادخل كود الدعوة (إن وجد)";
+"If you are invited by a friend, enter the invitation code to get your gift" = "في حالة تم دعوتك من صديق ادخل كود الدعوة للحصول على هديتك";
+"Create an account" = "إنشاء الحساب";
+"Create your password" = "ادخل كلمة المرور";
+"Reset your password" = "تغيير كلمة المرور";
+"Please enter your new password" = "من فضلك ادخل كلمة المرور الجديدة";
+"Type your new password" = "ادخل كلمة المرور الجديدة";
+"Confirm your new password" = "تأكيد كلمة المرور الجديدة";
+"Submit Register" = "تأكيد";
+
+//MARK: Chefaa Box
+"CHEFAA box is delivered within 2 business days" = "شفاء بوكس يتم توصيله خلال يومين عمل";
+"The shipping company has your order & will be delivered in 2-3 business days" = "طلبيتك لدى شركة الشحن، وستصلك خلال 2-3 أيام عمل";
+
+//MARK: Search Page
+"No Results Found" = "لا يوجد نتائج";
+"Sorry You Couldn’t Find What You Are\nLooking For, You Can Still Send Your Request" = "نعتذر منك ماحصلنا طلبك الي تبيه تواصل معنا دايركت مسج ندور لك عليه";
+"Show resaults" = "عرض النتائج";
+"Clear all" = "حذف الكل";
+"Sort" = "الترتيب";
+"Price : Low to High" = "السعر : من الأقل إلى الأعلى";
+"Price : High to Low" = "السعر : من الأعلى إلى الأقل";
+"Sort by" = "ترتيب حسب";
+
+// prescription
+"Upload a photo of your\nprescription or product" = "أضف صورة الوصفة أو المنتج الذي تريده";
+
+//order details
+"visa" = "بطاقة ائتمان";
+"Visa" = "بطاقة ائتمان ";
+"cash" = "نقداً عند الاستلام";
+"Cash" = "نقداً عند الاستلام ";
+
+//MARK: - Filter
+"brand selected" = "انتقينا الماركات الأكثر طلبا ";
+"View" = "عرض";
+"All products" = "كل المنتجات";
+
+
+//MARK: - store checkout
+"Total is zero, you don't need to pay" = "الإجمالي بصفر، ماتحتاج للدفع";
+
+"Open" = "فتح";
+
+"Type here the medicine name or the product\nname that you want to order " = "اكتب هنا اسم الدواء أو المنتج الذي تريد طلبه من الصيدلية";
+"* You have reached your limit of uploaded photos" = "*لقد وصلت للحد الأقصى لعدد الصور";
+
+
+//MARK: - Share Chefaa
+"Free credit" = "رصيد مجاني";
+"Share the app with your friends to get free credit in your wallet" = "ادعو أصدقائك واحصل على رصيد مسترجع في محفظتك ";
+
+"With every friend signing up using your code and getting his first order, you get 30 EGP in your wallet \nyour friend can get 30 EGP on signing up using the code to use it with the first order\n\nAll conditions and terms are applied" = " مع كل تسجيل دخول لصديق جديد باستخدام الكود الترويجي الخاص بك وإتمام أول طلب له، سوف تحصل على 30 ريالاً رصيد مسترجع في محفظتك وصديقك سيحصل على مبلغ مماثل. تطبق الشروط والأحكام.";
+
+"With every friend signing up using your code and getting his first order, you get " = "مع كل تسجيل دخول لصديق لك باستخدام الكود الخاص بك و إتمام أول طلب له ستحصل علي ";
+
+"EGP in your wallet \nyour friend can get " = "جنية في محفظتك \nصديقك سيحصل علي ";
+"EGP on signing up using the code to use it with the first order\n\nAll conditions and terms are applied" = "ريال عند التسجيل باستخدام الكود يستطيع استخدامها مع أول طلب\نطبق الشروط والأحكام";
+
+"You get" = "تكسب";
+"Your friend get" = "صديقك يكسب";
+"30 EGP" = "30 ر.س";
+"Your code" = "الكود الترويجي الخاص بك";
+"Share chefaa" = "شارك التطبيق";
+"Maximum" = "حد أقصى";
+
+"You must make at least one order to be able to share the app with your friends and receive the free credits" = "يجب إتمام طلب واحد على الأقل، حتى تستطيع مشاركة التطبيق مع أصدقائك والحصول على\n الرصيد المجاني";
+
+"coupon discount" = "قيمة كود الخصم";
+
+"Install CHEFAA app and use this code" = "حمل تطبيق شفاء واكتب رمز كود الخصم هذا";
+"as you sign up for both of us to win credit" = "وانت تسجل حسابك عشان تكسب رصيد مسترجع في محفظتك أنت وصديقك";
+"Link to install:" = "لينك التحميل:";
+"Select this location" = "اختر هذا الموقع";
+"Location on map is required" = "المكان على الخريطة مطلوب إدخاله";
+"Text Copied" = "تم النسخ";
+
+"Your Cart is empty" = "سلة التسوق فارغة";
+"Looks Like You Haven\'t Added\n Any Items To Your Cart." = "يبدو أنك ما أضفت أي عناصر في سلة تسوقك.";
+
+//"I sent a new order"
+"Need help with order" = "أحتاج إلى المساعدة على طلبي";
+"newScanOrder" = "أرسلت طلب وصفة طبية";
+"newInsuranceOrder" = "أرسلت طلب تأمين";
+"newWaffarOrder" = "أرسلت طلب من وفّر";
+"newNowOrder" = "أرسلت طلب من الآن";
+"newMultiOrder" = "أرسلت طلب من شحنتين";
+"needHelpScanOrder" = "أحتاج مساعدة على طلب وصفة طبية";
+"needHelpInsuranceOrder" = "أحتاج مساعدة على طلب تأمين";
+"needHelpWaffarOrder" = "أحتاج مساعدة على طلب من وفّر";
+"needHelpNowOrder" = "أحتاج مساعدة على طلب من الآن";
+"needHelpMultiOrder" = "أحتاج مساعدة على طلب من شحنتين";
+
+"Number :" = "رقم :";
+"My rating for order" = "تقييمي لطلب";
+"Pharmacy" = "الصيدلية";
+"App" = "التطبيق";
+"Please select location on the map." = "من فضلك اختار المكان على الخريطة";
+
+"Scheduled" = "مُجدول";
+"Change language" = "تغيير اللغة";
+
+"Need help with order" = "أحتاج إلى المساعدة على طلبي";
+//"Order items"
+"Order notes" = "ملاحظات";
+"Assigned to" = "توجيه إلى";
+"Need help?" = "تحتاج إلى المساعدة؟";
+"Need help ?" = "تحتاج إلى المساعدة؟";
+
+
+"Default" = "أساسي";
+"set as default" = "تعيين أساسي";
+"Select location" = "اختر موقعك";
+"Address type" = "اختر العنوان";
+"Sorry, our services don't cover this area" = "نعتذر منك، خدماتنا ماتغطي هذه المنطقة";
+"Work" = "العمل";
+"Home " = "المنزل";
+"work" = "العمل";
+"home" = "المنزل";
+"Street name" = "اسم الشارع";
+"Building No." = "رقم المبنى";
+"Floor" = "رقم الدور";
+"Aparment" = "رقم الشقة";
+"Apartment" = "رقم الشقة";
+"Ex: 7" = "مثال: 7";
+"Ex: 10" = "مثال: 10";
+"Ex: 20" = "مثال: 20";
+"Landmark" = "علامة مميزة";
+"ExLandmark" = "بجوار مسجد الراجحي";
+"Select city" = "اختر المدينة";
+"Select your city" = "اختر المدينة";
+"Select your area" = "اختر المنطقة";
+"Save address" = "حفظ العنوان";
+
+"Add the location you need your order to be delivered to and check the nearest pharmacy to you" = "أضف الموقع الذي تريده لتسليم طلبك وتحقق من أقرب صيدلية لك";
+"Upload the prescription or products images" = "أضف صورة الوصفة أو المنتجات التي تريد شراءها";
+"Choose the Categories & pick up the products you need" = "حدد القسم واختر منه المنتجات التي تريدها";
+"Packages of preorganized products per usage, and need" = "مجموعة منتجات مميزة تم اختيارها بعناية لتلبية احتياجاتك واستخدامك.";
+"Ask the pharmacist for a consultation or send your complaints easily" = "يُمكنك استشارة صيادلة شفاء، أو إرسال أي شكوى بسهولة";
+"Set your medicine time and we will make sure you don’t miss a dose" = "حدد وقت علاجك، وبنكون معك نذكرك بموعد الجرعة";
+"Enriching users with valuable content" = "تزويد المستخدمين بمحتوى دوائي قيم";
+"Support 24/7" = "الدعم24/7";
+"Pharmaceutical blog" = "مدونة دوائية";
+"Current Location" = "موقعي الحالي";
+"Most used address" = "من العناوين المحفوظة";
+"Show all address" = "عرض كل العناوين";
+"Add new address" = "إضافة عنوان جديد";
+"This address will be deleted Are you sure ?" = "سيتم حذف العنوان، هل أنت متأكد؟";
+"Yes , delete" = "تأكيد";
+"From saved address" = "من سجل العناوين";
+"Add credit" = "إضافة رصيد";
+"Payment gateways" = "آلات الدفع الإلكتروني";
+"Enter the amount you want to add" = "ادخل القيمة التي تريد إضافتها هنا";
+"Enter new amount" = "ادخل القيمة";
+"should be integer only." = "يجب أن يكون عدد صحيح فقط.";
+
+
+
+
+
+"Transaction success" = "عملية ناجحة";
+"You have added" = "لقد قمت بإضافة";
+"EGP to your\nwallet successfully" = "ريال\nللمحفظة بنجاح";
+
+"Transaction failed" = "عملية غير ناجحة";
+"Something wrong happened\nplease check your credit card" = "حدث خطأ خلال عملية التحويل\nيرجى مراجعة بطاقة الائتمان";
+
+"Back to wallet" = "العودة إلى المحفظة";
+
+"Add credit" = "إضافة رصيد";
+"Payment code" = "كود الدفع";
+
+"please take the code to any branch of\nour payment providers , once the payment is recevied your credit will be added" = "يرجى التوجه لأي فرع من فروع مزودي خدمات الدفع لدينا والدفع باستخدام الكود المرفق. سيتم إضافة الرصيد بمجرد إتمام عملية الدفع";
+
+"Take screenshot" = "حفظ كصورة";
+"Our Payment  providers" = "موفري الخدمة لدينا";
+"Removed Succssesfully" = "تم الحذف";
+"Credit added" = "رصيد مُضاف";
+"Update later" = "تحديث لاحقًا";
+"Update now" = "تحديث الآن";
+"Turn location services on" = "تفعيل خدمات الموقع";
+"Please enable location services on" = "من فضلك قم بتفعيل خدمات الموقع";
+
+"Your wishlist is empty" = "لا توجد أي منتجات في مفضلتك";
+"Save your favourite products here" = " أحفظ منتجاتك المفضلة هنا";
+
+"Notify me" = "أريد إبلاغك";
+"Will be notified" = "سيتم ابلاغك";
+"Retry" = "أعد المحاولة";
+"Show" = "عرض";
+"Offers only" = "العروض فقط";
+"Sorting by" = "ترتيب عن طريق";
+"Price ( low to high )" = "السعر ( من أقل لأعلى )";
+"Price ( High to low )" = "السعر (من أعلى لأقل)";
+"A to Z" = "من أ إلى ب";
+"Min" = "حد أدنى";
+"Max" = "حد أقصى";
+"Minimum price" = "أدنى سعر";
+"Maximum price" = "أقصى سعر";
+"You can tell us more ( optional )" = "يُمكنك تشاركتنا معلومات أكثر. (. اختياري)";
+"Comment" = "تعليق";
+
+"Recent Searches" = "آخر بحث لك";
+"What are you looking for ?" = "ما الذي تبحث عنه؟";
+"How was your last order ?" = "كيف كان طلبك الأخير؟";
+
+"Once you charge your wallet, balance shall be used upon your next order and can’t be redeemed back to your credit card" = "بعد إضافة مبلغ ما إلى المحفظة، يظل بالمحفظة ولا يمكن استرجاعه إلى البطاقة الائتمانية.";
+"Wallet policy" = "سياسة استخدام المحفظة";
+"Payment to order will take place once you charge your wallet automatically" = "بعد شحنك للمحفظة يتم دفع تكلفة الطلب من خلالها تلقائياً";
+"If wallet charged with less than order payment value, then wallet balance will be used and the remainder shall be paid cash in delivery" = "إذا كان المبلغ بالمحفظة غير كاف سيُخْصَم منه، ثم يُدفع الباقي نقدياً";
+
+"in" = "في";
+"Please note that product availability & price and delivery fees may vary according to pharmacy" = "توفر المنتجات وأسعارها وسعر التوصيل قد يختلف باختلاف الصيدلية والمنطقة";
+"Delivery fees not included" = "السعر غير شامل رسوم التوصيل";
+"Saved Articles" = "مقالات محفوظة";
+"Buy Now" = "اشتري الآن";
+"Decline" = "رفض";
+"Active order" = "الطلب الحالي";
+"No notification yet" = "لا يوجد أي إشعارات حتى الآن";
+"E-mail" = "البريد الإلكتروني";
+"Phone number" = "رقم الجوال";
+"Date of birth" = "تاريخ الميلاد";
+"Ask pharmacist" = "اسأل صيدلي ";
+
+//MARK: Autofill
+"Autofill" = "جدولة الأدوية";
+"Repeat Every" = "تكرار كل";
+"Week" = "أسبوع";
+"2 Weeks" = "أسبوعين";
+"3 Weeks" = "٣ أسابيع";
+"Month" = "شهر";
+"2 Months" = "شهرين";
+"3 Months" = "٣ أشهر";
+
+"Repeat every" = "تكرار كل";
+"week" = "أسبوع";
+"2 weeks" = "أسبوعين";
+"3 weeks" = "٣ أسابيع";
+"month" = "شهر";
+"2 months" = "شهرين";
+"3 months" = "٣ أشهر";
+
+"No Autofill" = "لا يوجد طلبات مجدولة";
+"Start to have your medicines to be refilled on schedule" = "جدول أدويتك وطلباتك لتصلك بشكل دوري في موعدها";
+"Start to have your medicines to be on schedule" = "";
+"Add any note" = "أضف أي ملحوظات";
+"Add prescription" = "أضف الوصفة";
+"Add Prescription" = "أضف الوصفة";
+
+"Are you sure you want to delete this autofill list ?" = "متأكد أنك تريد حذف القائمة المجدولة؟";
+"Add products" = "أضف المنتجات";
+"pricing" = "جاري التسعير";
+"Pricing" = "يُسعر لاحقًا";
+"Free" = "مجاني";
+"free" = "مجاني";
+"Autofill Name" = "اسم الجدولة";
+"Autofill name" = "اسم الجدولة";
+"autofill name" = "اسم الجدولة";
+"First delivery date" = "أول موعد توصيل";
+"Select first delivery date" = "اختر أول موعد توصيل";
+"Select your delivery address" = "اختر عنوان التوصيل";
+
+"Create an autofill" = "إنشاء جدولة";
+"items" = "عناصر";
+"every" = "كل";
+"Autofill items" = "منتجات الجدولة";
+"Create" = "إنشاء";
+"Next delivery date" = "موعد التوصيل القادم";
+"Prices may vary with every shipment  according to market price changes" = "قد تختلف الأسعار مع كل شحنة حسب تغيرات أسعار السوق";
+"Edit delivery information" = "تعديل معلومات التوصيل";
+"Edit items" = "تعديل القائمة";
+"Edit Items" = "تعديل القائمة";
+"Delete autofill" = "حذف الجدولة";
+
+"How it works?" = "كيفية عمل الجدولة؟";
+"Know more about refilling your pharmacy needs to be reshipped." = "اكتشف كيفية تنظيم جدول استخدام الأدوية والمنتجات الخاصة بك بانتظام";
+"Create your autofill, schedule your reshipment and add your address." = "قم بإنشاء جدولة وتحديد العنوان والمدة التي يتكرر بعدها الطلب";
+"You can add or edit prescriptions or products in your autofill whenever needed." = "يمكنك إضافة أي منتج أو صورة الوصفة داخل الجدولة وكذلك تعديلها في أي وقت";
+"You can delete or skip your next shipment before confirming." = "يمكنك حذف الجدولة أو تخطي الشحنة القادمة منها في أي وقت قبل تأكيدها";
+"Free for limited time" = "مجانًا و لفترة محدودة";
+"Skip the next shipment!" = "تخطي الطلبية القادمة!";
+"Your next shipment will be cancelled at the next delivery date" = "ستتخطى موعد التوصيل القادم وطلبيتك التالية سيتم إلغاؤها";
+"Yes, Skip" = "تأكيد";
+"Subtotal" = "المجموع";
+"Delivery fees" = "رسوم التوصيل";
+"Plan discount" = "خصم الباقة";
+"Chefaa copay" = "مشاركة شفاء";
+
+"By deleting the last item, your autofill will be deleted as well" = "اذا حذفت آخر منتج في القائمة ستُحْذَف الجدولة بشكل نهائي";
+"Choose repetition period" = "اختر مدة التكرار";
+
+"Your Autofill is empty" = "الجدولة فارغة";
+"Start adding your items to your autofill list" = "ابدأ بإضافة منتجاتك أو الوصفة لقائمة جدولتك";
+
+"Add" = "إضافة ";
+"Enter your autofill list name" = "ادخل اسم الجدولة";
+"Qty :" = "الكمية :";
+"Up to" = "حتى";
+
+"All patient's orders are revised, prepared and delivered by the pharmacies without chefaa app interference." = "جميع طلبات المرضى يتم استقبالها وتحضيرها وتوصيلها من خلال الصيدليات دون أي تدخل من تطبيق شفاء.";
+
+"The item will be permanently deleted" = "سيُحْذَف بشكل نهائي";
+
+"no notes" = "لا يوجد وصف";
+
+"Product Selected" = "المنتجات المضافة";
+"Repeat period" = "مدة التكرار";
+"Delivery date" = "موعد التوصيل";
+"Your subscribtion canceled and won't be renwed. You will back to free plan" = "أُلْغِي اشتراكك، ولن يجدد سوف تعود إلى الباقة المجانية";
+
+//Chefaa Plus
+"Best value" = "السعر الأفضل ";
+"Save with Chefaa Plus and" = "وفّر مع باقات شفاء بلس";
+"Save with Chefaa Prime and" = "وفّر مع باقات شفاء برايم";
+"select your plan NOW!" = "واختار باقتك الحين!";
+"Subscribe to" = "اشترك في";
+"and get more benefits" = "واحصل على مميزات أكثر";
+"Plan benefits :" = "مميزات الباقة :";
+"Subscribe for free" = "اشترك مجانًا";
+"Subscribe now" = "اشترك الحين";
+"My Plan" = "باقتي";
+"Chefaa Plus" = "شفاء بلس";
+"Waffar plus" = "شفاء بلس";
+"Plus" = "بلس";
+"Prime" = "برايم";
+"primeDiscUpTo" = "خصم حتى %$";
+"Prime.Phone" = "رقم الجوال";
+"Next payment :" = "تاريخ التجديد :";
+"Renewal date" = "تاريخ التجديد";
+"day till your next payment" = "يوم محدد لإعادة التجديد";
+"Contact our Support" = "تواصل مع فريق الدعم";
+"EGP / month" = "ج.م / شهر";
+"I read and accept all terms and conditions" = "قرأت الأحكام والشروط، وأوافق عليّها ";
+"You are subscribed to" = "أنت مشترك في";
+"PremiumDay" = "يوم";
+"Next shipment is excluded from your current plan, Discount will be applied once it's renewed" = "طلبك القادم خارج الاشتراك الحالي، سيُطَبَّق الخصم فور تجديده";
+"Have a coupon?" = "عندك كود؟";
+"Use your coupon" = "أضف كود الخصم";
+"Enter your coupon" = "ادخل الكود ";
+"Remove" = "إزالة";
+"Use Coupon" = "أضف كود خصم";
+"Type coupon here" = "أضف الكود هنا";
+"Invalid Coupon" = "كود خصم غير صالح";
+"No Providers found" = "لا يوجد خدمات";
+
+"Congratulations!" = " تم الاشتراك بنجاح!";
+"Subscribtion failed" = "فشلت عملية الإشتراك";
+"Now you are subscribed to" = "أنت الحين مشترك في";
+"Your renewable date will be on" = "تاريخ تجديد الباقة في";
+"Something went wrong with your subscribtion process, please check your information card" = "حدث خطأ في أثناء عملية الاشتراك، يرجى مراجعة معلومات بطاقة الدفع";
+"subMsg" = "أشتراك كشخص فردي ب %d ر.س / للشهر";
+"subBtn" = "اشترك الآن";
+
+//MARK: - Separated Orders
+"Products added are from different sellers, Your order will split." = "طلبك راح يتجزأ لأكثر من طلبية لإختلاف البائعين للمنتجات";
+"Shipment" = "طلبية";
+"shipment" = "طلبية";
+"Shipments" = "طلبيات";
+"shipments" = "طلبيات";
+"Save more with coupons" = "وفّر أكثر مع كود الخصم";
+"Use your coupons" = "أضف كود الخصم";
+"Use coupon" = "أضف كود الخصم";
+"Invalid coupon" = "كود خصم غير صالح";
+"of" = "من";
+"Shipment from :" = "شحنة من :";
+"Delivered within 1-2 hours" = "التوصيل سريع خلال 1-2 ساعة";
+"Shipment subtotal" = "المجموع";
+"Total shipment" = "الإجمالي";
+"Coupon discount" = "قيمة كود الخصم ";
+"Nearby pharmacy" = "أقرب صيدلية";
+"Go to checkout" = "إتمام الشراء";
+"Select delivery address" = "اختر عنوان التوصيل";
+"Debit" = "دين";
+"Delivery note" = "ملاحظات الطلب أو التوصيل ";
+"Add any note for the delivery" = "اضافة أي ملاحظات للطلب أو عند التوصيل";
+"How would you prefer us to contact you in case of a problem with your order?" = "اختر الطريقة المناسبة للتواصل معك في حالة وجود مشكلة في طلبك.";
+"Use Chefaa wallet" = "استخدم رصيد المحفظة";
+"Chefaa wallet" = "المحفظة";
+"Payment" = "طريقة الدفع";
+"ORDER - " = "رقم الطلب - ";
+"primeDiscUpTo" = "خصم حتى %$";
+"Prime.Phone" = "رقم الجوال";
+"Your order has been placed, We are working on it" = " تم استلام طلبك، وجاري ارساله للصيدليات القريبة منك ";
+"Your order is in being prepared" = "تم تأكيد الطلب، ونجهزه لك الحين ";
+"Your order is out for delivery" = " طلبك جايك بالطريق";
+"upto 10 EGP" = "حتى ١٠ ر.س";
+"upto" = "حتى";
+"Shipment is cancelled" = "تم الإلغاء";
+"Delivered by" = "تسليم عن طريق";
+"Shipment is delivered" = "تم التوصيل";
+"Shipment items" = "المنتجات";
+"Qty:" = "الكمية";
+"You will be notified with the order price and delivery fees by the pharmacy" = "سيتم إعلامك بالسعر الإجمالي للطلب ورسوم التوصيل من قبل الصيدلية";
+"Sold by :" = "يباع بواسطة :";
+"Delivery time :" = "زمن التوصيل :";
+
+"Services" = "الخدمات";
+"Prime order" = "شفاء بلس";
+"Schedule or refill your order" = "جدولة أو تكرار طلبي ";
+"Create new order" = "إنشاء طلب جديد";
+"Delivery info" = "معلومات التوصيل";
+"Upload prescription" = "رفع صورة الوصفة";
+"Scan / Upload" = "تصوير / رفع";
+"Repeat every month" = "تكرار طلبك شهريا";
+"Every month" = "كل شهر";
+"One time" = "مرة واحدة";
+"Order number #" = "رقم الطلب #";
+"Final total price including Chefaa copay set 5 days prior to due delivery date." = "سيتم تحديد السعر النهائي شاملاً مشاركة شفاء في تغطية قيمة من السعر قبل 5 أيام من تاريخ التوصيل المحدد.";
+"Terms and conditions applied" = "تطبق الشروط والأحكام";
+
+
+"Cancel your order" = "إلغاء الطلب";
+"The order will be deleted and next shipments  will be canceled in case it is a repeated" = " سيتم حذف الطلب وإلغاء أي طلب قادم في حالة التكرار";
+"Yes, cancel" = "تأكيد الإلغاء";
+
+"Edit delivery information" = "تعديل معلومات التوصيل";
+"Edit order" = "تعديل الطلب";
+
+"You will skip the next delivery date, your next order will be canceled" = "ستتخطى موعد التوصيل القادم، طلبك  التالي سيتم إلغاؤه";
+
+"No note added on this prescription" = "لم يتم إضافة ملحوظة على الوصفة";
+
+"First available date for delivery is 7 days and up to 30 days from today" = "يمكنك اختيار أول موعد متاح بعد ٧ أيام، وآخر موعد للتوصيل بعد ٣٠ يوماً.";
+
+"No orders" = "لا يوجد طلبات";
+
+//MARK: - Vodafone
+"Vodafone points" = "نقاط فودافون";
+"Type the coupon to redeem your Vodafone points in Chefaa wallet" = "إضافة كود الخصم لاستبدال نقاط فودافون الخاصة بك في محفظة شفاء";
+"Redeem coupon" = "استبدل كود الخصم";
+"* Your coupon is invalid" = "* كود الخصم غير صحيح";
+"Type coupon here" = "أضف الكود هنا";
+
+"vodafone_points_congrats" = "تم الاستبدال بنجاح";
+"Your Vodafone points were redeemed and you received" = "تم استبدال نقاط فودافون الخاصة بك وحصلت على";
+"EGP in Chefaa wallet" = "ريال في محفظة شفاء";
+
+"Topics" = "المواضيع";
+"Chefaa support" = "دعم شفاء";
+"Conversations" = "المحادثات";
+
+"The value is invalid" = "القيمة غير صحيحة";
+"Chefaa rewards" = "مكافآت شفاء";
+"Points" = "عدد النقاط";
+"Your points worth" = "نقاطك تساوي";
+"You can recharge Chefaa wallet by redeeming your points and using them on orders" = "يمكنك إعادة شحن المحفظة الخاصة بك عن طريق استبدال نقاطك واستخدامها عند الطلب";
+"Redeem" = "بدل نقاطك";
+
+"Get more points" = "احصل على نقاط أكثر";
+"Check all available rewards" = "تعرف على كل برامج المكافآت";
+"Redeem your points" = "بدل نقاطك";
+"Enter amount of money you want to redeem" = "اكتب قيمة المبلغ الذي تريد استبداله";
+"Redeemed successfully" = "تم الاستبدال بنجاح";
+"Your points have been redeemed and recharged into your chefaa wallet" = "تم استبدال نقاطك بنجاح وإعادة شحنها في محفظة شفاء الخاصة بك";
+
+"Need help with waffar plus" = "أريد المساعدة بخصوص شفاء بلس";
+
+"Card number" = "رقم البطاقة ";
+"Card holder name" = "اسم حامل البطاقة";
+"Hide card number" = "إخفاء رقم البطاقة";
+"Service details" = "تفاصيل الخدمة";
+"Prime.App" = "تطبيق";
+"Prime.Website" = "الموقع";
+"Prime.Location" = "العنوان";
+"How you can use the service" = "كيف يمكنك استخدام خدمتنا؟ ";
+
+"Search by city name" = "ابحث باسم المدينة";
+"Search by area name" = "ابحث باسم المنطقة";
+
+"NotifyMe.AskForAlternative" = "اسأل عن بديل";
+"I need alternative for " = "أريد بديل ل ";
+
+"PrimeOffline-Title" = "احصل على الخصم";
+"PrimeOffline-Disc" = "قم بتعبئة وإرسال هذه البيانات المطلوبة، وبنتواصل معك في أقرب وقت";
+"PrimeOffline-ServiceTitle" = "الخدمة / التحاليل";
+"PrimeOffline-ServiceDisc" = "أكتب هنا الخدمة والتحاليل المطلوبة";
+"PrimeOffline-AreaTitle" = "اختر الفرع القريب منك ";
+"PrimeOffline-AreaDisc" = "اختر منطقة";
+"PrimeOffline-DateTitle" = "اختر اليوم المناسب لك";
+"PrimeOffline-DateDisc" = "اختر اليوم";
+"PrimeOffline-PhotoTitle" = "أرفق صورة";
+//"PrimeOffline-DateDisc"
+"PrimeOffline-NoteTitle" = "أضف أي ملاحظات";
+"PrimeOffline-NoteDisc" = "أكتب هنا";
+"PrimeOffline-SuccessMsg" = "تم ارسال طلبك بنجاح، وبنتواصل معك بأقرب وقت لتأكيد الطلب";
+"Service provider code" = "كود مقدم الخدمة";
+"Ex: 123456" = "مثال: 123456";
+"Original price" = "السعر قبل الخصم";
+"Ex: 100" = "مثال: 100";
+"Discount percentage" = "نسبة الخصم";
+"Ex: 25" = "مثال: 25";
+"Activate" = "تفعيل";
+"Prime-EGP" = "ريال";
+"Congratulation" = "مبروك عليك";
+"The discount has been activated successfully, please check your email" = "تم تفعيل الخصم بنجاح، يرجى فحص بريدك الإلكتروني المسجل في شفاء مسبقًا";
+"PrimeSuccessBtn" = "تم";
+"Get offer" = "احصل على العرض";
+" is required." = " مطلوب";
+"DiscountPercentageValidation" = "يجب أن تكون القيمة بين 1 و 100";
+"Camera" = "الكاميرا";
+"Photos" = "الصور";
+"emptyViewStoreTitle" = "لا توجد نتائج";
+//"emptyViewStoreMsg"
+
+"No offers available in pharmacies near your current location" = "غير متوفّر عروض في الصيدليات القريبة من موقعك الحالي";
+"Change address" = "تغيير العنوان";
+"Caregiver" = "المتابع";
+"Caregiver enables you to get help when needed." = "خاصية المتابع تمكنك من الحصول على المساعدة على أي وقت";
+"Learn more" = "اعرف أكثر";
+"AddCareGiverPopup_Disc" = "خاصية المتابع تمكنك من الحصول على المساعدة أي وقت وكذلك تتبع مواعيد أدويتك";
+"AddCareGiverPopup_SOS" = "يمكنك إبلاغ متابعك في ثواني عند وجود حالة طارئة";
+"AddCareGiverPopup_Med" = "تتبع مواعيد أدويتك وإرسال تنبيه للمتابع عند وجود جرعة فائتة";
+"AddCareGiverPopup_AddBtn" = "إضافة متابع لك";
+"DeleteCareGiverPop_Title" = "سيتم حذف المتابع الخاص بك";
+"Add your caregiver" = "إضافة متابع لك";
+"Caregiver's name" = "اسم المتابع";
+"Caregiver's phone number" = "رقم جوال المتابع";
+"Your caregiver added successfully" = "تم إضافة المتابع بنجاح";
+"Preparing by" = "التحضير عن طريق";
+"Good morning, " = "صباح الخير، ";
+"Good afternoon, " = "مساء الخير، ";
+"Good evening, " = "مساء الخير، ";
+"How can we help you?" = "كيف نقدر نساعدك؟";
+"Order by prescription" = "طلب بالوصفة";
+"Show all brands" = "عرض كل الماركات";
+"Featured brands" = "ماركات مميزة";
+"New offers" = "جديدنا";
+"Debit" = "دين";
+"allfieldsAreRequired" = "من فضلك اكتب الاسم ";
+"nameIsInvalid" = "يرجي ألا يحتوي الاسم على رموز خاصة";
+"phoneIsInvalid" = "يرجى التأكد من رقم الجوال";
+"prescriptionTypeRx" = "إضافة \nالوصفة";
+"prescriptionTypeTxt" = "اكتب طلبك ";
+"prescriptionHomeTitle" = "سهلنا الطلب عليك";
+
+//MARK: - showCase
+"showcaseDeliverTitle" = "التوصيل إلى";
+"showcaseDeliverDisc" = "حدد عنوانك الذي تريد أن يصل طلبك إليه";
+"showcaseAskPharmacistTitle" = "24/7 اسأل صيدلي";
+"showcaseAskPharmacistDisc" = "يُمكنك استشارة صيادلة شفاء، أو إرسال أي شكوى بسهولة";
+"showcaseOffersTitle" = "العروض";
+"showcaseOffersDisc" = "الحق على العروض الحصرية في شفاء وكذلك في الصيدليات القريبة منك";
+"showcaseReminderTitle" = "منبه الدواء";
+"showcaseReminderDisc" = "حدد وقت العلاج الخاص بك، وبنكون معك نذكرك بموعد الجرعة";
+"showcaseBlogTitle" = "مدونة شفاء";
+"showcaseBlogDisc" = "ثقف نفسك عن حالتك، وفي كل ما يختص الأدوية ومنتجات العناية";
+"showcasePrimeTitle" = "شفاء برايم";
+"showcasePrimeDisc" = "استخدم شفاء برايم وقلل من تكلفة خدماتك الطبية";
+"left" = "متبقي";
+
+//MARK: - showCase - Split
+"showcaseTitle0eg" = "من خلال شفاء يمكنك الاختيار بين أربع تجارب شراء لطلب احتياجاتك من الصيدلية";
+"showcaseTitle0sa" = "من خلال شفاء يمكنك الاختيار بين تجربتين شراء لطلب احتياجاتك من الصيدلية";
+"showcaseDisc0" = "التالي";
+"showcaseTitle1" = "طلبك أرسلناه لأقرب صيدلية لك، وبيوصلك في اسرع وقت خلال 1-2 ساعة";
+"showcaseDisc1" = "التالي";
+"showcaseTitle2" = "عروض طوال العام على طلبات الصيدلية وتتشحن إلك خلال ٥ آيام.";
+"showcaseDisc2" = "التالي";
+"showcaseTitle3" = "دعم شامل على احتياجاتك الدوائية وغير الدوائية من الصيدلية وكذلك الخدمات الصحية";
+"showcaseDisc3" = "التالي";
+"showcaseTitle4" = "يمكنك الحين إرسال طلب التأمين ليصلك من أقرب صيدلية";
+"showcaseDisc4" = "تم";
+
+// PO
+"maxPhotoReached" = "تم الوصول إلى الحد الأقصى لعدد الصور";
+"nameIsRequired" = "لقد نسيت كتابة اسمك ";
+"POItems" = "منتجات";
+"POItem" = "منتج";
+
+// PO search
+"POSearchEmptyTitle" = "لا يوجد منتجات";
+"POSearchEmptyDisc" = "نعتذر منك، لم تتمكن من العثور على ما تبحث عنه ، ولكن لا يزال بإمكانك إرسال طلبك عن طريق كتابته";
+"POSearchEmptyBTnTitle" = "اكتب طلبك ";
+
+// PO Details
+"PODetailsVCTitle" = "تفاصيل الطلب";
+"preparedBy" = "يًجهز بواسطة";
+//MARK: - PO Tracking
+"POState1" = "تم الاستلام";
+"POState2" = "قيد التجهيز";
+"POState3" = "بالطريق لك ";
+"PDState3Chefaa" = "طلبك جاهز وسيتواصل معك  المندوب لتحديد موعد التسليم";
+"POState4" = "تم التوصيل";
+"POState5" = "تم الإلغاء";
+"PONeedHelpBtn" = "أحتاج مساعدة مع طلب من شفاء بلس";
+"POStateMsg1" = "تم استلام طلبك بنجاح وجاري تجهيزه";
+"POStateMsg2" = "طلبك قيد التجهيز";
+"POStateMsg3" = "طلبك بالطريق لك ";
+"POStateMsg4" = "تم التوصيل";
+"POStateMsg5" = "تم الإلغاء";
+
+// PO Step 1
+"POPriceLater" = "يُسعر لاحقًا";
+"POTitle" = "شفاء بلس";
+"POEmptyTitle" = "لا يوجد طلبات";
+"POEmptyDisc" = "ابدأ بتجربة خدمة شفاء بلس واحصل على تغطية من شفاء على طلباتك ";
+"POEmptyBTnTitle" = "إنشاء طلب جديد";
+"POstepOneBtnTitle" = "أضف منتجاتك";
+"POstep1VCTitle" = "إنشاء طلب";
+"POstepOneTitle" = "أضف منتجاتك";
+"POstepTwoTitle" = "معلومات التوصيل";
+"POItemsListTitle" = "قائمة المنتجات";
+"POEmpty1VCDisc" = "لم تتم إضافة أي منتج";
+"POItemTypePopTitle" = "أضف منتجاتك عن طريق";
+"POItemTypePhoto" = "اختر صورة";
+"POItemTypeTxt" = "اكتب اسم المنتج";
+"POItemTypeImg" = "ابحث عن منتج";
+"POItemTypeTxtDisc" = "اكتب هنا اسم الدواء/المنتج الذي تريد إضافته لقائمة منتجاتك";
+"POItemTypeTxtExample" = "مثال";
+"POItemSearchPlaceHolder" = "اكتب اسم المنتج ";
+
+// PO Step 2
+"PODeliverTo" = "عنوان التوصيل";
+"POAddressDefault" = "يرجى تحديد العنوان لمعرفة وقت التوصيل";
+"PODeliveryDate" = "وقت التوصيل المتوقع";
+"PODeliveryDefault" = "التوصيل متوقع خلال ٥ ايام عمل";
+"PODeliveryNoteTitle" = "ملاحظات على الطلب أو عند التوصيل";
+"PODeliveryNoteDefault" = "اكتب هنا ملاحظات الطلب أو عند التوصيل";
+"POOrderSummery" = "ملخص الطلب";
+"POChefaaCopay" = "تغطية شفاء";
+"POCheckoutNote" = "سيتم تأكيد السعر في خلال دقائق من بعد إرسال الطلب";
+"POCalendarPopTitle" = "حدد تاريخ التوصيل";
+"POOrderTotal" = "الإجمالي";
+"PODelvieryAddressValidation" = "يرجى اختيار عنوان التوصيل.";
+"PODelvieryDateValidation" = "يرجى اختيار تاريخ التوصيل.";
+"POPriceLater" = "يُسعر لاحقًا";
+"WafferPlusAlertMsg" = "الحد الأدنى لتنفيذ الطلب هو 200 ريال";
+
+// CART:-
+"cartPhAlert" = "توفر المنتجات وأسعارها ورسوم التوصيل قد يختلف باختلاف الصيدلية، وسنتواصل معك في حالة أي تغيير";
+
+// flow
+"nowTitle" = "الآن";
+"wafferTitle" = "وفّر";
+"primeTitle" = "بلس";
+"nowDisc" = "توصيل سريع لطلبك \n من أقرب صيدلية";
+"wafferDisc" = "عروض مرة قوية وشحن \n خلال ٤٨ ساعة";
+"primeDisc" = "خصومات أعلى وهدايا أكثر";
+
+"rxRequired" = "يلزم وصفة طبية";
+"rxRequiredBtn" = "أضف وصفة طبية";
+"lowStock" = "كمية محدودة";
+"lowStockDisc" = "قد لا نتمكن من توفيره، بسبب عدم توفره في الصيدليات";
+"done2" = "تم";
+
+// emptyView
+"nowEmptyViewTitle" = "نعتذر منك على عدم العثور ما تبحث عنه";
+"emptyViewStoreMsg" = "ما زال يمكنك إرسال طلبك عن طريقة كتابة اسم الدواء أو المنتج الذي تريده";
+"waffarEmptyViewTitle" = "نعتذر منك لعدم العثور على ما تبحث عنه";
+"waffarEmptyViewBtnTitle" = "متابعة التسوق";
+"Delete My Account" = "أريد حذف حسابي";
+"deleteMyAccountMsg" = "من فضلك أريد حذف حسابي.";
+
+"MaxQtyTitle" = "تنبيه";
+"MaxQtyDisc" = "عذراً، هذا المنتج له حد أقصى للطلب";
+
+// new product details
+"Frequently bought together" = "عادة ما يتم شراؤها معًا";
+"Price of selected = " = "سعر المنتجات المختارة = ";
+"Add selected to cart" = "أضف المنتجات المختارة";
+"Overview" = "نظرة عامة";
+"Specification" = "المواصفات";
+"Highlights" = "مميزات المنتج";
+"About product" = "عن المنتج";
+"Read More" = "قراءة المزيد";
+"Read Less" = "اقرأ أقل";
+"Selected added" = "تمت الإضافة";
+"See more" = "للمزيد";
+"Price:" = "السعر:";
+
+// Search Filter
+"filterTitle" = "التصفية";
+"filterCat1" = "الأقسام الأساسية";
+"filterCat2" = "الأقسام الفرعية";
+"filterCat3" = "الأقسام الفرعية الثانوية";
+"filterBrands" = "الماركات";
+"price" = "السعر";
+"filterType" = "النوع";
+"filterSkinType" = "نوع البشرة";
+"filterFormulation" = "المكونات";
+"filterSize" = "الحجم";
+"filterConcentration" = "التركيز";
+"filterColor" = "اللون";
+"filterAgeRange" = "الفئة العمرية";
+"filterOralCare" = "العناية بالأسنان";
+"filterHairType" = "نوع الشعر";
+"filterHairColor" = "لون الشعر";
+"filterPackSize" = "حجم العبوة";
+"filterSuitableFor" = "مناسب ل";
+"filterFreeFrom" = "خالي من";
+"filterSpecialFeatures" = "مميزات خاصة";
+"filterScent" = "الرائحة";
+"filterFlavor" = "المذاق";
+
+// health Profile
+"genderValidation" = "من فضلك اختر النوع";
+"Weight" = "الوزن";
+"Height" = "الطول";
+"Enter your weight" = "اكتب وزنك";
+"Enter your height" = "اكتب طولك";
+"Blood type" = "فصيلة الدم";
+"Select" = "اختر";
+"Chronic Diseases" = "الأمراض المزمنة ";
+"Identify chronic diseases, if you have." = "حدد الأمراض المزمنة إذا كنت تعانيها";
+"Agreed" = "موافق";
+"All information is secure and privacy protected" = "جميع المعلومات محمية، وفي سرية تامة ";
+"You can help us bring you a customized and better care that suits your health and well being." = "يمكنك مساعدتنا على تقديم رعاية أفضل ومخصصة لحياتك الصحية";
+"Start creating your health profile." = "ابدأ في إنشاء ملفك الصحي لدينا.";
+"Health profile" = "الملف الصحي";
+"Select your blood type" = "اختر فصيلة دمك";
+"Select your chronic conditions" = "حدد الأمراض المزمنة لديك";
+"  Need Help ?" = "  تحتاج للمساعدة ؟";
+
+// online payment
+"Saved Cards" = "بطاقات الدفع";
+"emptyCreditCardListTitle" = "ليس لديك أي بطاقات دفع";
+"emptyCreditCardListDisc" = "يتم إضافة بطاقات الدفع عند تنفيذ الطلبات";
+"CashPayment" = "الدفع عند الاستلام";
+"OnlinePayment" = "بطاقة ائتمان";
+"CreditFailedTitle" = "يوجد مشكلة مع بطاقة الدفع";
+"CreditFailedBtn" = "تم";
+"newCreditCard" = "استخدم بطاقة جديدة";
+"OnlinePaymentTitle" = "تأكيد الدفع";
+"onlinePaymentSuccessTitle" = "تم الطلب بنجاح";
+"onlinePaymentSuccessDisc" = "نريد إعلامك أنه سيتم سحب المبلغ المطلوب بعد تأكيد الطلب معك وخروجه للتوصيل";
+"cashPaymentSuccessDisc" = "نريد إعلامك أنه سيُتَوَاصَل معك الصيدلي في حالة عدم وجود بعض المنتجات لاختيار بديل لك";
+"onlinePaymentSuccessDiscKSA" = "يرجى الاحتفاظ بالجوال بالقرب منك لدفع الفاتورة بعد تأكيد الطلب";
+"cashPaymentSuccessDiscKSA" = "يرجى الاحتفاظ بالجوال في مكان قريب للتواصل معك في حالة اختيار بديل من الصيدلي";
+"viewOrder" = "تفاصيل الطلب";
+"onlinePaymentFailTitle" = "عملية دفع غير ناجحة";
+"onlinePaymentFailDisc" = "توجد مشكلة في بطاقتك ، يرجى المحاولة مرة أخرى باستخدام بطاقة أخرى";
+"onlineOrderFailTitle" = "لم يتم إرسال الطلب بنجاح.";
+"onlineOrderFailDisc" = "يوجد مشكلة في الطلب ليس لها علاقة بعملية الدفع";
+"tryAgain" = "العودة للدفع";
+"Card ending in " = "البطاقة التي تنتهي بـ ";
+"AvailablePaymentsTitle" = "طرق الدفع المتاحة";
+"multiShipmentWarningTwo" = "لديك طلبيتان ستصلك في أوقات مختلفة";
+"multiShipmentWarningMore" = "لديك ## طلبيات ستصلك في أوقات مختلفة";
+"OrderNeedsPayment" = "طلب يحتاج الدفع";
+"Apple pay" = "أبل باي";
+"OrderDetails-ShipPayBtn" = "سدد الآن";
+"OrderDetails-ShipTryAgainBtn" = "حاول الدفع مرة أخرى";
+"paymentReusultSuccessTitle" = "اكتمل الدفع بنجاح";
+"paymentReusultSuccessTitleSA" = "عملية دفع ناجحة";
+"paymentReusultSuccessDisc" = "سيتم استكمال تجهيز الطلب";
+"OrderPendingPaymentAlertLbl" = "طلبك جاهز للدفع أونلاين، يرجى الدفع لاستكماله";
+"Amount due" = "المبلغ المستحق";
+"paymentReusultFailTitle" = "لم تنجح عملية الدفع";
+"paymentReusultSuccessBtn" = "تم";
+"paymentReusultFailBtn" = "حاول مرة أخرى";
+"selectPaymentMethodTitle" = "اختر طريقة الدفع";
+"Cancel shipment" = "إلغاء الطلبية";
+
+// insurance
+//"insuranceCardTitle"
+"insuranceListEmptyTitle" = "لم تقم بإضافة أي تأمين طبي";
+"insuranceListEmptyDisc" = "الإضافة ستكون من خلال صفحة التأمين قبل إرسال الطلب";
+"EditCard" = "تعديل";
+"DeleteCard" = "حذف";
+"InsuranceTitle" = "تأمين طبي";
+"addInsuranceTitle" = "إضافة تأمين";
+"editInsuranceTitle" = "تعديل";
+"insuranceFullName" = "اسم البطاقة ";
+"insuranceFullNamePlaceHolder" = "اكتب اسماً للتفرقة مع الآخرين";
+"insuranceProviderTitle" = "اختر شركة التأمين";
+"insuranceProviderPlaceHolder" = "الشركات الحالية";
+"insurancePictureTitle" = "صور كارت التأمين";
+"retakePic" = "تغيير";
+"retakeFrontPic" = "التقط صورة للوجه الأمامي";
+"retakeBackPic" = "التقط صورة للوجه الخلفي";
+"dataIsSecuredTitle" = "سيتم حفظ جميع بياناتك بشكل آمن";
+"UploadRXTitle" = "أضف صورة الوصفة الطبية";
+"UploadRXDic" = "أضف صورة واضحة من نموذج المطالبة لطلب الدواء الخاص بك";
+"addAFile" = "أضف النموذج";
+"addNewInsurance" = "أضف تأمين جديد";
+"selectInsuranceCardTitle" = "اختر تأمينك الطبي";
+"captureFrontPic" = "التقاط الجانب الأمامي";
+"captureBackPic" = "التقاط الجانب الخلفي";
+"capturePicDisc" = "ضع بطاقتك في المنطقة المحددة";
+"checkOutInsuranceProviderTitle" = "تأمينك الطبي";
+"ODInsuranceCompanyTitle" = "شركة التأمين";
+"ODInsuranceCardTitle" = "بطاقة التأمين";
+"myCardsTitle" = "البطاقات";
+"tabbarOrdersTitle" = "الطلبات";
+"SupportTitle" = "الدعم";
+"SelectYourProviderTitle" = "اختر شركة التأمين";
+"cardNameIsRequired" = "اسم البطاقة مطلوب";
+"InsuranceNameValidation" = "يجب أن يكون اسم البطاقة بين 3 و 50";
+"providerIsRequired" = "مطلوب اختيار شركة التأمين";
+"frontImgIsRequired" = "صورة للوجه الأمامي مطلوبه";
+"backImgIsRequired" = "صورة للوجه الخلفي مطلوبة";
+"myOrdersListTitle" = "الطلبات الخاصة بك";
+"couponsucsess" = "تم تفعيل كود الخصم بنجاح";
+"FreeSum" = "مجانًا";
+"ReviewSheetTitle" = "تأكيد التسليم";
+"ReviewSheetDisc" = "تم التوصيل";
+"ReviewSheetResvBtn" = "تم الاستلام";
+"ReviewSheetHelpBtn" = "لم تصل بعد";
+"AddReviewSheetTitle" = "شاركنا رأيك";
+"Placed on " = "تم الطلب في : ";
+"Shipment by : " = "شحنة من : ";
+"RateYourExp" = "قيم لنا تجربتك معنا";
+"reviewCommentTitle" = "أرسل لنا ملاحظاتك للمساعدة على تحسين خدمتنا!";
+"more comments" = "أكتب هنا ملاحظاتك";
+"yourRate" = "تقييمك";
+"yourCommment" = "ملاحظة";
+"Delivery in" = "متوقع التسليم خلال";
+"Estimated arrival" = "الوقت المتوقع للوصول";
+"Your shipment delivered" = "تم التسليم";
+"Your shipment Canncelled" = "تم الإلغاء";
+"Hours" = "ساعة";
+"Minutes" = "دقيقة";
+"Searching for your order at a nearby pharmacy" = "جاري البحث في الصيدليات القريبة منك عن طلبك بالمنتجات المتاحة وأفضل الأسعار";
+"searchBarWaffarPH" = "ابحث في قسم وفر";
+"searchBarNowPH" = "ابحث في قسم الآن";
+"selectAddress" = "حدد العنوان";
+"OrderStatetitle1now" = "جاري البحث";
+"OrderStatetitle2now" = "جاري تجهيزه";
+"OrderStatetitle3now" = "خرج للتوصيل";
+"OrderStatetitle4now" = "تم التوصيل";
+"OrderStatetitle1waffar" = "تم الاستلام";
+"OrderStatetitle2waffar" = "جاري تجهيزه";
+"OrderStatetitle3waffar" = "تم الشحن";
+"OrderStatetitle4waffar" = "تم التوصيل";
+"Coupon applied" = "تم تفعيل كود الخصم";
+"requestRateLimitError" = "تم تجاوز حد الاستخدام المسموح به. يرجى المحاولة بعد ساعة";
+"Chefaa Rewards" = "مكافآت شفاء";
+"gameBallAlertTxt" = "ستحصل على نقاط تساوي (X) عند اكتمال الطلب.";
+"orderNotRecivedMsg" = "الطلب لم يصل بعد";
+// itemsPerZone
+"detectLocation" = "جاري تحديد موقعك ....";
+"awayFromGPSTitle" = "أنت بعيد عن أي عنوان لديك";
+"awayFromGPSDisc" = "هل أنت متأكد أنك تريد تسليم طلبك إلى عنوانك الأساسي؟";
+"keepThisAddressBtn" = "نعم، أريد هذا العنوان";
+"useCurrentGPSBtn" = "لا، اختر الموقع الحالي";
+"tellYourLocationTitle" = "أخبرنا بموقعك";
+"tellYourLocationDisc" = "للحصول على أفضل تجربة استخدام، نحتاج إلى موقعك لنعرض لك المنتج المتوفر بالقرب منك";
+"allowLocationAccessBtn" = "السماح لتحديد الموقع";
+"manualSelectLocationBtn" = "اختر من الخريطة";
+"voteLocationTitle" = "لا يوجد صيدليات قريبة منك";
+"voteLocationDisc" = "حاليًا لا يوجد في شبكتنا صيدليات قريبه منك، لكن يمكن ابلاغنا بمنطقتك";
+"voteLocationBtn" = "أبلغنا بهذه المنطقة";
+"orderFromWaffarBtn" = "اطلب من وفّر";
+"SelectDeliveryLocation" = "اختر موقع التوصيل";
+"ConfirmLocation" = "تأكيد الموقع";
+"Wasfaty information" = "بيانات وصفتي";
+"National ID / Residency number" = "رقم الهوية الوطنية / رقم الإقامة";
+"Wasfaty reference number" = "رقم الوصفة الطبية";
+"Mobile number" = "رقم الجوال";
+"WasfatyDeliveryFees" = "سيتم محاسبتك فقط على رسوم التوصيل";
+"Wasfaty photo" = "صورة الوصفة الطبية";
+"PaymentDetailsTitle" = "ملخص الدفع";
+
+"Order via Wasfaty" = "اطلب عبر \n وصفتي";
+"Order via Prescription" = "اطلب عبر \n الوصفة";
+"Wasfaty" = "وصفتي";
+"Add Wasfaty photo (optional)" = "اضف صورة الوصفة الطبية (اختياري)";
+"ex: 1234567891" = "مثال : 1234567891";
+"ex : 0534567891" = "مثال : 0534567891";
+"ex: b1385166" = "مثال : b1385166";
+"Upload photo" = "أرفق الصورة";
+"To ensure you reach the correct page, please change the country app." = "للتأكد من وصولك إلى الصفحة الصحيحة، يرجى تغيير بلد التطبيق.";
+"You can order by uploading photos or typing your needs" = "يمكنك الطلب عن طريق رفع الصور أو كتابة ما تريده من الصيدلية";
+"Mobile Number is wrong" = "رقم الجوال غير صحيح";
+"National ID / Residency number is wrong" = "رقم الهوية / الإقامة غير صحيح";
+"SelectDeliveryLocation" = "اختر موقع التوصيل";
+"ConfirmLocation" = "تأكيد الموقع";
+"ChangeLocation" = "اختر موقع آخر";
+"deliveryLocation" = "موقع التوصيل";
+"enableLocation" = "تحديد الموقع معطل. اضغط هنا لتفعيله قبل اختيار المنتجات";
+"enable" = "تفعيل";
+"addLocation" = "حدد الموقع";
+"UnavailableLocation" = "غير متوفر حاليًا في نطاق موقعك";
+"Unavailable" = "غير متاح";
+"out_of_zone_text" = "حاليًا لا يوجد في شبكتنا صيدليات قريبه منك";
+"voted_text" = "تم التصويت";
+
+//Profile
+"Account" = "الحساب";
+"AccountTitle" = "الحساب الشخصي";
+"PaymentTitle" = "الدفع";
+"View profile setting" = "إعدادات الحساب الشخصي";
+"Edit your information" = "تعديل الحساب الشخصي";
+"Your Password" = "كلمة المرور";
+"Account deletion" = "حذف الحساب";
+"seeYou" = "نأسف ان نراك تغادر ، لكن نتمنى أن نراك مرة أخرى";
+"Delete my account" = "احذف حسابي";
+"My Account" = "حسابي الشخصي";
+"Not completed" = "غير مكتمل";
+"Tax number" = "الرقم الضريبي";
+"Current location" = "موقع التوصيل";
+"Current location" = "موقع التوصيل";
+"The service has been stopped" = "تم ايقاف الخدمة";
+
+"Please upload prescription image" = "يرجى رفع الوصفة";
+"Search by product name" = "ابحث عن المنتج الذي تريده";
+"Upload" = "حمّل";
+"Got it" = " لقد فهمت";
+"There are no pharmacies near you, but you can order with Big save option" = "لا يوجد صيدليات قريبة، لكن يمكنك الطلب عن طريق خدمة سوبر توفير من سلة التسوق";
+"There aren't any pharmacies available in your area, so big save is your best option for ordering, you can select it in cart" = "لا يوجد صيدليات متاحة في منطقتك، خدمة سوبر توفير هي أفضل خيار متاح، يمكنك تجربتها واختيارها من خلال سلة التسوق.";
+"Monthly Medication" = "الوصفة الشهرية";
+"Upload prescription" = "حمّل الوصفة";
+"Order your monthly medication & needs with Big Save service" = "اطلب أدويتك و احتياجاتك الشهرية عن طريق خدمة سوبر توفير";
+"Coverage provided by" = "التغطية مقدمة من";
+"What is Big Save Service?" = "ما خدمة سوبر توفير؟";
+"Delivery option" = "نوع التوصيل";
+"BigsaveNotify" = "You'll be notified of the price and available products. Order will be canceled if the minimum is not met.";
+"BigsaveNotify" = "راح توصلك إشعارات بالسعر والمنتجات المتوفرة. الطلب يلغى إذا ما تم تحقيق الحد الأدنى";
+
+"items" = "المنتجات";
+"Removed items" = "المنتجات المحذوفة";
+"Attachments" = "مرفقات";
+"Payment summary" = "ملخص الدفع";
+"Log in / Sign up" = "تسجيل دخول/ مستخدم جديد";
+"Select delivery option" = "اختر طريقة التوصيل";
+"You're (X) EGP away from the minimum order." = "تحتاج منتجات بقيمة (X) حتي تصل للحد الأدنى";
+"What is Big Save option ?" = "ما خدمة سوبر توفير؟";
+"Tap to learn more ...." = "اضغط لمعرفة المزيد ....";
+"Login First" = "سجل الدخول أولاً";
+"Create address" = "إنشاء عنوان";
+"Minimum order =" = "الحد الأدنى =";
+"Coupon" = "الكوبون";
+"Type coupon code" = "اكتب كود الخصم";
+"You rock! You've reached the minimum order 🎉" = "عظيم! وصلت للحد الأدنى للطلب 🎉";
+"Not available for your address" = "غير متاح حالياً لعنوانك";
+"Search for your Location" = "ابحث عن موقعك";
+"Text" = "النص";
