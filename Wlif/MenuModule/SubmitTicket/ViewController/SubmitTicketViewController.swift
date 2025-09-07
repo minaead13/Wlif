@@ -15,7 +15,7 @@ class SubmitTicketViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var errorLabel: UILabel!
     
     let viewModel = SubmitTicketViewModel()
-    let commentPlaceholder = "Comment"
+    let commentPlaceholder = "Comment".localized
     
     override func viewDidLoad() {
         super.viewDidLoad()

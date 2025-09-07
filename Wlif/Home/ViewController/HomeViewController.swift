@@ -65,16 +65,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell", for: indexPath) as? HeaderTableViewCell else { return UITableViewCell() }
-            cell.handleCartSelection = { [weak self] in
-                let vc = self?.storyboard?.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
-                self?.navigationController?.pushViewController(vc, animated: true)
+            
+            cell.headerView.onCartTap = { [weak self] in
+                self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
             }
             
-            cell.handleMenuSelection = { [weak self] in
-                let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
-                self?.navigationController?.pushViewController(vc, animated: true)
-                
+            cell.headerView.onSideMenuTap = { [weak self] in
+                self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
             }
             
             cell.locationLabel.text = LocationUtil.load()?.address

@@ -8,12 +8,19 @@
 import Foundation
 
 struct UserModel: Codable {
-    let token: String
-    let user: User
+    var token: String?
+    var newUser: Bool?
+    var user: User?
+    
+    enum CodingKeys: String, CodingKey {
+        case token
+        case newUser = "new_user"
+        case user
+    }
 }
 
 struct User: Codable {
-    let id: Int
-    let name, email, image: String
-    let code: Int?
+    var id: Int?
+    var name, email, phone, image: String?
+    var code: Int?
 }

@@ -16,6 +16,7 @@ class AddAdoptionViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var bloodTypeTextField: UITextField!
     @IBOutlet weak var descTextView: UITextView!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = AddAdoptionViewModel()
     
@@ -28,6 +29,7 @@ class AddAdoptionViewController: UIViewController, UIImagePickerControllerDelega
             viewModel.getAdoptionDetails()
         }
         setupTextView()
+        setupHeaderActions()
     }
     
     func setupTextView() {
@@ -69,6 +71,20 @@ class AddAdoptionViewController: UIViewController, UIImagePickerControllerDelega
         
         viewModel.onImagesDownloaded = { [weak self] images in
              self?.collectionView.reloadData()
+        }
+    }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
         }
     }
     

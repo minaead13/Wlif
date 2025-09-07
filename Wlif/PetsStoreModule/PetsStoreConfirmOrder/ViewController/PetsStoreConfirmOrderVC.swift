@@ -10,6 +10,7 @@ import UIKit
 class PetsStoreConfirmOrderVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = PetsStoreConfirmOrderViewModel()
     
@@ -22,6 +23,7 @@ class PetsStoreConfirmOrderVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         setupTableView()
         bind()
+        setupHeaderActions()
     }
     
     func setupTableView() {
@@ -53,6 +55,20 @@ class PetsStoreConfirmOrderVC: UIViewController {
                     self.hideLoadingIndicator()
                 }
             }
+        }
+    }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
         }
     }
     
@@ -106,21 +122,24 @@ extension PetsStoreConfirmOrderVC: UITableViewDelegate, UITableViewDataSource {
             
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentMethodTableViewCell", for: indexPath) as? PaymentMethodTableViewCell else { return UITableViewCell()}
-            
+            cell.selectionStyle = .none
             return cell
             
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryFeesTableViewCell", for: indexPath) as? DeliveryFeesTableViewCell else { return UITableViewCell()}
             cell.costLabel.text = "\(viewModel.deliveryFees?.cost ?? 0)"
             cell.expectedDeliveryTime.text = viewModel.deliveryFees?.expectedDeliveryTime
+            cell.selectionStyle = .none
             return cell
             
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "StorePaymentInfoTableViewCell", for: indexPath) as? StorePaymentInfoTableViewCell else { return UITableViewCell()}
-            cell.subTotalLabel.text = viewModel.cart?.subtotal
-            cell.deliveryValueLabel.text = viewModel.cart?.deliveryValue
+            cell.subTotalLabel.text = "\(viewModel.cart?.subtotal ?? 0)"
+           // cell.deliveryValueLabel.text = viewModel.cart?.deliveryValue
+            cell.subTotalCountLabel.text = "\("Subtotal".localized) (\(viewModel.cart?.items?.count ?? 0) \("items".localized))"
             cell.taxLabel.text = viewModel.cart?.tax
-            cell.totalLabel.text = viewModel.cart?.total
+            cell.totalLabel.text = "\(viewModel.cart?.total ?? 0)"
+            cell.selectionStyle = .none
             return cell
             
         default:

@@ -10,6 +10,7 @@ import UIKit
 class OfferStoresDetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = OfferStoresDetailsViewModel()
     let cartViewModel = CartViewModel()
@@ -24,6 +25,7 @@ class OfferStoresDetailsViewController: UIViewController {
         setTableView()
         bind()
         viewModel.fetchOffers()
+        setupHeaderActions()
     }
     
     func setTableView() {
@@ -63,6 +65,20 @@ class OfferStoresDetailsViewController: UIViewController {
                     self.hideLoadingIndicator()
                 }
             }
+        }
+    }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
         }
     }
     

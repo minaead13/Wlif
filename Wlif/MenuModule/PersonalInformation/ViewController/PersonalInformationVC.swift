@@ -13,6 +13,7 @@ class PersonalInformationVC: UIViewController {
     @IBOutlet weak var fullnameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var headerView: HeaderView!
     
     private lazy var validator = LoginValidator()
     private lazy var viewModel = PersonalInformationViewModel(validator: validator)
@@ -26,15 +27,17 @@ class PersonalInformationVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         bind()
         viewModel.getUserDetails()
+        setupHeaderActions()
+        setupHeaderActions()
     }
     
     func bind() {
         viewModel.onUserDetailsFetched = { [weak self] userModel in
             guard let self else { return }
-            personImageView.setImage(from: userModel?.user.image)
-            fullnameTextField.text = userModel?.user.name
+            personImageView.setImage(from: userModel?.user?.image)
+            fullnameTextField.text = userModel?.user?.name
           //  phoneTextField.text = user?.phone
-            emailTextField.text = userModel?.user.email
+            emailTextField.text = userModel?.user?.email
         }
         
         viewModel.isLoading.bind { [weak self] isLoading in
@@ -76,6 +79,20 @@ class PersonalInformationVC: UIViewController {
         alert.addAction(library)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     @IBAction func didTapBackBtn(_ sender: Any) {

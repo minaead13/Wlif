@@ -29,7 +29,7 @@ class CartTableViewCell: UITableViewCell {
             nameLabel.text = item?.name ?? ""
             storeLabel.text = item?.store ?? ""
             sizeLabel.text = item?.size
-            priceLabel.text = item?.price
+            priceLabel.text = "\(item?.price ?? 0)"
            // qtyLabel.text = "\(item?.qty ?? 0)"
             
             qtyAmount = item?.qty ?? 0

@@ -11,6 +11,7 @@ class HotelBookingVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = HotelBookingViewModel()
     
@@ -25,11 +26,26 @@ class HotelBookingVC: UIViewController {
         setupTableView()
         titleLabel.text = "\("Booking".localized) \(">".localized) \(viewModel.store?.name ?? "")"
         tableView.reloadData()
+        setupHeaderActions()
     }
     
     func setupTableView() {
         tableView.registerCell(cell: HotelBookingServicesTableViewCell.self)
         tableView.registerCell(cell: HotelBookingTableViewCell.self)
+    }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     

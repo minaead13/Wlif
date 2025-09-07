@@ -18,7 +18,7 @@ class LocationViewController: UIViewController ,CLLocationManagerDelegate, GMSMa
     @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var workView: UIView!
     @IBOutlet weak var saveSwitch: UISwitch!
-    
+    @IBOutlet weak var headerView: HeaderView!
     
     var locationManager = CLLocationManager()
     var viewModel = LocationViewModel()
@@ -32,6 +32,7 @@ class LocationViewController: UIViewController ,CLLocationManagerDelegate, GMSMa
         saveSwitch.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
         bind()
         setAddressType()
+        setupHeaderActions()
     }
     
     func bind() {
@@ -47,6 +48,20 @@ class LocationViewController: UIViewController ,CLLocationManagerDelegate, GMSMa
                     self.hideLoadingIndicator()
                 }
             }
+        }
+    }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
         }
     }
     

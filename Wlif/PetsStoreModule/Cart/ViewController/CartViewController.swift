@@ -38,7 +38,7 @@ class CartViewController: UIViewController {
         viewModel.onCartFetched = { [weak self] cart in
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
-                self?.totalLabel.text = cart?.total
+                self?.totalLabel.text = "\(cart?.total ?? 0)"
             }
         }
         
@@ -106,11 +106,11 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch action {
         case .increase:
-            increaseQuantity(productId: productId, qty: qty)
+            increaseQuantity(productId: productId ?? 0, qty: 1)
         case .decrease:
-            decreaseQuantity(itemId: itemId, productId: productId, qty: qty)
+            decreaseQuantity(itemId: itemId ?? 0, productId: productId ?? 0, qty: 1)
         case .delete:
-            deleteItem(itemId: itemId)
+            deleteItem(itemId: itemId ?? 0)
         }
     }
     

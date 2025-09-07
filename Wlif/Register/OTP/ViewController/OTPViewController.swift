@@ -13,10 +13,13 @@ class OTPViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var otp2TextField: UITextField!
     @IBOutlet weak var otp3TextField: UITextField!
     @IBOutlet weak var otp4TextField: UITextField!
+    @IBOutlet weak var otpStack: UIStackView!
     @IBOutlet weak var verifyButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var resendButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var outerStack: UIStackView!
+    @IBOutlet weak var phoneLabel: UILabel!
     
     private lazy var validator = LoginValidator()
     lazy var viewModel = LoginViewModel(validator: validator)
@@ -32,6 +35,26 @@ class OTPViewController: UIViewController, UITextFieldDelegate {
         self.resendButton.isEnabled = false
         setupTextFieldDelegates()
         setupBindings()
+        otpStack.semanticContentAttribute = .forceLeftToRight
+        outerStack.semanticContentAttribute = .forceLeftToRight
+        phoneLabel.text = otpViewModel.userData?.phone
+        bind()
+    }
+    
+    func bind() {
+        viewModel.isLoading.bind { [weak self] isLoading in
+            guard let self = self,
+                  let isLoading = isLoading else {
+                return
+            }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self.showLoadingIndicator()
+                } else {
+                    self.hideLoadingIndicator()
+                }
+            }
+        }
     }
     
     func setupBindings() {
@@ -89,19 +112,30 @@ class OTPViewController: UIViewController, UITextFieldDelegate {
         let otpString = [otp1TextField, otp2TextField, otp3TextField, otp4TextField]
             .compactMap { $0.text }
             .joined()
+            .replacedArabicDigitsWithEnglish
        
-        viewModel.verify(email: otpViewModel.userData?.email ?? "", enteredCode: otpViewModel.userData?.code ?? 0, code: Int(otpString) ?? 0) { [weak self] result in
+        viewModel.verify(phone: otpViewModel.userData?.phone ?? "", enteredCode: otpViewModel.userData?.code ?? 0, code: Int(otpString) ?? 0) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
-                case .success(let data):
-                    print("data is \(data)")
-                   // self?.navigateToHome()
+                case .success(_):
+                    self?.setRootToHome()
                 case .failure(let error):
                     self?.errorLabel.isHidden = false
                     self?.errorLabel.text = error.localizedDescription
                 }
                 self?.verifyButton.isEnabled = true
             }
+        }
+    }
+    
+    private func setRootToHome() {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let navController = storyboard.instantiateViewController(withIdentifier: "Home") as! UINavigationController
+        
+        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate,
+           let window = sceneDelegate.window {
+            window.rootViewController = navController
+            window.makeKeyAndVisible()
         }
     }
     

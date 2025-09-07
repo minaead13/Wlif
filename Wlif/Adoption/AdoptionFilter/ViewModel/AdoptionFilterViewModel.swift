@@ -12,11 +12,10 @@ class AdoptionFilterViewModel {
     var selectedIndex: Int = 0
     
     var filterArr = [
-        FilterModel(imageBlack: "Order.black" ,image: "Order", title: "My Animal"),
-        FilterModel(imageBlack: "adoptedPets.black"  ,image: "adoptedPets", title: "Adopted Pets"),
-        FilterModel(imageBlack: "chat.black" ,image: "chat", title: "All Chat"),
-        FilterModel(imageBlack: "fav.black" ,image: "fav", title: "Favourites"),
-        
+        FilterModel(imageBlack: "Order.black" ,image: "Order", title: "My Animal".localized),
+        FilterModel(imageBlack: "adoptedPets.black"  ,image: "adoptedPets", title: "Adopted Pets".localized),
+        FilterModel(imageBlack: "chat.black" ,image: "chat", title: "All Chat".localized),
+        FilterModel(imageBlack: "fav.black" ,image: "fav", title: "Favourites".localized),
     ]
     
     var isLoading: Observable<Bool> = Observable(false)

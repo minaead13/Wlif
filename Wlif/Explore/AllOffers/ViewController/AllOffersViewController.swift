@@ -11,6 +11,7 @@ class AllOffersViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = AllOffersViewModel()
     
@@ -24,6 +25,7 @@ class AllOffersViewController: UIViewController {
         setCollectionView()
         bind()
         viewModel.fetchOffers()
+        setupHeaderActions()
     }
     
     func setCollectionView() {
@@ -56,6 +58,21 @@ class AllOffersViewController: UIViewController {
             }
         }
     }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
     @IBAction func didTapBackBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

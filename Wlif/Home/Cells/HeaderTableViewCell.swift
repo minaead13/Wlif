@@ -6,59 +6,53 @@
 //
 
 import UIKit
+import HSCycleGalleryView
 
 class HeaderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var headerView: HeaderView!
     
-    var handleCartSelection: (() -> Void)?
-    var handleMenuSelection: (() -> Void)?
+    let pager =  HSCycleGalleryView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 170))
     
     var banners: [BannerModel] = [] {
         didSet {
-            tableView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self, self.banners.count > 0 else { return }
+                setView()
+                pager.reloadData()
+            }
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupTableView()
-        nameLabel.text = "\("Hi".localized) \(UserUtil.load()?.user.name ?? "")"
+        nameLabel.text = "\("Hi".localized) \(UserUtil.load()?.user?.name ?? "")"
     }
     
-    func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.registerCell(cell: BannerTableViewCell.self)
+    func setView() {
+        pager.register(nib: UINib(nibName: "PetsCollectionViewCell", bundle: nil), forCellReuseIdentifier: "PetsCollectionViewCell")
+        pager.delegate = self
+        pager.backgroundColor = .clear
+        pager.subviews.forEach { $0.backgroundColor = .clear }
+        containerView.addSubview(pager)
     }
 
-    @IBAction func didTapCartBtn(_ sender: Any) {
-        handleCartSelection?()
-    }
-    
-    @IBAction func didTapMenuBtn(_ sender: Any) {
-        handleMenuSelection?()
-    }
 }
 
-extension HeaderTableViewCell: UITableViewDelegate, UITableViewDataSource {
+extension HeaderTableViewCell: HSCycleGalleryViewDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfItemInCycleGalleryView(_ cycleGalleryView: HSCycleGalleryView) -> Int {
         return banners.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BannerTableViewCell", for: indexPath) as? BannerTableViewCell else { return UITableViewCell() }
+    func cycleGalleryView(_ cycleGalleryView: HSCycleGalleryView, cellForItemAtIndex index: Int) -> UICollectionViewCell {
+        guard let cell = cycleGalleryView.dequeueReusableCell(withIdentifier: "PetsCollectionViewCell", for: IndexPath(item: index, section: 0)) as? PetsCollectionViewCell else { return UICollectionViewCell() }
+        cell.backgroundColor = .clear
+        cell.petsImageView.setImage(from: banners[index].image)
         
-        cell.banners = banners
-        
-        cell.selectionStyle = .none
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 171
     }
 }

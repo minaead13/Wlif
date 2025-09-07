@@ -196,5 +196,26 @@ struct Urls {
         return "\(explore)/show"
     }
     
+    static var wallet: String {
+        return "wallet"
+    }
+    
+    static var addBalance: String {
+        return "add_balance"
+    }
+    
+    //MARK: - Orders
+    static var orders: String {
+        return "orders"
+    }
+    
+    static var order: String {
+        return "order"
+    }
+    
+    static var bookingOrder: String {
+        return "booking_order"
+    }
+    
     
 }

@@ -11,6 +11,7 @@ class AdoptionDetailsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backTitleLabel: UILabel!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = AdoptionDetailsViewModel()
     
@@ -25,7 +26,7 @@ class AdoptionDetailsViewController: UIViewController {
         setupTableView()
         bind()
         viewModel.getAdoptionDetails()
-        
+        setupHeaderActions()
     }
     
     func setupTableView() {
@@ -36,7 +37,7 @@ class AdoptionDetailsViewController: UIViewController {
     func bind() {
         viewModel.onAdoptionDetailsFetched = { [weak self] details in
             DispatchQueue.main.async {
-                self?.backTitleLabel.text = "Details >\(self?.viewModel.adoptiondetails?.petName ?? "")"
+                self?.backTitleLabel.text = "\("Details".localized) >\(self?.viewModel.adoptiondetails?.petName ?? "")"
                 self?.tableView.reloadData()
             }
         }
@@ -53,6 +54,20 @@ class AdoptionDetailsViewController: UIViewController {
                     self.hideLoadingIndicator()
                 }
             }
+        }
+    }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
         }
     }
     

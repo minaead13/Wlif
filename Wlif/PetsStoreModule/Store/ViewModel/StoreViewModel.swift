@@ -8,6 +8,7 @@
 import Foundation
 
 class StoreViewModel {
+    var selectedIndex: Int = 0
     var id: Int?
     var isLoading: Observable<Bool> = Observable(false)
 
@@ -19,11 +20,17 @@ class StoreViewModel {
     
     var onStoreFetched: ((StoreModel?) -> Void)?
     
-    func getStoreData(completion: ((Result<StoreModel, Error>) -> Void)? = nil) {
+    func getStoreData(categroyID: Int? = nil, completion: ((Result<StoreModel, Error>) -> Void)? = nil) {
         self.isLoading.value = true
+        
+        var param: [String: Any] = [:]
+            
+        if let id = categroyID {
+            param["category"] = id
+        }
 
         let url = Urls.store + "/\(id ?? 0)"
-        NetworkManager.instance.request(url, parameters: nil, method: .get, type: StoreModel.self) { [weak self] (baseModel, error) in
+        NetworkManager.instance.request(url, parameters: param, method: .get, type: StoreModel.self) { [weak self] (baseModel, error) in
             self?.isLoading.value = false
 
             if let data = baseModel?.data {

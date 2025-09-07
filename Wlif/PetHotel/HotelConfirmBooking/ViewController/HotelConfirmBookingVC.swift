@@ -10,6 +10,7 @@ import UIKit
 class HotelConfirmBookingVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = HotelConfirmBookingViewModel()
     
@@ -18,6 +19,7 @@ class HotelConfirmBookingVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         setupTableView()
         bind()
+        setupHeaderActions()
     }
     
     func setupTableView() {
@@ -43,6 +45,19 @@ class HotelConfirmBookingVC: UIViewController {
         }
     }
     
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
+    }
     
     @IBAction func didTapContinueBtn(_ sender: Any) {
         viewModel.confirmHotelBooking { [weak self] result in

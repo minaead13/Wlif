@@ -10,6 +10,7 @@ import UIKit
 class AdoptionListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = AdoptionViewModel()
     
@@ -24,6 +25,7 @@ class AdoptionListViewController: UIViewController {
         setupTableView()
         bind()
         viewModel.getAdoptions()
+        setupHeaderActions() 
     }
     
     func setupTableView() {
@@ -51,6 +53,19 @@ class AdoptionListViewController: UIViewController {
         }
     }
    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+    }
     
     @IBAction func didTapMoreBtn(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "AdoptionFilterViewController") as! AdoptionFilterViewController

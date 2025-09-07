@@ -67,37 +67,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdm-9m-IFM">
                                                         <rect key="frame" x="178" y="0.0" width="104" height="44"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZbF-fp-lbl">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZbF-fp-lbl" customClass="HeaderView" customModule="Wlif" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="104" height="34"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ayR-ly-Aca">
-                                                                        <rect key="frame" x="14" y="12" width="76" height="10"/>
-                                                                        <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-JN-bMb">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="home"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRs-kX-pif">
-                                                                                <rect key="frame" x="25.5" y="0.0" width="25" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="list"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUC-Ql-jkq">
-                                                                                <rect key="frame" x="50.5" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="bag"/>
-                                                                            </button>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.058823529409999999" green="0.058823529409999999" blue="0.058823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="ayR-ly-Aca" secondAttribute="trailing" constant="14" id="EAf-FG-jTN"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="ayR-ly-Aca" secondAttribute="bottom" constant="12" id="Ov1-nU-1U8"/>
-                                                                    <constraint firstItem="ayR-ly-Aca" firstAttribute="top" secondItem="ZbF-fp-lbl" secondAttribute="top" constant="12" id="oLN-dN-XRb"/>
-                                                                    <constraint firstItem="ayR-ly-Aca" firstAttribute="leading" secondItem="ZbF-fp-lbl" secondAttribute="leading" constant="14" id="xvR-Ta-DFz"/>
-                                                                </constraints>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                         <real key="value" value="16"/>
@@ -255,6 +227,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerView" destination="ZbF-fp-lbl" id="Xmn-S7-g19"/>
                         <outlet property="servicesCollectionView" destination="23K-JJ-Sn9" id="vZd-hq-twr"/>
                         <outlet property="tableView" destination="oHF-lY-45v" id="ZcO-Br-4fy"/>
                         <outlet property="titleLabel" destination="vnn-5B-Cts" id="Y5v-sk-iVE"/>
@@ -323,37 +296,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zc-Vg-d4P">
                                                         <rect key="frame" x="178" y="0.0" width="104" height="44"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNv-h3-v8m">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNv-h3-v8m" customClass="HeaderView" customModule="Wlif" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="104" height="34"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="d6I-VS-7Lm">
-                                                                        <rect key="frame" x="14" y="12" width="76" height="10"/>
-                                                                        <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEA-Gm-CWC">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="home"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kri-6s-4k3">
-                                                                                <rect key="frame" x="25.5" y="0.0" width="25" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="list"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ke1-6P-kOF">
-                                                                                <rect key="frame" x="50.5" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="bag"/>
-                                                                            </button>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.058823529409999999" green="0.058823529409999999" blue="0.058823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="d6I-VS-7Lm" secondAttribute="bottom" constant="12" id="5hU-mL-YJu"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="d6I-VS-7Lm" secondAttribute="trailing" constant="14" id="7v0-an-pav"/>
-                                                                    <constraint firstItem="d6I-VS-7Lm" firstAttribute="leading" secondItem="WNv-h3-v8m" secondAttribute="leading" constant="14" id="Cii-Re-g1k"/>
-                                                                    <constraint firstItem="d6I-VS-7Lm" firstAttribute="top" secondItem="WNv-h3-v8m" secondAttribute="top" constant="12" id="x2h-KM-Ts7"/>
-                                                                </constraints>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                         <real key="value" value="16"/>
@@ -426,6 +371,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerView" destination="WNv-h3-v8m" id="Ou9-3P-5GR"/>
                         <outlet property="serviceNameLabel" destination="r40-N0-Xof" id="zwV-tY-Xyw"/>
                         <outlet property="tableView" destination="aPa-Bn-wQ8" id="SOa-t2-jpm"/>
                         <outlet property="titleLabel" destination="8F2-Jk-ovs" id="lmH-3B-aNz"/>
@@ -494,37 +440,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65n-Uk-jZc">
                                                         <rect key="frame" x="178" y="0.0" width="104" height="44"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c22-FJ-cTo">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c22-FJ-cTo" customClass="HeaderView" customModule="Wlif" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="104" height="34"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Htt-sc-YGs">
-                                                                        <rect key="frame" x="14" y="12" width="76" height="10"/>
-                                                                        <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOi-va-DBL">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="home"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cJ-lk-5Nv">
-                                                                                <rect key="frame" x="25.5" y="0.0" width="25" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="bag"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZd-F8-oCx">
-                                                                                <rect key="frame" x="50.5" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="list"/>
-                                                                            </button>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.058823529409999999" green="0.058823529409999999" blue="0.058823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="Htt-sc-YGs" secondAttribute="trailing" constant="14" id="JNZ-1g-rzw"/>
-                                                                    <constraint firstItem="Htt-sc-YGs" firstAttribute="top" secondItem="c22-FJ-cTo" secondAttribute="top" constant="12" id="Mwj-cY-XkW"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="Htt-sc-YGs" secondAttribute="bottom" constant="12" id="doB-if-z9Y"/>
-                                                                    <constraint firstItem="Htt-sc-YGs" firstAttribute="leading" secondItem="c22-FJ-cTo" secondAttribute="leading" constant="14" id="hQb-Ig-3RP"/>
-                                                                </constraints>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                         <real key="value" value="16"/>
@@ -629,6 +547,7 @@
                     <connections>
                         <outlet property="continueBtn" destination="imF-Ar-1KZ" id="jfT-sr-IYX"/>
                         <outlet property="continueView" destination="Xs3-4A-suf" id="0Ys-KJ-A2f"/>
+                        <outlet property="headerView" destination="c22-FJ-cTo" id="rrs-GN-uLq"/>
                         <outlet property="priceLabel" destination="0z7-VO-J4c" id="gu9-LL-o9M"/>
                         <outlet property="tableView" destination="pif-iK-CgL" id="LAi-az-WEi"/>
                         <outlet property="titleLabel" destination="V2l-vs-ep0" id="lAL-dv-cMR"/>
@@ -827,37 +746,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awi-yw-mW2">
                                                         <rect key="frame" x="178" y="0.0" width="104" height="44"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRb-9k-dnc">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRb-9k-dnc" customClass="HeaderView" customModule="Wlif" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="104" height="34"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5KR-Gq-XDJ">
-                                                                        <rect key="frame" x="14" y="12" width="76" height="10"/>
-                                                                        <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Du1-2s-IUK">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="home"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsH-Un-o3A">
-                                                                                <rect key="frame" x="25.5" y="0.0" width="25" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="bag"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMg-jI-I9c">
-                                                                                <rect key="frame" x="50.5" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="list"/>
-                                                                            </button>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.058823529409999999" green="0.058823529409999999" blue="0.058823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="5KR-Gq-XDJ" secondAttribute="trailing" constant="14" id="CXf-QC-6pv"/>
-                                                                    <constraint firstItem="5KR-Gq-XDJ" firstAttribute="leading" secondItem="gRb-9k-dnc" secondAttribute="leading" constant="14" id="OCR-sE-H3t"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="5KR-Gq-XDJ" secondAttribute="bottom" constant="12" id="Oa4-fQ-TCr"/>
-                                                                    <constraint firstItem="5KR-Gq-XDJ" firstAttribute="top" secondItem="gRb-9k-dnc" secondAttribute="top" constant="12" id="e6U-m7-kQH"/>
-                                                                </constraints>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                         <real key="value" value="16"/>
@@ -954,6 +845,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerView" destination="gRb-9k-dnc" id="4tq-XQ-3N2"/>
                         <outlet property="tableView" destination="dRb-W7-Qy6" id="dha-di-Rbb"/>
                     </connections>
                 </viewController>
@@ -1059,10 +951,7 @@
     <resources>
         <image name="CheckMark" width="75.5" height="65.5"/>
         <image name="back" width="44" height="44"/>
-        <image name="bag" width="10.5" height="10.5"/>
         <image name="call.dark" width="19" height="19"/>
-        <image name="home" width="10.5" height="10.5"/>
-        <image name="list" width="10.5" height="10.5"/>
         <image name="yellowRing" width="170" height="170"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

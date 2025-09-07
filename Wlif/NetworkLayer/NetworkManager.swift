@@ -45,7 +45,16 @@ class NetworkManager {
                         }
                         
                     default:
-                        break
+                        if let data = response.data {
+                            do {
+                                let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: data)
+                                api_response(nil, errorResponse.message)
+                            } catch {
+                                api_response(nil, "Server returned status \(statusCode)")
+                            }
+                        } else {
+                            api_response(nil, "Server returned status \(statusCode)")
+                        }
                     }
                 }
             case .failure(let error):

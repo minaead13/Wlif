@@ -67,37 +67,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKA-fJ-lyL">
                                                         <rect key="frame" x="178" y="0.0" width="104" height="44"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJE-iC-RkQ">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJE-iC-RkQ" customClass="HeaderView" customModule="Wlif" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="104" height="34"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Nea-Lw-eT5">
-                                                                        <rect key="frame" x="14" y="12" width="76" height="10"/>
-                                                                        <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hak-fK-ZwZ">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="home"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmD-RL-F0x">
-                                                                                <rect key="frame" x="25.5" y="0.0" width="25" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="list"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h34-TQ-4m6">
-                                                                                <rect key="frame" x="50.5" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="bag"/>
-                                                                            </button>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.058823529409999999" green="0.058823529409999999" blue="0.058823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="Nea-Lw-eT5" secondAttribute="trailing" constant="14" id="74g-sc-N4B"/>
-                                                                    <constraint firstItem="Nea-Lw-eT5" firstAttribute="leading" secondItem="nJE-iC-RkQ" secondAttribute="leading" constant="14" id="9DM-Kg-h72"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="Nea-Lw-eT5" secondAttribute="bottom" constant="12" id="OFh-uv-lKK"/>
-                                                                    <constraint firstItem="Nea-Lw-eT5" firstAttribute="top" secondItem="nJE-iC-RkQ" secondAttribute="top" constant="12" id="r67-We-I99"/>
-                                                                </constraints>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                         <real key="value" value="16"/>
@@ -164,6 +136,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerView" destination="nJE-iC-RkQ" id="MjR-Qj-Mkl"/>
                         <outlet property="tableView" destination="eeE-jV-2zM" id="nyH-jW-jL0"/>
                     </connections>
                 </viewController>
@@ -229,37 +202,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSA-fk-bCc">
                                                         <rect key="frame" x="178" y="0.0" width="104" height="44"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-tX-pPe">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-tX-pPe" customClass="HeaderView" customModule="Wlif" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="104" height="34"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="a69-ix-z2m">
-                                                                        <rect key="frame" x="14" y="12" width="76" height="10"/>
-                                                                        <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qlo-g9-r9T">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="home"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0D-cF-9QS">
-                                                                                <rect key="frame" x="25.5" y="0.0" width="25" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="list"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAp-w8-bq0">
-                                                                                <rect key="frame" x="50.5" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="bag"/>
-                                                                            </button>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.058823529409999999" green="0.058823529409999999" blue="0.058823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="a69-ix-z2m" secondAttribute="trailing" constant="14" id="VRc-Pv-70e"/>
-                                                                    <constraint firstItem="a69-ix-z2m" firstAttribute="top" secondItem="9v3-tX-pPe" secondAttribute="top" constant="12" id="aah-mz-zrc"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="a69-ix-z2m" secondAttribute="bottom" constant="12" id="j2C-Wy-m6i"/>
-                                                                    <constraint firstItem="a69-ix-z2m" firstAttribute="leading" secondItem="9v3-tX-pPe" secondAttribute="leading" constant="14" id="o0U-d8-KbV"/>
-                                                                </constraints>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                         <real key="value" value="16"/>
@@ -356,6 +301,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerView" destination="9v3-tX-pPe" id="lBc-Ti-fPf"/>
                         <outlet property="tableView" destination="xpv-8e-JDS" id="PdI-zE-cLf"/>
                     </connections>
                 </viewController>
@@ -421,37 +367,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czm-zf-FuV">
                                                         <rect key="frame" x="178" y="0.0" width="104" height="44"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPK-UK-qJt">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPK-UK-qJt" customClass="HeaderView" customModule="Wlif" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="104" height="34"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0lp-J7-yG9">
-                                                                        <rect key="frame" x="14" y="12" width="76" height="10"/>
-                                                                        <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVE-r5-3Zt">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="home"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKq-ce-vxM">
-                                                                                <rect key="frame" x="25.5" y="0.0" width="25" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="list"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcA-Qm-Moh">
-                                                                                <rect key="frame" x="50.5" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="bag"/>
-                                                                            </button>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.058823529409999999" green="0.058823529409999999" blue="0.058823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="0lp-J7-yG9" secondAttribute="trailing" constant="14" id="Xux-AT-gbU"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="0lp-J7-yG9" secondAttribute="bottom" constant="12" id="Zb1-k5-4C5"/>
-                                                                    <constraint firstItem="0lp-J7-yG9" firstAttribute="leading" secondItem="RPK-UK-qJt" secondAttribute="leading" constant="14" id="hZe-Vm-cST"/>
-                                                                    <constraint firstItem="0lp-J7-yG9" firstAttribute="top" secondItem="RPK-UK-qJt" secondAttribute="top" constant="12" id="nYl-dC-DpX"/>
-                                                                </constraints>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                         <real key="value" value="16"/>
@@ -548,6 +466,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerView" destination="RPK-UK-qJt" id="dEF-9D-c33"/>
                         <outlet property="tableView" destination="Rqc-Bc-MQe" id="J9K-hm-6de"/>
                         <outlet property="titleLabel" destination="Ia4-kA-ksp" id="ket-dV-JAx"/>
                     </connections>
@@ -830,37 +749,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGK-sM-Pei">
                                                         <rect key="frame" x="178" y="0.0" width="104" height="44"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H03-OB-1UD">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H03-OB-1UD" customClass="HeaderView" customModule="Wlif" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="104" height="34"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kqq-RQ-6rU">
-                                                                        <rect key="frame" x="14" y="12" width="76" height="10"/>
-                                                                        <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0y-0P-T4f">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="home"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBG-wY-N4S">
-                                                                                <rect key="frame" x="25.5" y="0.0" width="25" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="bag"/>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ra-jq-Xoo">
-                                                                                <rect key="frame" x="50.5" y="0.0" width="25.5" height="10"/>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="list"/>
-                                                                            </button>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.058823529409999999" green="0.058823529409999999" blue="0.058823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="kqq-RQ-6rU" secondAttribute="bottom" constant="12" id="ILg-bV-BTY"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="kqq-RQ-6rU" secondAttribute="trailing" constant="14" id="TeN-CY-QBf"/>
-                                                                    <constraint firstItem="kqq-RQ-6rU" firstAttribute="top" secondItem="H03-OB-1UD" secondAttribute="top" constant="12" id="ZHG-ra-Ly0"/>
-                                                                    <constraint firstItem="kqq-RQ-6rU" firstAttribute="leading" secondItem="H03-OB-1UD" secondAttribute="leading" constant="14" id="hJR-JR-oXt"/>
-                                                                </constraints>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                         <real key="value" value="16"/>
@@ -957,6 +848,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerView" destination="H03-OB-1UD" id="nxe-9k-AH6"/>
                         <outlet property="tableView" destination="V15-h8-Nu8" id="8JS-73-zDt"/>
                     </connections>
                 </viewController>
@@ -967,9 +859,6 @@
     </scenes>
     <resources>
         <image name="back" width="44" height="44"/>
-        <image name="bag" width="10.5" height="10.5"/>
-        <image name="home" width="10.5" height="10.5"/>
-        <image name="list" width="10.5" height="10.5"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

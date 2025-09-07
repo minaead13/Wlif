@@ -1,18 +1,28 @@
 PODS:
-  - GoogleMaps (9.4.0):
-    - GoogleMaps/Maps (= 9.4.0)
-  - GoogleMaps/Maps (9.4.0)
+  - GoogleMaps (7.4.0):
+    - GoogleMaps/Maps (= 7.4.0)
+  - GoogleMaps/Base (7.4.0)
+  - GoogleMaps/Maps (7.4.0):
+    - GoogleMaps/Base
+  - GooglePlaces (7.4.0)
+  - HSCycleGalleryView (1.2.0)
 
 DEPENDENCIES:
-  - GoogleMaps
+  - GoogleMaps (~> 7.4.0)
+  - GooglePlaces (~> 7.4.0)
+  - HSCycleGalleryView
 
 SPEC REPOS:
   trunk:
     - GoogleMaps
+    - GooglePlaces
+    - HSCycleGalleryView
 
 SPEC CHECKSUMS:
-  GoogleMaps: 0608099d4870cac8754bdba9b6953db543432438
+  GoogleMaps: 032f676450ba0779bd8ce16840690915f84e57ac
+  GooglePlaces: 544e908d94860bf6f8fc1865b80d2c7eb6b5f937
+  HSCycleGalleryView: 5101435175a26d08f1c062cf6cb245f58f09b425
 
-PODFILE CHECKSUM: 7deee5dee667f3864963dc4a8872bca9c20bf8e5
+PODFILE CHECKSUM: 203e0eaa01b82dcb35289bdac62395f46fc83627
 
 COCOAPODS: 1.16.2

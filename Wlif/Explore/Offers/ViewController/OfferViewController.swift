@@ -10,6 +10,7 @@ import UIKit
 class OfferViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = OffersViewModel()
     
@@ -23,6 +24,7 @@ class OfferViewController: UIViewController {
         setTableView()
         bind()
         viewModel.getOffers()
+        setupHeaderActions()
     }
     
     func setTableView() {
@@ -51,6 +53,19 @@ class OfferViewController: UIViewController {
         }
     }
    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+    }
 
     @IBAction func didTapBackBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

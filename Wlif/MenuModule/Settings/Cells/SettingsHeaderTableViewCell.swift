@@ -18,8 +18,8 @@ class SettingsHeaderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        nameLabel.text = UserUtil.load()?.user.name
-        userImageView.image = UIImage(named: UserUtil.load()?.user.image ?? "")
+        nameLabel.text = UserUtil.load()?.user?.name
+        userImageView.image = UIImage(named: UserUtil.load()?.user?.image ?? "")
         
     }
     

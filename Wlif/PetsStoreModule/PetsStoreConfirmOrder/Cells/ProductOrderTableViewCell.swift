@@ -27,7 +27,7 @@ class ProductOrderTableViewCell: UITableViewCell {
         nameLabel.text = item.name
         storeLabel.text = item.store
         sizeLabel.text = item.size
-        priceLabel.text = item.price
-        quantityLabel.text = "\(item.qty)"
+        priceLabel.text = "\(item.price ?? 0)"
+        quantityLabel.text = "\(item.qty ?? 0)"
     }
 }

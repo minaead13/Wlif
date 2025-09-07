@@ -19,7 +19,7 @@ class AddAdoptionViewModel {
     var isLoading: Observable<Bool> = Observable(false)
     var isFromEdit: Bool = false
     var petID: Int?
-    let placeholder = "Description"
+    let placeholder = "Description".localized
     var isAddCellAvailable = true
     var adoptionImages: [UIImage] = []
     var onImagesDownloaded: (([UIImage]) -> Void)?
@@ -36,23 +36,23 @@ class AddAdoptionViewModel {
 
     func validateFields() -> (Bool, String?) {
         if petName?.isEmpty ?? true {
-            return (false, "Pet name is required.")
+            return (false, "Pet name is required.".localized)
         }
         
         if LocationUtil.load() == nil {
-            return (false, "Location is required.")
+            return (false, "Location is required.".localized)
         }
         
         if ageGroup?.isEmpty ?? true {
-            return (false, "Age group is required.")
+            return (false, "Age group is required.".localized)
         }
         
         if bloodType?.isEmpty ?? true {
-            return (false, "Blood type is required.")
+            return (false, "Blood type is required.".localized)
         }
         
         if description?.isEmpty ?? true {
-            return (false, "Description is required.")
+            return (false, "Description is required.".localized)
         }
         
       

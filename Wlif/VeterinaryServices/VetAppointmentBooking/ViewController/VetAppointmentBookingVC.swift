@@ -14,6 +14,7 @@ class VetAppointmentBookingVC: UIViewController {
     @IBOutlet weak var continueBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var continueView: UIView!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = VetAppointmentBookingViewModel()
     
@@ -36,6 +37,7 @@ class VetAppointmentBookingVC: UIViewController {
 //        continueView.layer.shadowRadius = 4
         
         viewModel.getCategoryDetails()
+        setupHeaderActions()
     }
     
 
@@ -57,6 +59,20 @@ class VetAppointmentBookingVC: UIViewController {
                     self.hideLoadingIndicator()
                 }
             }
+        }
+    }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
         }
     }
     

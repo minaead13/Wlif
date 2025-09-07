@@ -324,4 +324,39 @@ extension String {
         let fontAttributes = [NSAttributedString.Key.font: font]
         return self.size(withAttributes: fontAttributes)
     }
+    
+    // June 9, 2025 - 11:45 AM
+    func formatOrderDateString() -> String {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+        inputFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        guard let date = inputFormatter.date(from: self) else {
+            return self
+        }
+        
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "MMMM d, yyyy - h:mm a"
+        outputFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        return outputFormatter.string(from: date)
+    }
+    
+    /// Convert "HH:mm:ss" (24h) into "h:mm a" (12h with AM/PM)
+    func to12HourTime() -> String {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "HH:mm:ss"
+        inputFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "h:mm a"
+        outputFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        guard let date = inputFormatter.date(from: self) else {
+            return self // return original if parsing fails
+        }
+        
+        return outputFormatter.string(from: date)
+    }
+
 }

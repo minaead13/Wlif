@@ -11,6 +11,7 @@ class PetsStoresViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = PetsStoresViewModel()
     
@@ -25,6 +26,7 @@ class PetsStoresViewController: UIViewController {
         setupTableView()
         bind()
         viewModel.getPetsStores()
+        setupHeaderActions()
     }
     
     func setupTableView() {
@@ -55,6 +57,20 @@ class PetsStoresViewController: UIViewController {
                     self.hideLoadingIndicator()
                 }
             }
+        }
+    }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
         }
     }
     

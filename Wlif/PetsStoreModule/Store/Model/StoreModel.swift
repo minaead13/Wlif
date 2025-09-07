@@ -9,7 +9,15 @@ import Foundation
 
 struct StoreModel: Codable {
     var store: Store?
+    var categories: [StoreCategory]?
     var products: [Product]?
+}
+
+struct StoreCategory: Codable {
+    var id: Int?
+    var name: String?
+    var image: String?
+    var slogan: String?
 }
 
 struct Store: Codable {

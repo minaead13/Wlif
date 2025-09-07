@@ -14,6 +14,7 @@ class AdoptionFilterViewController: UIViewController {
     @IBOutlet weak var myAnimalTableView: UITableView!
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var favTableView: UITableView!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = AdoptionFilterViewModel()
     
@@ -25,7 +26,7 @@ class AdoptionFilterViewController: UIViewController {
     func setupUI() {
         setupCollectionView()
         setupTableView()
-        
+        setupHeaderActions()
         bind()
         viewModel.getMyAnimalList(isAnimal: true)
         
@@ -33,6 +34,14 @@ class AdoptionFilterViewController: UIViewController {
         adoptedPetsCollection.isHidden = true
         chatTableView.isHidden = true
         favTableView.isHidden = true
+        
+        let indexPath = IndexPath(item: 0, section: 0)
+        let scrollPosition: UICollectionView.ScrollPosition = LanguageManager.shared.isRightToLeft ? .right : .left
+        DispatchQueue.main.async {
+            if self.filterCollectionView.numberOfItems(inSection: 0) > 0 {
+                self.filterCollectionView.scrollToItem(at: indexPath, at: scrollPosition, animated: false)
+            }
+        }
     }
     
     func setupCollectionView() {
@@ -72,6 +81,20 @@ class AdoptionFilterViewController: UIViewController {
                     self.hideLoadingIndicator()
                 }
             }
+        }
+    }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
         }
     }
     

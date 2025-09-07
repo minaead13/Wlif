@@ -9,6 +9,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import IQKeyboardToolbarManager
 import GoogleMaps
+//import CheckoutSDK_iOS
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -40,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setAppLanguage()
         keyboardManagerSetup()
         prepareAppFont("IBMPlexSansArabic")
+        setPayment()
     }
     
     func setAppLanguage() {
@@ -81,6 +83,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .substituteFontName
         = name
     
+    }
+    
+    func setPayment() {
+//        let config = CheckoutConfig(
+//            publicKey: "pk_test_dLHQbnGpZag4Fk9sYu3X6zl0",
+//            merchantId: "YOUR_MERCHANT_ID",
+//            environment: .sandbox
+//        )
+//        
+//        TapCheckoutSDK.initializeSDK(
+//                    publicKey: "YOUR_PUBLIC_KEY",
+//                    bundleID: Bundle.main.bundleIdentifier ?? ""
+//                )
+        //CheckoutSDK.initalizeSdk
     }
 }
 

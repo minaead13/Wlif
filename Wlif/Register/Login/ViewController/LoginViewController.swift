@@ -23,18 +23,29 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        })
+        bind()
     }
     
     func setUI() {
         outerStack.semanticContentAttribute = .forceLeftToRight
         loginStack.semanticContentAttribute = .forceLeftToRight
         mobileNumberStack.semanticContentAttribute = .forceLeftToRight
-        //numberTextField.semanticContentAttribute = .forceLeftToRight
+    }
+    
+    func bind() {
+        viewModel.isLoading.bind { [weak self] isLoading in
+            guard let self = self,
+                  let isLoading = isLoading else {
+                return
+            }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self.showLoadingIndicator()
+                } else {
+                    self.hideLoadingIndicator()
+                }
+            }
+        }
     }
 
     func login() {
@@ -46,9 +57,8 @@ class LoginViewController: UIViewController {
         viewModel.processLogin(mobileNumber: numberTextField.text ?? "") { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
-                case .success(let loginModel):
-                    print(loginModel)
-                    self?.navigateToHome()
+                case .success(let result):
+                    self?.navigateToHome(isNewUser: result.newUser ?? false)
                 case .failure(let error):
                     self?.errorMessage.text = error.localizedDescription
                 }
@@ -57,10 +67,16 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func navigateToHome() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
-        vc.otpViewModel.userData = viewModel.userData
-        self.navigationController?.pushViewController(vc, animated: true)
+    func navigateToHome(isNewUser: Bool) {
+        if isNewUser {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+            vc.otpViewModel.userData = viewModel.userData
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+      
     }
     
     @IBAction func didTapLoginBtn(_ sender: Any) {

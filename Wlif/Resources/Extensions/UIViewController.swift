@@ -49,6 +49,18 @@ extension UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func navigate<T: UIViewController>(to viewControllerType: T.Type,
+                                           from storyboardName: String,
+                                           storyboardID: String,
+                                       animated: Bool = true) {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: storyboardID) as? T else {
+            assertionFailure("⚠️ Couldn't instantiate \(storyboardID) from \(storyboardName).storyboard")
+            return
+        }
+        navigationController?.pushViewController(vc, animated: animated)
+    }
+    
     func displaySpinner(onView : UIView) -> UIView {
         let loaderColor = UIColor.label
         let animationFrame = CGRect(origin: CGPoint.zero, size: CGSize(width: 100, height: 100))

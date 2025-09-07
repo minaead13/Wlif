@@ -10,7 +10,7 @@ import UIKit
 class StorePaymentInfoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var subTotalLabel: UILabel!
-    @IBOutlet weak var deliveryValueLabel: UILabel!
+    @IBOutlet weak var subTotalCountLabel: UILabel!
     @IBOutlet weak var taxLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     

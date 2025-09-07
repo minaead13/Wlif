@@ -89,6 +89,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             switch indexPath.row {
+            case 0:
+                let storyboard = UIStoryboard(name: "Orders", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "OrderHistoryViewController") as! OrderHistoryViewController
+                self.navigationController?.pushViewController(vc, animated: true)
             case 2:
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "SupportVC") as! SupportVC
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -98,6 +102,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 self.navigationController?.pushViewController(vc, animated: true)
             case 4:
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "TermsVC") as! TermsVC
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            case 7:
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "WalletViewController") as! WalletViewController
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             default:

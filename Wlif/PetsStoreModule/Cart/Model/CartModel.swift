@@ -9,7 +9,8 @@ import Foundation
 
 struct CartModel: Codable {
     var items: [Item]?
-    var subtotal, tax, total, deliveryValue: String?
+    var subtotal, total: Double?
+    var tax, deliveryValue: String?
     
     enum CodingKeys: String, CodingKey {
         case items, subtotal, tax, total
@@ -22,11 +23,12 @@ struct CartItems: Codable {
 }
 
 struct Item: Codable {
-    let id, merchantId, productID: Int
-    let name, store: String
-    let image: String
-    let price, size: String
-    let qty: Int
+    var id, merchantId, productID: Int?
+    var name, store: String?
+    var image: String?
+    var price: Int?
+    var size: String?
+    var qty: Int?
 
     enum CodingKeys: String, CodingKey {
         case id

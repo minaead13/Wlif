@@ -42,7 +42,7 @@ extension OfferClinicServicesTableViewCell: UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceDetailsTableViewCell", for: indexPath) as? ServiceDetailsTableViewCell else { return UITableViewCell() }
         cell.configure(data: offers[indexPath.row])
-        
+        cell.selectionStyle = .none
         return cell
     }
     

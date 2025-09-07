@@ -12,6 +12,7 @@ class ServiceDetailsViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var serviceNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = ServiceDetailsViewModel()
     
@@ -26,6 +27,7 @@ class ServiceDetailsViewController: UIViewController {
         bind()
         viewModel.getServiceDetails()
         tableView.registerCell(cell: ServiceDetailsTableViewCell.self)
+        setupHeaderActions()
     }
     
 
@@ -52,6 +54,19 @@ class ServiceDetailsViewController: UIViewController {
         }
     }
     
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
+    }
     
     @IBAction func didTapBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

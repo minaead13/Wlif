@@ -90,7 +90,7 @@ extension ProductDetailsViewController: UITableViewDelegate, UITableViewDataSour
             
             switch action {
             case .increase:
-                cartViewModel.addCartProduct(productId: productId ?? 0, qty: qty)
+                cartViewModel.addCartProduct(productId: productId ?? 0, qty: 1)
             case .decrease:
                 print("minus")
             case .delete:

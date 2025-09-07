@@ -9,6 +9,8 @@ import UIKit
 
 class SupportVC: UIViewController {
     
+    @IBOutlet weak var headerView: HeaderView!
+    
     let viewModel = SupportViewModel()
     
     override func viewDidLoad() {
@@ -20,6 +22,7 @@ class SupportVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         bind()
         viewModel.getSupport()
+        setupHeaderActions()
     }
     
     func bind() {
@@ -38,6 +41,19 @@ class SupportVC: UIViewController {
         }
     }
     
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
+    }
     
     @IBAction func didTapEmailBtn(_ sender: Any) {
         if let email = viewModel.support?.email, let url = URL(string: "mailto:\(email)") {

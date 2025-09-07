@@ -10,6 +10,7 @@ import UIKit
 class HotelDetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = HotelDetailsViewModel()
     
@@ -25,6 +26,7 @@ class HotelDetailsViewController: UIViewController {
         bind()
         viewModel.getPetHotelDetails()
         viewModel.getPetHotelReviews()
+        setupHeaderActions()
     }
     
     func setupTableView() {
@@ -53,6 +55,20 @@ class HotelDetailsViewController: UIViewController {
                     self.hideLoadingIndicator()
                 }
             }
+        }
+    }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
         }
     }
     

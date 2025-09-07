@@ -10,6 +10,8 @@ import UIKit
 class StoreViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = StoreViewModel()
     let cartViewModel = CartViewModel()
@@ -23,14 +25,17 @@ class StoreViewController: UIViewController {
     func setupUI() {
         self.navigationController?.navigationBar.isHidden = true
         setupTableView()
+        setupCollectionView()
         bind()
         viewModel.getStoreData()
+        setupHeaderActions()
     }
     
 
     func bind() {
         viewModel.onStoreFetched = { [weak self] services in
             self?.tableView.reloadData()
+            self?.collectionView.reloadData()
         }
         
         viewModel.isLoading.bind { [weak self] isLoading in
@@ -65,6 +70,24 @@ class StoreViewController: UIViewController {
     func setupTableView() {
         tableView.registerCell(cell: StoreDetailsTableViewCell.self)
         tableView.registerCell(cell: ProductTableViewCell.self)
+    }
+    
+    func setupCollectionView() {
+        collectionView.registerCell(cell: CategoryCollectionViewCell.self)
+    }
+    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigate(to: SettingsViewController.self, from: "Profile", storyboardID: "SettingsViewController")
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     @IBAction func didTapBackButton(_ sender: Any) {
@@ -137,5 +160,40 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
             vc.viewModel.productId = viewModel.store?.products?[indexPath.row].id
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+}
+
+extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.store?.categories?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell else {
+            return UICollectionViewCell() }
+        
+        let isSelected = indexPath.row == viewModel.selectedIndex
+        cell.outerView.backgroundColor = isSelected ? .label : .clear
+        cell.outerView.borderColor = isSelected ? .clear : UIColor(hex: "A1A1A1")
+        cell.outerView.borderWidth = isSelected ? 0 : 1
+        cell.nameLabel.textColor = isSelected ? .white : UIColor(hex: "A1A1A1")
+        cell.nameLabel.text = viewModel.store?.categories?[indexPath.row].name
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.selectedIndex = indexPath.row
+        collectionView.reloadData()
+        viewModel.getStoreData(categroyID: viewModel.store?.categories?[indexPath.row].id)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let font = UIFont(name: "IBMPlexSansArabic-SemiBold", size: 16) ?? UIFont.systemFont(ofSize: 16)
+        let title = viewModel.store?.categories?[indexPath.row].name ?? ""
+        let textWidth = ceil(title.widthOfString(usingFont: font))
+        let horizontalPadding = 32
+        let cellWidth = textWidth + CGFloat(horizontalPadding)
+        return CGSize(width: cellWidth, height: 43)
     }
 }

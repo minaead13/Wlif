@@ -27,11 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** Creates a solid color stroke style. */
 + (instancetype)solidColor:(UIColor *)color;
 
-/** Creates a gradient stroke style interpolating from `fromColor` to `toColor`. */
+/** Creates a gradient stroke style interpolating from |fromColor| to |toColor|. */
 + (instancetype)gradientFromColor:(UIColor *)fromColor toColor:(UIColor *)toColor;
-
-/** Creates a transparent stroke style and sets the stampStyle. */
-+ (instancetype)transparentStrokeWithStampStyle:(GMSStampStyle *)stampStyle;
 
 @end
 

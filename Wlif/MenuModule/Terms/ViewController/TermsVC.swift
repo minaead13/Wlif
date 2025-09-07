@@ -10,6 +10,7 @@ import UIKit
 class TermsVC: UIViewController {
     
     @IBOutlet weak var termTextView: UITextView!
+    @IBOutlet weak var headerView: HeaderView!
     
     let viewModel = TermsViewModel()
     
@@ -22,6 +23,7 @@ class TermsVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         bind()
         viewModel.getTerms()
+        setupHeaderActions()
     }
     
     func bind() {
@@ -45,7 +47,19 @@ class TermsVC: UIViewController {
         }
     }
     
-    
+    func setupHeaderActions() {
+        headerView.onCartTap = { [weak self] in
+            self?.navigate(to: CartViewController.self, from: "Home", storyboardID: "CartViewController")
+        }
+        
+        headerView.onSideMenuTap = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+        headerView.onHomeTap = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
+    }
 
     @IBAction func didTapBackBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
