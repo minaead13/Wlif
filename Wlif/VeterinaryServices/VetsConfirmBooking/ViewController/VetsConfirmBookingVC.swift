@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import PassKit
+import MoyasarSdk
 
 class VetsConfirmBookingVC: UIViewController {
 
@@ -93,6 +95,7 @@ extension VetsConfirmBookingVC: UITableViewDelegate, UITableViewDataSource {
             cell.vetImageView.setImage(from: viewModel.store?.image)
             cell.nameLabel.text = viewModel.store?.name
             cell.locationLabel.text = viewModel.store?.distance
+            cell.selectionStyle = .none
             return cell
             
         case 1:
@@ -102,13 +105,16 @@ extension VetsConfirmBookingVC: UITableViewDelegate, UITableViewDataSource {
             cell.dateLabel.text = viewModel.date
             cell.timeLabel.text = viewModel.selectedTime?.time
             cell.animalTypes = viewModel.selectedAnimalTypes
-            
+            cell.selectionStyle = .none
             return cell
             
         case 2:
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentMethodTableViewCell", for: indexPath) as? PaymentMethodTableViewCell else { return UITableViewCell()}
-            
+            cell.completionHandler = { [weak self] in
+                self?.startApplePayPayment()
+            }
+            cell.selectionStyle = .none
             return cell
             
         case 3:
@@ -116,10 +122,59 @@ extension VetsConfirmBookingVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentInfoTableViewCell", for: indexPath) as? PaymentInfoTableViewCell else { return UITableViewCell()}
             cell.totalLabel.text = "\(viewModel.category?.price ?? 0) \("SR".localized)"
             cell.subTotalLabel.text = "\(viewModel.category?.price ?? 0) \("SR".localized)"
+            cell.selectionStyle = .none
             return cell
             
         default:
             return UITableViewCell()
         }
     }
+}
+
+extension VetsConfirmBookingVC: PKPaymentAuthorizationControllerDelegate {
+    
+    func startApplePayPayment() {
+        let paymentRequest = PKPaymentRequest()
+        
+        paymentRequest.merchantIdentifier = "merchant.your.merchant.id"
+        paymentRequest.countryCode = "SA"
+        paymentRequest.currencyCode = "SAR"
+        paymentRequest.supportedNetworks = [.visa, .masterCard, .mada]
+        paymentRequest.merchantCapabilities = [.capability3DS, .capabilityCredit, .capabilityDebit]
+        
+        paymentRequest.paymentSummaryItems = [
+            PKPaymentSummaryItem(label: "Booking Payment", amount: NSDecimalNumber(string: "\(viewModel.category?.price ?? 0)"))
+        ]
+        
+        let controller = PKPaymentAuthorizationController(paymentRequest: paymentRequest)
+        controller.delegate = self
+        controller.present(completion: nil)
+    }
+    
+    func paymentAuthorizationController(_ controller: PKPaymentAuthorizationController,
+                                        didAuthorizePayment payment: PKPayment,
+                                        handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
+        
+//        MoyasarSDK.createApplePayPayment(token: payment.token, amount: viewModel.category?.price ?? 0, currency: "SAR", description: "Booking Payment") { result in
+//            
+//            switch result {
+//            case .success(let paymentResult):
+//                if paymentResult.status == "paid" {
+//                    completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+//                    self.handlePaymentSuccess(paymentResult)
+//                } else {
+//                    completion(PKPaymentAuthorizationResult(status: .failure, errors: nil))
+//                }
+//            case .failure(let error):
+//                print("Payment failed: \(error.localizedDescription)")
+//                completion(PKPaymentAuthorizationResult(status: .failure, errors: [error]))
+//            }
+        // }
+    }
+
+    
+    func paymentAuthorizationControllerDidFinish(_ controller: PKPaymentAuthorizationController) {
+        controller.dismiss()
+    }
+    
 }

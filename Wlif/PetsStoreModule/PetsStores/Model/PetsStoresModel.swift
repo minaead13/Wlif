@@ -13,11 +13,11 @@ struct PetsStoresDataContainer: Codable {
 }
 
 struct PetsStoresModel: Codable {
-    let id: Int
-    let image: String
-    let name, shortDesc, delivery, distance: String
-    let rate: Int
-    let minuim, closesAt: String
+    var id: Int?
+    var image: String?
+    var name, shortDesc, delivery, distance: String?
+    var rate: Int?
+    var minuim, closesAt: String?
 
     enum CodingKeys: String, CodingKey {
         case id, image, name

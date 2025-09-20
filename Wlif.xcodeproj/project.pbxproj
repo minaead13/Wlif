@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1EC140051FF7F5D431C08C45 /* Pods_Wlif.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45184EACC729F123864F1FA /* Pods_Wlif.framework */; };
+		8A29C6D92E7C502700334CAA /* MoyasarSdk in Frameworks */ = {isa = PBXBuildFile; productRef = 8A29C6D82E7C502700334CAA /* MoyasarSdk */; };
 		8A4B22D32E1E729400A13823 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 8A4B22D22E1E729400A13823 /* Cosmos */; };
 		8AB0A2632E16971C0042FB85 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8AB0A2622E16971C0042FB85 /* Kingfisher */; };
 		8AB0A2682E1697830042FB85 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 8AB0A2672E1697830042FB85 /* NVActivityIndicatorView */; };
@@ -54,6 +55,7 @@
 				8AB0A2682E1697830042FB85 /* NVActivityIndicatorView in Frameworks */,
 				8AB0A2632E16971C0042FB85 /* Kingfisher in Frameworks */,
 				8AF539CC2E13BE2600D3170A /* Alamofire in Frameworks */,
+				8A29C6D92E7C502700334CAA /* MoyasarSdk in Frameworks */,
 				8AF53A352E13DA6800D3170A /* IQKeyboardManagerSwift in Frameworks */,
 				8AF9EF8B2E2FA60B008F7EF2 /* FSCalendar in Frameworks */,
 				8AB0A26A2E1697830042FB85 /* NVActivityIndicatorViewExtended in Frameworks */,
@@ -129,6 +131,7 @@
 				8AB0A2692E1697830042FB85 /* NVActivityIndicatorViewExtended */,
 				8A4B22D22E1E729400A13823 /* Cosmos */,
 				8AF9EF8A2E2FA60B008F7EF2 /* FSCalendar */,
+				8A29C6D82E7C502700334CAA /* MoyasarSdk */,
 			);
 			productName = Wlif;
 			productReference = 8AF539A22E13BD3000D3170A /* Wlif.app */;
@@ -167,6 +170,7 @@
 				8AB0A2662E1697830042FB85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				8A4B22D12E1E729400A13823 /* XCRemoteSwiftPackageReference "Cosmos" */,
 				8AF9EF892E2FA60B008F7EF2 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				8A29C6D72E7C502700334CAA /* XCRemoteSwiftPackageReference "moyasar-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8AF539A32E13BD3000D3170A /* Products */;
@@ -465,6 +469,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8A29C6D72E7C502700334CAA /* XCRemoteSwiftPackageReference "moyasar-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/moyasar/moyasar-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		8A4B22D12E1E729400A13823 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
@@ -516,6 +528,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8A29C6D82E7C502700334CAA /* MoyasarSdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A29C6D72E7C502700334CAA /* XCRemoteSwiftPackageReference "moyasar-ios-sdk" */;
+			productName = MoyasarSdk;
+		};
 		8A4B22D22E1E729400A13823 /* Cosmos */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8A4B22D12E1E729400A13823 /* XCRemoteSwiftPackageReference "Cosmos" */;
