@@ -1,6 +1,0 @@
-framework module Pods_Wlif {
-  umbrella header "Pods-Wlif-umbrella.h"
-
-  export *
-  module * { export * }
-}
