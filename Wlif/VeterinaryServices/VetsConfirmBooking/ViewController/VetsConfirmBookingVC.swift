@@ -112,7 +112,40 @@ extension VetsConfirmBookingVC: UITableViewDelegate, UITableViewDataSource {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentMethodTableViewCell", for: indexPath) as? PaymentMethodTableViewCell else { return UITableViewCell()}
             cell.completionHandler = { [weak self] in
-                self?.startApplePayPayment()
+                guard let self = self else { return }
+                do {
+                    let amount = self.viewModel.category?.price ?? 0
+                    
+                    // This is the line that can throw
+                    let request = try PaymentRequest(
+                        apiKey: "YOUR_PUBLISHABLE_API_KEY",
+                        amount: amount,
+                        currency: "SAR",
+                        description: "Veterinary booking for \(self.viewModel.store?.name ?? "")"
+                    )
+                    
+                    let vc = CreditCardPaymentVC()
+                    vc.paymentRequest = request // Pass the valid request
+                    
+                    // Set up the completion handlers for success and failure
+                    vc.onPaymentSuccess = { [weak self] in
+                        self?.viewModel.addVetOrder { addOrderResult in
+                            // ... (existing success logic)
+                        }
+                    }
+                    
+                    vc.onPaymentFailure = { error in
+                     
+                    }
+                    
+                    self.present(vc, animated: true, completion: nil)
+                } catch {
+                    // Handle the error if the PaymentRequest creation fails
+                    print("Failed to create payment request: \(error.localizedDescription)")
+                    let alert = UIAlertController(title: "Payment Error", message: "An error occurred while preparing for payment. Please try again.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
             cell.selectionStyle = .none
             return cell
